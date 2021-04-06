@@ -1,4 +1,4 @@
-from db import db
+from .db import db
 
 class Questions(db.Model):
     __tablename__ = 'questions'

@@ -1,4 +1,4 @@
-from db import db
+from .db import db
 
 class QuestionsRepo(db.Model):
     __tablename__ = 'questions_repo'
