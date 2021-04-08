@@ -11,5 +11,7 @@ class Questions(db.Model):
         return {
             "question_id": self.id,
             "question" : self.question,
-            "answer" : self.subcategory
+            "answer" : self.answer,
+            "subcategory" : self.subcategory,
+            
         }

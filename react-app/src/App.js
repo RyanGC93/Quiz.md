@@ -6,7 +6,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
-
+import MainPage from "./components/MainPage";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -37,7 +37,7 @@ function App() {
           />
         </Route>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>sdsadsad</h1>
+          <MainPage />
           {/* <UsersList/> */}
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
