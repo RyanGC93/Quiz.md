@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './styles.css';
 import { useDispatch} from 'react-redux';
 import { login } from '../../../store/session';
 import {rememberMe, isRemembered} from '../../../services/rememberMe.js'
 
-export const LoginForm = () => {
+export const LoginForm = ({ setAuthenticated}) => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
@@ -22,20 +22,30 @@ export const LoginForm = () => {
     e.preventDefault();
     
     if (checkbox) rememberMe(checkbox, email);
-    const user = { email, password };
-    const res = await dispatch(login(user));
 
-    return (res.errors) ? setErrors(res.errors): <Redirect to='/' />
+    const res = await dispatch(login(email,password));
+    if (res.errors) setErrors(res.errors)
+    setAuthenticated(true)
+    if(!res.errors) history.push('/')
+  }
+
+  const demoLogin = async (e) => {
+    e.preventDefault()
+    const res = await dispatch(login('demo@aa.io','password'));
+    if (res.errors) setErrors(res.errors)
+    setAuthenticated(true)
+    if(!res.errors) history.push('/')
   }
 
   useEffect(() => {
     setEmail(isRemembered())
-  },[])
+  },[setEmail])
 
   const checkboxHandler = () => (checkbox) ? setCheckBox(false) : setCheckBox(true)
 
 
   return (
+    <>
     <form onSubmit={onLogin}>
       <div className='error-container'>
         {errors.map((error) => (
@@ -70,8 +80,12 @@ export const LoginForm = () => {
           <div className="group">
             <input type="submit" className="button sign-in-btn" value="Sign In"/>
           </div>
+          <div className="group">
+            <input type="submit" className="button sign-in-btn" value="Demo User Sign In " onClick={demoLogin}/>
+          </div>
       </div>
-    </form>
+      </form>
+    </>  
   );
 };
 

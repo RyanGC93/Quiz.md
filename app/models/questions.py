@@ -6,3 +6,10 @@ class Questions(db.Model):
     question = db.Column(db.Text, nullable=False)
     answer = db.Column(db.Text, nullable=False)
     subcategory = db.Column(db.String(250), nullable=False)
+
+    def to_dict(self):
+        return {
+            "question_id": self.id,
+            "question" : self.question,
+            "answer" : self.subcategory
+        }
