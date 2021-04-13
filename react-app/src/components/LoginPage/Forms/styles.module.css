@@ -5,8 +5,13 @@
 .groupbutton,.button{
 	text-transform:uppercase;
 }
+form {
+    margin-left: 10%p;
+}
+
 .input, .signInBtn{
     border:none;
+    /* margin-left: 10%; */
 	padding: 15px 0px 15px 0px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
@@ -16,6 +21,16 @@
     outline-style: none;
     color: #fff;
 
+}
+form{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.options{
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
 .label {

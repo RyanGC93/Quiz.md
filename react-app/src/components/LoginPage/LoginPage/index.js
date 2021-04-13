@@ -7,8 +7,10 @@ import SignUpForm from "../Forms/SignUpForm";
 
 const LoginPage = ({ setAuthenticated }) => {
 	return (
-    <>
-      <img className='background-img' alt='' src='https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'/>
+		<>
+			<div>
+
+      <img className='background-img' alt='' src='https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'/>
 			<div className="login-wrap">
 				<div className="login-html">
 					<div className="login-title">Worldly</div>
@@ -18,7 +20,7 @@ const LoginPage = ({ setAuthenticated }) => {
 						name="tab"
 						className="sign-in"
 						defaultChecked
-					/>
+						/>
 					<label htmlFor="tab-1" className="tab__login ">
 						Sign In
 					</label>
@@ -29,16 +31,17 @@ const LoginPage = ({ setAuthenticated }) => {
 					<div className="login-form">
 						<div className="sign-in-htm">
 							<LoginForm setAuthenticated={setAuthenticated} />
-							<SocialLogins type="Signup" facebook=" with Facebook" />
-							<PortfolioNavigator />
 						</div>
 						<div className="sign-up-htm">
 							<SignUpForm />
 							<div className="hr"></div>
 						</div>
 					</div>
+							{/* <SocialLogins type="Signup" facebook=" with Facebook" /> */}
+							<PortfolioNavigator />
 				</div>
 			</div>
+						</div>
 		</>
 	);
 };
