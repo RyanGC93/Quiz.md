@@ -51,7 +51,9 @@ function App() {
          */}
         
         <ProtectedRoute path="/practice/:repoId"  authenticated={authenticated}>
-            <FlashCardQuiz />
+            <NavBar setAuthenticated={setAuthenticated} />
+  
+          <FlashCardQuiz />
         </ProtectedRoute>
         
 

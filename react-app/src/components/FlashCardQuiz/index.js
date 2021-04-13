@@ -1,11 +1,31 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
+import styles from './styles.module.css'
 
 const FlashCardQuiz = () => {
 
-    useEffect(()=> alert())
 
+    // !Section 1
     return <>
-    <div>xczxc</div>
+        <div className={styles.quizPageContainer}>
+            <div className={styles.quizCardContainer}>
+
+
+
+
+
+
+
+            </div>
+         
+         
+        </div>
+        
+    // !Section 2
+        <div className={styles.quizList}>
+
+
+
+        </div>
         
     </>;
 };
