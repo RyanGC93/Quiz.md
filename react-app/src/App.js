@@ -36,13 +36,16 @@ function App() {
             setAuthenticated={setAuthenticated}
           />
         </Route>
+        {/* Main Page */}
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
           <MainPage />
-          {/* <UsersList/> */}
         </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
+        {/* User Profile */}
+
+        {/* <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
+        
         {/* <Route path="/" exact={true} authenticated={authenticated}>
           <h1>My Home Page</h1>
         </Route> */}

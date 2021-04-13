@@ -9,7 +9,7 @@ import DropDownMenu from './DropDownMenu'
 
 const NavBar = ({ setAuthenticated }) => {
 	const history = useHistory()
-	const username = useSelector(state => state.session.user.username)
+	// const username = useSelector(state => state.session.user.username)
 	const [searchItems, setSearchItems]= useState([])
 	const homeRedirect = () => {
 		history.push('/')
@@ -36,13 +36,13 @@ const NavBar = ({ setAuthenticated }) => {
   };
 
 	useEffect(() => {
-		(async () => {
-			const url = '/api/search/'
-		  const res = await fetch(url)
-			if (!res.ok) console.error(res)
-			const data = await res.json()
-			setSearchItems(data.search)
-		})();
+		// (async () => {
+		// 	const url = '/api/search/'
+		//   const res = await fetch(url)
+		// 	if (!res.ok) console.error(res)
+		// 	const data = await res.json()
+		// 	setSearchItems(data.search)
+		// })();
 
 	  }, []);
 	return (
@@ -64,7 +64,7 @@ const NavBar = ({ setAuthenticated }) => {
 						)}
 				</div>
 				<div className={styles.userSettings}>
-					<DropDownMenu username={username} setAuthenticated={setAuthenticated} />
+					<DropDownMenu  setAuthenticated={setAuthenticated} />
 				</div>
 			</div>
 		</>

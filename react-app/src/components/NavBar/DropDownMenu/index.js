@@ -17,7 +17,7 @@ const DropDownMenu = ({ setAuthenticated }) => {
 
 
   const history = useHistory()
-  const username = useSelector(state => state.session.user.username)
+  // const username = useSelector(state => state.session.user.username)
 
 
     const dropdownRef = useRef(null);
@@ -32,7 +32,7 @@ const DropDownMenu = ({ setAuthenticated }) => {
       return
     }
       setIsActive(false)
-      history.push(`profile/${username}`)
+      // history.push(`profile/${username}`)
   }
   
   
@@ -40,7 +40,7 @@ const DropDownMenu = ({ setAuthenticated }) => {
       <>
         <div className="menu-container">
           <button onClick={onClick} className="menu-trigger">
-            <span>{username}</span>
+            <span>{}</span>
             <img
               src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
               alt="User avatar"
