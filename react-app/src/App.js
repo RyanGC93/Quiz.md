@@ -44,11 +44,17 @@ function App() {
 
         {/* <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
-        </ProtectedRoute> */}
+        </ProtectedRoute>
+         */}
         
-        {/* <Route path="/" exact={true} authenticated={authenticated}>
+        <ProtectedRoute path="/practice:/repoId" exact={true} >
+
+        </ProtectedRoute>
+        
+
+{/* <Route path="/" exact={true} authenticated={authenticated}>
           <h1>My Home Page</h1>
-        </Route> */}
+        </Route>  */}
       </Switch>
     </BrowserRouter>
   );

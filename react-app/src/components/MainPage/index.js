@@ -3,20 +3,31 @@ import {useHistory} from 'react-router-dom'
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import styles from "./styles.module.css";
 
-// TODO 
-const redirect = () => {
-        let repoId = 2
-        hisory.
 
-}
 
 
 const MainPage = () => {
-	return (
+    let history = useHistory()
+	
+    // TODO 
+const redirect = () => {
+    let repoId = 2
+    history.push(`/practice/${repoId}`)
+
+}
+    
+    
+    return (
 		<>
 			<div>
 				{/* TODO add the banner */}
-				<div className={styles.banner}></div>
+                <div className={styles.banner}>
+                    
+
+
+
+
+                </div>
 
                 
 
@@ -26,6 +37,7 @@ const MainPage = () => {
                     <div className={styles.rightContainer} >
                         {/* If the is no recent */}
                         <div className={style.altContainer}>
+                        <h1 onClick={redirect}>Redirect </h1>
 
 
                         </div>
