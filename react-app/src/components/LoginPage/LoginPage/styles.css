@@ -62,11 +62,15 @@
 }
 
 .tab__login{
-	padding:5px 5px 5px 5px;
-	width: 45%;
+	/* padding:5px 5px 5px 5px; */
+	width: 40%;
+	margin-left: 5%;
+	margin-right: 5%;
 	text-align: center;
-	padding: 5px 2% 5px 2%
+	/* padding: 5px 2% 5px 2% */
 }
+
+
 
 .login-html .tab__login{
 	font-size:22px;
@@ -80,7 +84,9 @@
 .login-html .sign-in:checked + .tab__login,
 .login-html .sign-up:checked + .tab__login{
 	color:#e4edea;
-	border-color:#1161ee;
+	background-color: rgba(43,47,59,.15);
+	border-color: #244a4e;
+    border-width: medium
 }
 .tab__login:hover{
 	cursor: pointer;
@@ -105,7 +111,7 @@
 
 
 .login-form .group .button{
-	background:#1161ee;
+	background:#171a26;
 }
 .login-form .group label .icon{
 	width:15px;
@@ -139,7 +145,7 @@
 	color:#e4edea;
 }
 .login-form .group .check:checked + label .icon{
-	background:#1161ee;
+	background:#171a26;
 }
 .login-form .group .check:checked + label .icon:before{
 	transform:scale(1) rotate(45deg);

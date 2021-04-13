@@ -37,7 +37,6 @@ const SignUpForm = (authenticated,setAuthenticated) => {
       <div className={styles.group}>
         <label className={styles.label}>User Name</label>
         <input
-            // placeholder="Username"
                   className={styles.input}
           type="text"
           name="username"
@@ -61,9 +60,11 @@ const SignUpForm = (authenticated,setAuthenticated) => {
       <div className={styles.options}>
 
         <div className={styles.group}>
-          <label className={styles.label}>Password</label>
+          <label className={styles.label}></label>
                 <input
-            className={styles.input}        
+            className={styles.input}
+            placeholder='Password'
+
             type="password"
             name="password"
             onChange={(e) => setPassword(e.target.value)}
@@ -72,9 +73,10 @@ const SignUpForm = (authenticated,setAuthenticated) => {
             ></input>
         </div>
         <div className={styles.group}>
-          <label className={styles.label}>Repeat Password</label>
+          <label className={styles.label}></label>
             <input
-            className={styles.input}        
+            className={styles.input}
+            placeholder='Repeat Password'
             type="password"
             name="repeat_password"
             onChange={(e) =>setRepeatPassword(e.target.value)}

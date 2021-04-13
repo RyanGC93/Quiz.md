@@ -5,8 +5,14 @@
 .groupbutton,.button{
 	text-transform:uppercase;
 }
-form {
-    margin-left: 10%p;
+
+
+.errorRow {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(70, 1, 1);
+    border-bottom: 1px solid black;
+
 }
 
 .input, .signInBtn{
@@ -22,11 +28,25 @@ form {
     color: #fff;
 
 }
+.signInBtn{
+    cursor: pointer;
+    width: 75%;
+    margin-left: 12.5%;
+}
+.signInBtn:hover{
+    /* background-color:#6a7c8b;
+    outline-style: solid */
+    transform: scale(1.1);
+    border: 3px solid #244a4e
+}
 form{
     margin-left: 10%;
     margin-right: 10%;
 }
 
+.remember{
+    font-weight: bold;
+}
 
 .options{
     display: grid;
@@ -39,6 +59,10 @@ form{
     width: 100%;
     color: #fff;
     display: block;
+}
+
+.form{
+    height: 100%
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

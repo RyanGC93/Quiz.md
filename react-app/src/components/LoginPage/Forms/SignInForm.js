@@ -44,11 +44,13 @@ export const LoginForm = ({ setAuthenticated }) => {
 
 	return (
 		<>
-			<form onSubmit={onLogin}>
+			<form className={styles.form} onSubmit={onLogin}>
 				<div className={styles.errorContainer}>
-					{errors.map((error) => (
-						<li className={styles.error}>{error}</li>
-					))}
+					{errors && (
+						<>
+						<div className={styles.errorRow}> Wrong Email/Password Combo</div>	
+						</>
+					)}
 				</div>
 				<div className={styles.group}>
 					<label className={styles.label} htmlFor="email">
@@ -83,11 +85,12 @@ export const LoginForm = ({ setAuthenticated }) => {
 							className={styles.check}
 							defaultChecked
 						/>
-						<label htmlFor="check">
+						<label className={styles.remember} >
 							<span className={(styles.icon, styles.checkBox)}></span> Remember
 							me
 						</label>
 					</div>
+				</div>
 					<div className={styles.options}>
 						<div className={styles.group}>
 							<input
@@ -105,7 +108,6 @@ export const LoginForm = ({ setAuthenticated }) => {
 							/>
 						</div>
 					</div>
-				</div>
 			</form>
 		</>
 	);
