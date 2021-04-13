@@ -57,7 +57,7 @@ const SignUpForm = (authenticated,setAuthenticated) => {
         ></input>
         
       </div>
-      <div className={styles.options}>
+      <div className={styles.opts}>
 
         <div className={styles.group}>
           <label className={styles.label}></label>
@@ -73,6 +73,8 @@ const SignUpForm = (authenticated,setAuthenticated) => {
             ></input>
         </div>
         <div className={styles.group}>
+          <div className={StyleSheet.inputWrapper}>
+            
           <label className={styles.label}></label>
             <input
             className={styles.input}
@@ -83,9 +85,10 @@ const SignUpForm = (authenticated,setAuthenticated) => {
             value={repeatPassword}
             required={true}
             ></input>
+            </div>
         </div>
             </div>
-      <div className={styles.group}>
+      <div className={styles.bottom}>
         <input type="submit" className={styles.signInBtn} value="Sign Up"/>
           </div>
     </form>

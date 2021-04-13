@@ -5,9 +5,26 @@
 	height: 70px;
   background-color: #171a26;
 	display: grid;
-	grid-template-columns: 33% 33% 33%;
+	grid-template-columns: 17.5% 17.5% 30% 35%;
 	box-sizing: border-box;
 	box-shadow: 0 1.5em 1em -1em rgb(70, 69, 69)
+}
+
+.addBtn{
+	margin-top: 5px;
+	/* background-color:red; */
+	height:60px;
+	width: 60px
+}
+
+.addBtn svg{
+	height:50px;
+	width: 50px
+}
+
+.addBtn path {
+	fill: rgba(228,237,234,.4);
+	stroke: #9db1c0
 }
 
 

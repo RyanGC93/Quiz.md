@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import styles from './styles.module.css'
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import DropDownMenu from './DropDownMenu'
+import {GrAddCircle} from "react-icons/gr";
 
 
 
@@ -49,7 +50,11 @@ const NavBar = ({ setAuthenticated }) => {
 	<>
 			<div className={styles.navbar}>
 				<div className={styles.logoHolder} >
-					<div className={styles.navLogo} onClick={homeRedirect}>Worldy </div>
+					<div className={styles.navLogo} onClick={homeRedirect}>--LOGO-- </div>
+				</div>
+				<div >
+
+					<GrAddCircle className={styles.addBtn} />
 				</div>
 				<div className={styles.searchBarWrapper}>
 					{searchItems && (
