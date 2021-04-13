@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Pattaya&display=swap');
 .navbar {
 	width: 100%;
-	height: 70px;
+	height: 9vw;
   background-color: #171a26;
 	display: grid;
 	grid-template-columns: 17.5% 17.5% 30% 35%;
@@ -18,8 +18,8 @@
 }
 
 .addBtn svg{
-	height:50px;
-	width: 50px
+	height:100%;
+	width: 100%
 }
 
 .addBtn path {
@@ -41,7 +41,7 @@
 .navLogo{
 	font-family: "Pattaya";
 	color: #e4edea;
-	font-size: 50px;
+	font-size: 3vh;
 	transition: 0.3s;
 	font-weight: bold;
 	cursor:pointer;

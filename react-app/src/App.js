@@ -4,6 +4,7 @@ import LoginPage from './components/LoginPage'
 import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
+import FlashCardQuiz from "./components/FlashCardQuiz";
 import User from "./components/User";
 import { authenticate } from "./services/auth";
 import MainPage from "./components/MainPage";
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      {/* <NavBar setAuthenticated={setAuthenticated} /> */}
       <Switch>
         <Route path="/login" exact={true}>
           <LoginPage
@@ -38,6 +39,8 @@ function App() {
         </Route>
         {/* Main Page */}
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+        <NavBar setAuthenticated={setAuthenticated} />
+
           <MainPage />
         </ProtectedRoute>
         {/* User Profile */}
@@ -47,12 +50,13 @@ function App() {
         </ProtectedRoute>
          */}
         
-        <ProtectedRoute path="/practice:/repoId" exact={true} >
-
+        <ProtectedRoute path="/practice/:repoId" exact={true} >
+            <FlashCardQuiz />
         </ProtectedRoute>
         
 
 {/* <Route path="/" exact={true} authenticated={authenticated}>
+          
           <h1>My Home Page</h1>
         </Route>  */}
       </Switch>

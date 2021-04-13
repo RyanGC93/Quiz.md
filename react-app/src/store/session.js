@@ -17,8 +17,9 @@ const removeSession = () => {
   };
 };
 
-export const login = (user) => async (dispatch) => {
-  const { email, password } = user;
+export const login = (email,password) => async (dispatch) => {
+
+  console.log(email,password)
   const response = await fetch('/api/auth/login', {
     method: 'POST',
     headers: {

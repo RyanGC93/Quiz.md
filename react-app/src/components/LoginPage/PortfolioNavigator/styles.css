@@ -2,11 +2,16 @@
   width: 50px;
   height: 80px;
   padding: 5px 5px 5px 5px;  
+;
+}
+.professional-row svg{
+  fill: #9db1c0
 }
 .professional-header{
    padding: 8px 4px 2px 4px;
-   font-size: 20px;
-   color: white;
+   font-size: 23px;
+   color: rgba(36,74,78,.9);
+   font-weight: bold;
    text-align: center;
    /* text-decoration: underline */
 }
@@ -20,3 +25,4 @@
   display: flex;
   justify-content:center;
 }
+
