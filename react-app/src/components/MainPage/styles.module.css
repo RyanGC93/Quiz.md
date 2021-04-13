@@ -1,0 +1,24 @@
+.banner {
+    width: 100%;
+    height: 20vw;
+    background-color: red;
+}
+
+.categories {
+    display:grid;
+    grid-template-columns: 60% 40%;
+    height: 30vw
+}
+
+.recentContainer{
+    background-color:yellow;
+    width:100%;
+    height:100%;
+}
+
+.topics{
+
+    width:100%;
+    height:100%;
+    background-color:orange;
+}
