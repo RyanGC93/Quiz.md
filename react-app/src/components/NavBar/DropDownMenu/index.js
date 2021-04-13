@@ -1,6 +1,7 @@
 
 import React, { useRef } from 'react';
-import {useLocation} from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+import { AiOutlineMenu } from "react-icons/ai";
 
 import {useDetectOutsideClick} from "../../../services/detectOutsideClick"
 import './styles.css';
@@ -39,13 +40,9 @@ const DropDownMenu = ({ setAuthenticated }) => {
     return (
       <>
         <div className="menu-container">
-          <button onClick={onClick} className="menu-trigger">
-            <span>{}</span>
-            <img
-              src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg"
-              alt="User avatar"
-            />
-          </button>
+          <div onClick={onClick} className="menu-trigger">
+            <AiOutlineMenu className="menu-icon"/>
+          </div>
           <nav
             ref={dropdownRef}
             className={`menu abs ${isActive ? "active" : "inactive"}`}

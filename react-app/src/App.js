@@ -50,7 +50,7 @@ function App() {
         </ProtectedRoute>
          */}
         
-        <ProtectedRoute path="/practice/:repoId" exact={true} >
+        <ProtectedRoute path="/practice/:repoId"  authenticated={authenticated}>
             <FlashCardQuiz />
         </ProtectedRoute>
         

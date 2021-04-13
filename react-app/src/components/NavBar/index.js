@@ -52,10 +52,6 @@ const NavBar = ({ setAuthenticated }) => {
 				<div className={styles.logoHolder} >
 					<div className={styles.navLogo} onClick={homeRedirect}>--LOGO-- </div>
 				</div>
-				<div >
-
-					<GrAddCircle className={styles.addBtn} />
-				</div>
 				<div className={styles.searchBarWrapper}>
 					{searchItems && (
 						<ReactSearchAutocomplete
