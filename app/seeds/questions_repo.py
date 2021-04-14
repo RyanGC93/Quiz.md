@@ -2,6 +2,8 @@ from app.models import db, QuestionsRepo
 from faker import Faker
 fake = Faker()
 
+
+# ! Seeds with lorem for quick build
 def seed_questions_repo():
     seed_list = []
     count = 0 

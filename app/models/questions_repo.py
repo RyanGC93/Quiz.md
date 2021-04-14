@@ -10,3 +10,5 @@ class QuestionsRepo(db.Model):
 
 
     user = db.relationship('User', back_populates='questions_repo')
+    
+    questions = db.relationship('Questions', back_populates='questions_repo') 
