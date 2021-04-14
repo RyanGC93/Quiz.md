@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import Speech from "react-speech";
 import { useParams } from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import {useDispatch,useSelector} from 'react-redux'
 
 import ReactCardFlip from "react-card-flip";
 import ReactMarkdown from "react-markdown";
@@ -57,11 +57,15 @@ const FlashCardQuiz = () => {
 	let { repoId } = useParams()
 	const dispatch = useDispatch()
 	const [flipToggle, setFlipToggle] = useState(false);
+	const questions = useSelector(state => state.questions)
 
 	useEffect(() => {
 		if (!repoId) return
 		dispatch(getQuestions(repoId))
-  },dispatch,repoId)
+		if(questions) console.log(questions)
+	}, [dispatch, repoId, questions])
+	
+	console.log(questions,questions)
 
 	// !Section 1
 	return (
