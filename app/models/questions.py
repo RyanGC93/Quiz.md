@@ -7,6 +7,9 @@ class Questions(db.Model):
     answer = db.Column(db.Text, nullable=False)
     subcategory = db.Column(db.String(250), nullable=False)
 
+    # question = db.relationship('QuestionsRepo', back_populates='question')
+
+
     def to_dict(self):
         return {
             "question_id": self.id,
