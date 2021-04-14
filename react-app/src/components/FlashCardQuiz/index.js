@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import './carousel.css'
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -27,11 +28,11 @@ const FlashCardQuiz = () => {
 		<>
 			<div className={styles.quizPageContainer}>
 				<div className={styles.quizCardContainer}>
-					{/* <Carousel> */}
+					<Carousel>
 						{questions[0] && questions.map((question) => (
 							<FlashCard question={question} />
 						))}
-					{/* </Carousel> */}
+					</Carousel>
 				</div>
 			</div>
 			// !Section 2<div className={styles.quizList}></div>
