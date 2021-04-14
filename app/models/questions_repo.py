@@ -8,7 +8,6 @@ class QuestionsRepo(db.Model):
     type = db.Column(db.String(250), nullable=False)
     subcategory = db.Column(db.String(250), nullable=False)
 
-
     user = db.relationship('User', back_populates='questions_repo')
     
     questions = db.relationship('Questions', back_populates='questions_repo') 
