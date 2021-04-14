@@ -15,5 +15,5 @@ class Questions(db.Model):
             "question_id": self.id,
             "question" : self.question,
             "answer" : self.answer,
-            "subcategory" : self.subcategory, 
+            "repo_id" : self.repo_id, 
         }
