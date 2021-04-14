@@ -22,27 +22,6 @@ const speechStyle = {
 		},
 	},
 };
-
-
-
-const BackComponent = ({ setFlipToggle, flipToggle }) => {
-	return (
-    <div onClick={() =>alert()} className={styles.card }>
-      <div onClick={() => alert('')}className="card-content">
-				<Speech
-					style={speechStyle}
-					stop={true}
-					pause={true}
-					resume={true}
-					text="I have altered my voice"
-					voice="Google UK English Female"
-				/>
-				sadasdsadasd
-			</div>
-			<div className="card-options"></div>
-		</div>
-	);
-};
 const FlashCardQuiz = () => {
 	let { repoId } = useParams()
 	const dispatch = useDispatch()
@@ -66,16 +45,7 @@ const FlashCardQuiz = () => {
 		<>
 			<div className={styles.quizPageContainer}>
         <div onClick={() => alert(!flipToggle)} className={styles.quizCardContainer}>
-          <ReactCardFlip
-            containerStyle={{ height: '100%'}}
-            className={styles.cardHolder}
-						isFlipped={flipToggle}
-						onClick={() => alert(!flipToggle)}
-						flipDirection="vertical"
-					>
-						<FrontComponent />
-            <BackComponent setFlipToggle={ setFlipToggle}/>
-					</ReactCardFlip>
+
         </div>
         <button	onClick={() => setFlipToggle(!flipToggle)} >ChangeState</button>
 			</div>
