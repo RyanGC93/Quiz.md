@@ -8,7 +8,7 @@ class Questions(db.Model):
     answer = db.Column(db.Text, nullable=False)
 
 
-    questions_repo = db.relationship('QuestionsRepo', back_populates='question')
+    questions_repo = db.relationship('QuestionsRepo', back_populates='questions')
 
     def to_dict(self):
         return {

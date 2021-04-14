@@ -16,6 +16,6 @@ def seed_questions_repo():
         db.session.commit()
         
 def undo_questions_repo():
-    db.session.execute('TRUNCATE questions CASCADE;')
+    db.session.execute('TRUNCATE questions_repo CASCADE;')
     db.session.commit()
         

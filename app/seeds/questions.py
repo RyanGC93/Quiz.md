@@ -6,10 +6,8 @@ fake = Faker()
 # ! Seeds with lorem for quick build
 def seed_questions():
     seed_list = []
-    count = 0 
     for _ in range(10):
-        seed = Questions( owner_id=1, name=fake.word(), type=fake.word(), subcategory=fake.word())
-        count +=1
+        seed = Questions( repo_id=fake.random_int(min=0, max=10, step=1), question=fake.sentence(), answer=fake.paragraph())
         seed_list.append(seed)
         
         db.session.add_all(seed_list)
