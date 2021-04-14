@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import Speech from "react-speech";
 import { useParams } from 'react-router-dom'
 import {useDispatch,useSelector} from 'react-redux'
-
+import Slider from 'infinite-react-carousel';
 import ReactCardFlip from "react-card-flip";
 import ReactMarkdown from "react-markdown";
 import {getQuestions } from '../../store/questions'
@@ -37,8 +37,8 @@ const FrontComponent = ({ setFlipToggle }) => {
 
 const BackComponent = ({ setFlipToggle, flipToggle }) => {
 	return (
-    <div onCLick={() =>alert()} className={styles.card }>
-      <div onCLick={() => alert('')}className="card-content">
+    <div onClick={() =>alert()} className={styles.card }>
+      <div onClick={() => alert('')}className="card-content">
 				<Speech
 					style={speechStyle}
 					stop={true}
@@ -57,17 +57,21 @@ const FlashCardQuiz = () => {
 	let { repoId } = useParams()
 	const dispatch = useDispatch()
 	const [flipToggle, setFlipToggle] = useState(false);
-	const questions = useSelector(state => state.questions)
+	const questions = useSelector((state) => Object.values(state.questions))
 
 	useEffect(() => {
 		if (!repoId) return
-		dispatch(getQuestions(repoId))
-		if(questions) console.log(questions)
-	}, [dispatch, repoId, questions])
+		if (!questions[0]) dispatch(getQuestions(repoId))
+		if (questions[0]) console.log(questions)
+		console.log(questions)
+		
+	}, [dispatch, repoId])
 	
-	console.log(questions,questions)
+	if (!questions[0]) return null
+	console.log(questions)
+	// console.log(questions,questions)
 
-	// !Section 1
+	// !Section 1 FlashCards
 	return (
 		<>
 			<div className={styles.quizPageContainer}>
@@ -86,6 +90,18 @@ const FlashCardQuiz = () => {
         <button	onClick={() => setFlipToggle(!flipToggle)} >ChangeState</button>
 			</div>
 			// !Section 2<div className={styles.quizList}></div>
+
+			<Slider >
+				{questions.map((question) => (
+					<div>
+						<h1>{question.question}</h1>
+						<div>{question.answer}</div>
+					</div>		
+				))}
+			</Slider>
+			<div className={styles.gridContainer}>
+
+			</div>
 		</>
 	);
 };
