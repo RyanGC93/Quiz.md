@@ -23,17 +23,7 @@ const speechStyle = {
 	},
 };
 
-const FrontComponent = ({ setFlipToggle }) => {
-	return (
-		<div className={styles.card}>
-			<div className={styles.contentContainer}>
-        <ReactMarkdown className="md">
-\
-        </ReactMarkdown>
-			</div>
-		</div>
-	);
-};
+
 
 const BackComponent = ({ setFlipToggle, flipToggle }) => {
 	return (
