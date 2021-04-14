@@ -75,7 +75,8 @@ export const getQuestions = (repoId) => async (dispatch) => {
   const response = await fetch(`/api/questions/${repoId}`);
   console.log(response,'response')
   if (response.ok) {
-      let res = await response.json();
+    let res = await response.json();
+    console.log(res.questions)
       dispatch(setQuestions(res.questions))
   }
   return response;

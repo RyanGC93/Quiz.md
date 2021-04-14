@@ -9,6 +9,6 @@ questions_routes = Blueprint('questions', __name__)
 @login_required
 def questions(repoId):
     questions = Questions.query.filter(Questions.repo_id == repoId).all()
-    resObj = {"Questions": [question.to_dict() for question in questions]}
-    return resObj if resObj else {"Questions": []} 
+    resObj = {"questions": [question.to_dict() for question in questions]}
+    return resObj if resObj else {"questions": []} 
     return resObj
