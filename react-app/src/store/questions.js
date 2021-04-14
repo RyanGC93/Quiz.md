@@ -71,11 +71,12 @@ export const updateQuestionLikes = (like) => async (dispatch) => {
   return response;
 };
 
-export const getQuestions = (param) => async (dispatch) => {
-  const response = await fetch(`/api/questions/`);
+export const getQuestions = (repoId) => async (dispatch) => {
+  const response = await fetch(`/api/questions/${repoId}`);
+  console.log(response,'response')
   if (response.ok) {
       let res = await response.json();
-      return res
+      dispatch(setQuestions(res.questions))
   }
   return response;
 };
