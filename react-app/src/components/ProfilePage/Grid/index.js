@@ -5,12 +5,12 @@ import { getRepoList } from '../../../store/repoList'
 
 import styles from "./styles.module.css";
 
-const Grid = ({ quizList }) => {
+const Grid = () => {
   const dispatch = useDispatch()
   const user = useSelector(state => state.session.user)
   
   useEffect(() => {
-    if (!quizList) return
+
     if (!user) return
 
     dispatch(getRepoList(user.id))
@@ -22,7 +22,6 @@ const Grid = ({ quizList }) => {
 
   const determineUser = () => {
     console.log(user)
-    alert()
 
 
 
