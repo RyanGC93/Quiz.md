@@ -1,5 +1,6 @@
 import React from 'react'
-
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import styles from './styles.module.css'
 import { BsFilePost} from "react-icons/bs";
@@ -29,19 +30,19 @@ const ProfilePage = () => {
 						<div className={`${styles.grid} ${styles.clearfix}`}>
 							<div className={`${styles.col3} ${styles.first}`}>
 								<h1>694</h1>
-								<span>Following</span>
+								<span className={styles.colText}>Following</span>
 							</div>
 							<div className={styles.col3}><h1>452</h1>
-							<span>Likes</span></div>
+							<span className={styles.colText}>Likes</span></div>
 							<div className={`${styles.col3} ${styles.last}`}><h1>1207</h1>
-							<span>Bookmarks</span></div>
+							<span className={styles.colText}>Bookmarks</span></div>
 						</div>
 					</div>
 					</div>
 				<div className={`${styles.row} ${styles.clearfix}`}>
 					<ul className={`${styles.row2tab} ${styles.clearfix}`}>
-						<li><BsFilePost /> My posts </li>
-						<li><MdFavorite/> My likes </li>
+						<li><BsFilePost /> My Quizes </li>
+						<li><MdFavorite/> Bookmarks</li>
 						<li><FaCheck /> Following </li>
 						<li><FaThumbsUp/> Suggestions </li>
 					</ul>
@@ -49,11 +50,24 @@ const ProfilePage = () => {
 			</div>
 			<span className={styles.smalltri}>
 				
-			<FaStar />
+			<FaStar className={styles.triIcon} />
 			</span>
 		</section> 
 		<section className={`${styles.section2} ${styles.clearfix}`}>
 
+    <Tabs>
+    <TabList className={styles.tabList}>
+      <Tab>My Quizes</Tab>
+      <Tab>Bookmarked</Tab>
+    </TabList>
+
+    <TabPanel>
+      <h2>Display Grid of User Quizes</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>Booked Quizes</h2>
+    </TabPanel>
+  </Tabs>
 		</section> 
 	</div>
 </div>	
