@@ -62,8 +62,9 @@ export const deleteRepo = (id) => async dispatch => {
   }
 }
 
-export const getRepo = (repoId) => async (dispatch) => {
-  const response = await fetch(`/api/repo/${repoId}`);
+// Gets all Repos of a particular user
+export const getRepoList = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/repoRepoList/${userId}`);
   if (response.ok) {
     let res = await response.json();
     console.log(res,'repo')

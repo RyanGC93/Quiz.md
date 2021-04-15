@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-
+import Grid from './Grid'
 import styles from './styles.module.css'
 import { BsFilePost} from "react-icons/bs";
 import { MdFavorite} from "react-icons/md";
@@ -58,15 +58,15 @@ const ProfilePage = () => {
     <Tabs>
     <TabList className={styles.tabList}>
       <Tab>My Quizes</Tab>
-      <Tab>Bookmarked</Tab>
+      {/* <Tab>Bookmarked</Tab> */}
     </TabList>
 
     <TabPanel>
-      <h2>Display Grid of User Quizes</h2>
+      <Grid />
     </TabPanel>
-    <TabPanel>
-      <h2>Booked Quizes</h2>
-    </TabPanel>
+    {/* <TabPanel>
+      <Grid /> 
+    </TabPanel> */}
   </Tabs>
 		</section> 
 	</div>

@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import QuizCreator from "./components/QuizCreator";
 import FlashCardQuiz from "./components/FlashCardQuiz";
+import ProfilePage from "./components/ProfilePage";
 
 import User from "./components/User";
 import { authenticate } from "./services/auth";
@@ -56,6 +57,10 @@ function App() {
         <ProtectedRoute path="/create/:id"  authenticated={authenticated}>
             <NavBar setAuthenticated={setAuthenticated} />
             <QuizCreator />
+        </ProtectedRoute>
+
+        <ProtectedRoute path="/profile/:id"  authenticated={authenticated}>
+            <ProfilePage />
         </ProtectedRoute>
         
         
