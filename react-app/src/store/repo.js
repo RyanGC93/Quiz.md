@@ -39,13 +39,12 @@ export const createRepo = (repoId,repo, answer) => async dispatch => {
     dispatch(setRepo([json]))
 }
 export const editRepo = (repoId, name) =>     async dispatch => {
-  console.log('w', repoId)
   const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({repo, name})
+    body: JSON.stringify({repoId, name})
   }
   const res = await fetch(`/api/repo/${repoId}`, options)
   if (res.ok) {

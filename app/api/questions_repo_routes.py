@@ -34,15 +34,14 @@ def edit_repo(id):
           ===========================================
           ''')
     print(data,id)
+    edit_repo = QuestionsRepo.query.get(id)
     print('''
           ===========================================
           ''')
-    print(id)
-    edit_question = Questions.query.get(id)
-    edit_question.question = data['question']
-    edit_question.answer = data['answer']
+    print(edit_repo)
+    edit_repo.name = data['name']
     db.session.commit()
-    return edit_question.to_dict()
+    return edit_repo.to_dict()
 
 
 

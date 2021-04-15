@@ -49,6 +49,10 @@ const QuizCreator = () => {
 		setRowQuestion('')
 		setRowAnswer('')
 	}
+	const removeRepo = (e) => {
+		dispatch(deleteRepo)
+	}
+
 	const changeTitle = () => {
 		dispatch(editRepo(para.id,repoTitle))
 	}
@@ -74,6 +78,8 @@ const QuizCreator = () => {
 							  value={repoTitle}
 					/>
 					<div onClick={changeTitle} >change title</div>
+				</div>
+				<div onClick={removeRepo} >change title</div>
 					</div>
 				<div className={styles.quizGrid}>
 					{/* iterate over the array */}
