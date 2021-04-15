@@ -14,8 +14,7 @@ class QuestionsRepo(db.Model):
 
     def to_dict(self):
         return {
-            "question_id": self.id,
-            "question" : self.question,
-            "answer" : self.answer,
-            "repo_id" : self.repo_id, 
+            "repo_id": self.id,
+            "owner_id" : self.owner_id,
+            "name" : self.name,
         }
