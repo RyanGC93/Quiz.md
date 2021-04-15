@@ -10,7 +10,7 @@ import {GrAddCircle} from "react-icons/gr";
 
 const NavBar = ({ setAuthenticated }) => {
 	const history = useHistory()
-	// const username = useSelector(state => state.session.user.username)
+	const user = useSelector(state => state.session.user)
 	const [searchItems, setSearchItems]= useState([])
 	const homeRedirect = () => {
 		history.push('/')
@@ -36,15 +36,17 @@ const NavBar = ({ setAuthenticated }) => {
   };
 
 	useEffect(() => {
-		// (async () => {
-		// 	const url = '/api/search/'
-		//   const res = await fetch(url)
-		// 	if (!res.ok) console.error(res)
-		// 	const data = await res.json()
-		// 	setSearchItems(data.search)
-		// })();
+		(async () => {
+			const url = '/api/search/'
+		  const res = await fetch(url)
+			if (!res.ok) console.error(res)
+			const data = await res.json()
+			setSearchItems(data.search)
+		})();
+		if(!user) return
 
-	  }, []);
+	}, [user]);
+	if(!user) return null
 	return (
 	<>
 			<div className={styles.navbar}>
@@ -64,7 +66,7 @@ const NavBar = ({ setAuthenticated }) => {
 						)}
 				</div>
 				<div className={styles.userSettings}>
-					<DropDownMenu  setAuthenticated={setAuthenticated} />
+					<DropDownMenu userId={user.id}  setAuthenticated={setAuthenticated} />
 				</div>
 			</div>
 		</>

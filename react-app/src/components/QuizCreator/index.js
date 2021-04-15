@@ -55,6 +55,8 @@ const QuizCreator = () => {
 	}
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
+console.log(e.target)
+		console.log(rowAnswer)
 	}
 
 	const questionHandler = (e) => {
@@ -88,12 +90,12 @@ const QuizCreator = () => {
 					
 					{/* To add More */}
 					<div className={styles.inputRow}>
-						<input
+						<textarea
 							onChange={questionHandler}
 							className={styles.cell}
 							value={rowQuestion}
 						/>
-						<input
+						<textarea
 							onChange={answerHandler}
 							className={styles.cell}
 							value={rowAnswer}

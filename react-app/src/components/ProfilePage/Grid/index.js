@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRepoList } from '../../../store/repoList'
+import RepoCard from '../RepoCard'
 // Component => component Name
 
 import styles from "./styles.module.css";
@@ -8,13 +9,13 @@ import styles from "./styles.module.css";
 const Grid = () => {
   const dispatch = useDispatch()
   const user = useSelector(state => state.session.user)
-  const questions = useSelector((state) => Object.values(state.questions));
+  const repoList = useSelector((state) => Object.values(state.repoList));
 
   
   useEffect(() => {
 
-    if (!user) return
-    if(questions[0]) return
+    if (!user) return 
+    if(repoList[0]) return
     dispatch(getRepoList(user.id))
     console.log(user)
       // have to make a call based on the input 
@@ -22,16 +23,17 @@ const Grid = () => {
 
   const determineUser = () => {
     console.log(user)
+    console.log(repoList)
   }
 
-  console.log(questions)
+  console.log(repoList)
   return (
     <>
       <div className={styles.gridContainer} onClick={determineUser}>
-        <div className={styles.grid}>
-          {/* iterate over the array*/}
+          {repoList.map((repo) => (
+            <RepoCard repo={repo} />
+          ))}
           {}
-        </div>
       </div>
     </>
   );

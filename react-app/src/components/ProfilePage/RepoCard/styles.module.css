@@ -1,0 +1,20 @@
+.cardBtn{
+    background-color:#e4edea ;
+    cursor: pointer;
+}
+
+.repoContainer{
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color:rgba(228,237,234,.5); */
+    
+}
+
+.repoTitle{
+    width: 80%;
+    text-align: center;
+    background-color: #6a7c8b;
+}

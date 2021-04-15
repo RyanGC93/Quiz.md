@@ -6,10 +6,9 @@ import { AiOutlineMenu } from "react-icons/ai";
 import {useDetectOutsideClick} from "../../../services/detectOutsideClick"
 import './styles.css';
 import { useHistory } from "react-router-dom";
-import { useSelector } from 'react-redux'
 import { logout } from "../../../services/auth";
 
-const DropDownMenu = ({ setAuthenticated }) => {
+const DropDownMenu = ({ setAuthenticated,userId }) => {
   let location = useLocation()
   const onLogout = async (e) => {
     await logout();
@@ -28,11 +27,12 @@ const DropDownMenu = ({ setAuthenticated }) => {
   const profileRedirect = () => {
     let pathname = location.pathname;
 
-    if (pathname.startsWith("/profile/")) {
+    if (pathname.startsWith(`/profile/${userId}`)) {
       setIsActive(false)
       return
     }
-      setIsActive(false)
+    setIsActive(false)
+    history.push(`/profile/${userId}`)
       // history.push(`profile/${username}`)
   }
   

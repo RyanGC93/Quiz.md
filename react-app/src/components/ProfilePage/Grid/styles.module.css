@@ -1,5 +1,10 @@
-.gridContainer{
-    height:300px;
+div.gridContainer{
+    margin-top: 60px;
     width: 100%;
-    background-color: blue;
+    display: grid;
+    background-color: #6a7c8b;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-row-gap: 4vh;
+    padding: 20px 30px
+    
 }
