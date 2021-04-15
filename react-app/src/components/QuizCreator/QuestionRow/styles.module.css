@@ -1,0 +1,20 @@
+.inputRow{
+    height: 10vh; 
+    width: 100%;
+    display:grid;
+    grid-template-columns: 40% 50% 10%;  
+}
+
+.cell{
+    height: 100%;
+    width: 100%;
+    /* font-size:; */
+}
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.optionsBtn{
+    width: 80%;
+}

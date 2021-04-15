@@ -4,16 +4,46 @@
 
 }
 
-.header{
+
+.titleContainer{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
 
 }
 
 .title{
+    font-size:6vh;
+    padding: 10px 10px 10px 10px
+}
+
+.addBtnContainer {
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    padding: 30px
+}
+
+
+
+
+.inputRow{
+    height: 10vh; 
+    width: 100%;
+    display:grid;
+    grid-template-columns: 40% 60%;  
+}
+
+.cell{
+    height: 100%;
+    width: 100%;
 
 }
-.quizGrid{
 
+.addIcon {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
 }

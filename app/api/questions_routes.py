@@ -12,3 +12,17 @@ def questions(repoId):
     resObj = {"questions": [question.to_dict() for question in questions]}
     return resObj if resObj else {"questions": []} 
     return resObj
+
+
+@questions_routes.route('/<int:id>', methods=['DELETE'])
+@login_required
+def delete_question(id):
+    question = Questions.query.get(id)
+    print('''
+          ===========================================
+          ''')
+    print(question)
+    
+    db.session.delete(post)
+    db.session.commit()
+    return 'Post Deleted'

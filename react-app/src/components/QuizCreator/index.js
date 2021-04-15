@@ -1,34 +1,45 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import QuestionRow from "./QuestionRow"
+import QuestionRow from "./QuestionRow";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions } from "../../store/questions";
 import { useParams } from "react-router-dom";
+import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
+
+import {IoAddCircle} from "react-icons/io5";
 
 const QuizCreator = () => {
-	const [isNewForm, setIsNewForm] = useState()
+	const [rowQuestion,setRowQuestion] =useState('')
+	const [rowAnswer, setRowAnswer] = useState('')
+	
+
+	const [isNewForm, setIsNewForm] = useState();
 	let para = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
 
-
 	useEffect(() => {
-		if(!para.id) return
+		if (!para.id) return;
 		if (para !== 0) {
-			dispatch(getQuestions(para.id))
+			dispatch(getQuestions(para.id));
 		}
-		setIsNewForm(false)
-	}, [para,dispatch]);
+		setIsNewForm(false);
+	}, [para, dispatch]);
+
+	const answerHandler = (e) => {
+		setRowAnswer(e.target.value)
+	}
+	const questionHandler = (e) => {
+		setRowQuestion(e.target.value)
+	}
 
 	return (
 		<>
 			<div className={styles.quizPage}>
 				<div className={styles.header}></div>
-				{questions[0] &&
-					questions.map((question) => <h1>sdsadad</h1>
-					)}
-				<div className={styles.title}>
-					<div>text</div>
+
+				<div className={styles.titleContainer}>
+					<div className={styles.title}>Title</div>
 					<input
 						type="text"
 						name="title"
@@ -38,16 +49,26 @@ const QuizCreator = () => {
 				</div>
 				<div className={styles.quizGrid}>
 					{/* iterate over the array */}
-					<div className={styles.inputRow}>
-						<div className={styles.question}>Question </div>
-						<div className={styles.answer}>Answer</div>
-					</div>
-
-
-
+					{questions[0] &&
+						questions.map((question) => <QuestionRow question={question} />)}
 					
-					<div className={styles.addBtn}></div>
-					<div className={styles.addRow}></div>
+					{/* To add More */}
+					<div className={styles.inputRow}>
+						<input
+							onChange={questionHandler}
+							className={styles.cell}
+							value={rowQuestion}
+						/>
+						<input
+							onChange={answerHandler}
+							className={styles.cell}
+							value={rowAnswer}
+						/>
+					</div>
+					<div className={styles.addBtnContainer} >
+						< IoAddCircle className={styles.addIcon} />
+					
+					</div>
 				</div>
 			</div>
 		</>
