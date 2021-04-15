@@ -24,28 +24,29 @@ const removeQuestion = (id) => {
   }
 }
 
-export const createQuestion = (post) => async dispatch => {
-    const { isPrivate, description, url, userId} = post
+export const createQuestion = (repoId,question, answer) => async dispatch => {
+
     const options =
     {
       method: 'QUESTION',
       headers: {
         'Content-Type': 'Application/json'
       },
-      body: JSON.stringify({ isPrivate, description, url, userId })
+      body: JSON.stringify({ repoId, question,answer })
     }
     const res = await fetch('/api/questions/', options)
     const json = await res.json()
 }
-export const editQuestion = (id, description, isPrivate) => async dispatch => {
+export const editQuestion = (questionId, question, answer) => async dispatch => {
+  console.log('w', questionId)
   const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({description, isPrivate})
+    body: JSON.stringify({question, answer})
   }
-  const res = await fetch(`/api/questions/${id}`, options)
+  const res = await fetch(`/api/questions/${questionId}`, options)
   if (res.ok) {
     const newQuestion = await res.json()
   }

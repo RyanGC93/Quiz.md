@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { deleteQuestion } from '../../../store/questions'
+import { editQuestion } from '../../../store/questions'
 import {useDispatch} from 'react-redux'
 
 const QuestionRow = ({ question }) => {
@@ -9,6 +10,7 @@ const QuestionRow = ({ question }) => {
 	const [rowAnswer, setRowAnswer] = useState("");
 
 	useEffect(() => {
+		console.log(question)
 		setRowQuestion(question.question);
 		setRowAnswer(question.answer);
 	}, []);
@@ -21,6 +23,7 @@ const QuestionRow = ({ question }) => {
 	};
 	const updateHandler = (e) => {
 		let id = question.question_id
+		dispatch(editQuestion(id, rowQuestion, rowAnswer))
 	};
 	const deleteHandler = (e) => {
 		let id = question.question_id

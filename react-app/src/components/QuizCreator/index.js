@@ -4,6 +4,7 @@ import QuestionRow from "./QuestionRow";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions } from "../../store/questions";
 import { useParams } from "react-router-dom";
+import {createQuestion}  from "../../store/questions";
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 
 import {IoAddCircle} from "react-icons/io5";
@@ -25,6 +26,13 @@ const QuizCreator = () => {
 		}
 		setIsNewForm(false);
 	}, [para, dispatch]);
+
+	const addQuestionHandler = () => {
+		if(!rowQuestion && !rowAnswer) return alert('Must add add question/answer')
+		dispatch(createQuestion(para.id,rowQuestion, rowAnswer))
+
+	}
+		
 
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
@@ -66,7 +74,7 @@ const QuizCreator = () => {
 						/>
 					</div>
 					<div className={styles.addBtnContainer} >
-						< IoAddCircle className={styles.addIcon} />
+						< IoAddCircle className={styles.addIcon} onClick={addQuestionHandler} />
 					
 					</div>
 				</div>
