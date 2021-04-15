@@ -28,7 +28,7 @@ export const createQuestion = (repoId,question, answer) => async dispatch => {
 
     const options =
     {
-      method: 'QUESTION',
+      method: 'POST',
       headers: {
         'Content-Type': 'Application/json'
       },
@@ -36,6 +36,7 @@ export const createQuestion = (repoId,question, answer) => async dispatch => {
     }
     const res = await fetch('/api/questions/', options)
     const json = await res.json()
+    dispatch(setQuestions([json]))
 }
 export const editQuestion = (questionId, question, answer) => async dispatch => {
   console.log('w', questionId)

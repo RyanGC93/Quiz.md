@@ -23,16 +23,16 @@ const QuizCreator = () => {
 		if (!para.id) return;
 		if (para !== 0) {
 			dispatch(getQuestions(para.id));
-		}
-		setIsNewForm(false);
+			dispatch(getRepo(par)
 	}, [para, dispatch]);
 
 	const addQuestionHandler = () => {
 		if(!rowQuestion && !rowAnswer) return alert('Must add add question/answer')
-		dispatch(createQuestion(para.id,rowQuestion, rowAnswer))
-
+		dispatch(createQuestion(para.id, rowQuestion, rowAnswer))
+		setRowQuestion('')
+		setRowAnswer('')
 	}
-		
+	const updateTitle = () =>		
 
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
@@ -51,8 +51,8 @@ const QuizCreator = () => {
 					<input
 						type="text"
 						name="title"
-						//   onChange={updatePassword}
-						//   value={password}
+						  onChange={updateTitle}
+						  value={title}
 					></input>
 				</div>
 				<div className={styles.quizGrid}>
