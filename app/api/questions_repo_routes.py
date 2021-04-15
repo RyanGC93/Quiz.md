@@ -5,20 +5,27 @@ from flask import Blueprint, jsonify
 from flask_login import login_required
 from app.models import db, QuestionsRepo, Questions
 
-repo_routes = Blueprint('repo', __name__)
+questions_repo_routes = Blueprint('repo', __name__)
 
-# Gets all repo to a repo
-@repo_routes.route('/<int:repoId>')
+# Gets the repo
+@questions_repo_routes.route('/<int:repoId>')
 @login_required
 def repo(repoId):
-    repo = QuestionsRepo.query.get(id)
-    respObj = 
+    repo = QuestionsRepo.query.get(repoId)
+    print('''
+          
+          
+          =====================repo===================
+          
+          ''')
+    print(repo.to_dict())
+    resObj = repo.to_dict()
     return resObj if resObj else {"repo": []} 
     return resObj
 
 
 # Edit question
-@repo_routes.route('/<int:id>', methods=['PUT'])
+@questions_repo_routes.route('/<int:id>', methods=['PUT'])
 @login_required
 def edit_repo(id):
     
@@ -40,7 +47,7 @@ def edit_repo(id):
 
 
 # CREATE QUESTION
-@repo_routes.route('/', methods=['POST'])
+@questions_repo_routes.route('/', methods=['POST'])
 def new_question():
     if current_user.is_authenticated:
         print(current_user.id)
@@ -61,7 +68,7 @@ def new_question():
 
 
 # DELETE
-@repo_routes.route('/<int:id>', methods=['DELETE'])
+@questions_repo_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def delete_question(id):
     question = Questions.query.get(id)

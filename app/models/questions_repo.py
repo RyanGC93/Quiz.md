@@ -5,8 +5,8 @@ class QuestionsRepo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     owner_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     name = db.Column(db.String(250), nullable=False)
-    # type = db.Column(db.String(250), nullable=False)
-    # subcategory = db.Column(db.String(250), nullable=False)
+    type = db.Column(db.String(250), nullable=True)
+    subcategory = db.Column(db.String(250), nullable=True)
 
     user = db.relationship('User', back_populates='questions_repo')
     
@@ -16,5 +16,5 @@ class QuestionsRepo(db.Model):
         return {
             "repo_id": self.id,
             "owner_id" : self.owner_id,
-            "name" : self.name,
+            "name" : self.name
         }

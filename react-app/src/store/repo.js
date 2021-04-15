@@ -17,14 +17,14 @@ const updateRepo = (repo) => {
     repo,
   };
 };
-const removeQuestion = (id) => {
+const removeRepo = (id) => {
   return {
     type: REMOVE_REPO,
     id
   }
 }
 
-export const createQuestion = (repoId,question, answer) => async dispatch => {
+export const createRepo = (repoId,repo, answer) => async dispatch => {
 
     const options =
     {
@@ -32,34 +32,34 @@ export const createQuestion = (repoId,question, answer) => async dispatch => {
       headers: {
         'Content-Type': 'Application/json'
       },
-      body: JSON.stringify({ repoId, question,answer })
+      body: JSON.stringify({ repoId, repo,answer })
     }
     const res = await fetch('/api/repo/', options)
     const json = await res.json()
     dispatch(setRepo([json]))
 }
-export const editQuestion = (questionId, question, answer) => async dispatch => {
-  console.log('w', questionId)
+export const editRepo = (repoId, name) =>     async dispatch => {
+  console.log('w', repoId)
   const options = {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({question, answer})
+    body: JSON.stringify({repo, name})
   }
-  const res = await fetch(`/api/repo/${questionId}`, options)
+  const res = await fetch(`/api/repo/${repoId}`, options)
   if (res.ok) {
-    const newQuestion = await res.json()
+    const newRepo = await res.json()
   }
 }
 
-export const deleteQuestion = (id) => async dispatch => {
+export const deleteRepo = (id) => async dispatch => {
   const options = {
     method: 'DELETE'
   }
   const res =await fetch(`/api/repo/${id}`, options)
   if ( res.ok) {
-    dispatch(removeQuestion(id))
+    dispatch(removeRepo(id))
   }
 }
 
@@ -67,22 +67,20 @@ export const getRepo = (repoId) => async (dispatch) => {
   const response = await fetch(`/api/repo/${repoId}`);
   if (response.ok) {
     let res = await response.json();
-      dispatch(setRepo(res.repo))
+    console.log(res,'repo')
+      dispatch(setRepo(res))
   }
   return response;
 };
 
-const initialState = {};
+const initialState = {
+
+};
 
 const repoReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_REPO:
-      const repo = action.repo.reduce((acc, ele) => {
-
-        acc[ele.question_id] = ele;
-        return acc;
-      }, {});
-      return { ...state, ...repo };
+      return { ...state,repo: action.repo };
     case CREATE_REPO:
       return { ...state, [action.drink.id]: action.drink };
     case REMOVE_REPO:

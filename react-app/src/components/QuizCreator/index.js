@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getQuestions } from "../../store/questions";
 import { getRepo } from "../../store/repo";
 import { useParams } from "react-router-dom";
-import {createQuestion}  from "../../store/questions";
+import { createQuestion } from "../../store/questions";
+import {editRepo}  from "../../store/repo";
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 
 import {IoAddCircle} from "react-icons/io5";
@@ -20,20 +21,26 @@ const QuizCreator = () => {
 	let para = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
+	const repoInfo = useSelector((state) => state.repo.repo);
+	const [repoTitle,setRepoTitle] = useState('')
+	console.log(repoTitle)
 
+	console.log(repoInfo)
 	useEffect(() => {
 		if (!para.id) return;
+		if(repoInfo) return setRepoTitle(repoInfo.name)
 		if (para !== 0) {
 			dispatch(getQuestions(para.id));
 			dispatch(getRepo(para.id));
 
 		}
 		setIsNewForm(false);
-	}, [para, dispatch]);
+		if (!repoInfo) return
+		setRepoTitle(repoInfo.name)
+	}, [para, repoInfo, dispatch]);
 
-	const updateTitle = () => {
-
-
+	const updateTitle = (e) => {
+		setRepoTitle(e.target.value)
 	}
 
 	const addQuestionHandler = () => {
@@ -42,28 +49,32 @@ const QuizCreator = () => {
 		setRowQuestion('')
 		setRowAnswer('')
 	}
-
+	const changeTitle = () => {
+		dispatch(editRepo(para.id,repoTitle))
+	}
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
 	}
 	const questionHandler = (e) => {
 		setRowQuestion(e.target.value)
 	}
-
 	return (
 		<>
+			
+			{!repoInfo && (
+			null
+			)}
 			<div className={styles.quizPage}>
-				<div className={styles.header}></div>
-
 				<div className={styles.titleContainer}>
-					<div className={styles.title}>Title</div>
-					<input
-						type="text"
-						name="title"
-						  onChange={updateTitle}
-						  value={title}
-					></input>
-				</div>
+						<div className={styles.title}>Title</div>
+						<input
+							type="text"
+							name="title"
+							  onChange={updateTitle}
+							  value={repoTitle}
+					/>
+					<div onClick={changeTitle} >change title</div>
+					</div>
 				<div className={styles.quizGrid}>
 					{/* iterate over the array */}
 					{questions[0] &&
