@@ -10,7 +10,6 @@ const QuestionRow = ({ question }) => {
 	const [rowAnswer, setRowAnswer] = useState("");
 
 	useEffect(() => {
-		console.log(question)
 		setRowQuestion(question.question);
 		setRowAnswer(question.answer);
 	}, []);

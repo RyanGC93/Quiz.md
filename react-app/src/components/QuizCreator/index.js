@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import QuestionRow from "./QuestionRow";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions } from "../../store/questions";
-import { getQuestions } from "../../store/questions";
+import { getRepo } from "../../store/repo";
 import { useParams } from "react-router-dom";
 import {createQuestion}  from "../../store/questions";
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
