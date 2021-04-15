@@ -8,11 +8,13 @@ import styles from "./styles.module.css";
 const Grid = () => {
   const dispatch = useDispatch()
   const user = useSelector(state => state.session.user)
-  const repoList = useSelector(state => state.session.user)
+  const questions = useSelector((state) => Object.values(state.questions));
+
   
   useEffect(() => {
 
     if (!user) return
+    if(questions[0]) return
     dispatch(getRepoList(user.id))
     console.log(user)
       // have to make a call based on the input 
@@ -22,6 +24,7 @@ const Grid = () => {
     console.log(user)
   }
 
+  console.log(questions)
   return (
     <>
       <div className={styles.gridContainer} onClick={determineUser}>
