@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './styles.module.css'
+import styles from './styles.module.css'
 
 const QuestionRow = ({question}) => {
 

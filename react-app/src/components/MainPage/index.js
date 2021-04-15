@@ -15,6 +15,12 @@ const redirect = () => {
     history.push(`/practice/${repoId}`)
 
 }
+const redirectCreate = () => {
+    let id = 2
+    history.push(`/create/${id}`)
+
+}    
+    
     
     
     return (
@@ -37,7 +43,8 @@ const redirect = () => {
                     <div className={styles.rightContainer} >
                         {/* If the is no recent */}
                         <div className={style.altContainer}>
-                        <h1 onClick={redirect}>Redirect </h1>
+                        <h1 onClick={redirectCreate}>Redirect Create </h1>                        <h1 onClick={redirect}>Redirect </h1>
+
 
 
                         </div>
