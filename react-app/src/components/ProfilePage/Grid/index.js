@@ -1,18 +1,26 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 // Component => component Name
 
 import styles from "./styles.module.css";
 
-const Grid = () => {
+const Grid = ({ quizList }) => {
+  const dispatch = useDispatch()
   
-    useEffect(() =>{
+  useEffect(() => {
+    if (!quizList) return
+
+    
+    
       // have to make a call based on the input 
-    })
+  })
+  
+
   return (
     <>
-      <div className={styles.componentName}>
-        <div className={styles.componentName}>
+      <div className={styles.gridContainer}>
+        <div className={styles.grid}>
             {/* iterate over the array*/}
 
 
