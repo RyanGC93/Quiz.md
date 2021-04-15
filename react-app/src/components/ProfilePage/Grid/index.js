@@ -8,32 +8,26 @@ import styles from "./styles.module.css";
 const Grid = () => {
   const dispatch = useDispatch()
   const user = useSelector(state => state.session.user)
+  const repoList = useSelector(state => state.session.user)
   
   useEffect(() => {
 
     if (!user) return
-
     dispatch(getRepoList(user.id))
     console.log(user)
-    
-    
       // have to make a call based on the input 
   })
 
   const determineUser = () => {
     console.log(user)
-
-
-
   }
 
   return (
     <>
       <div className={styles.gridContainer} onClick={determineUser}>
         <div className={styles.grid}>
-            {/* iterate over the array*/}
-
-
+          {/* iterate over the array*/}
+          {}
         </div>
       </div>
     </>

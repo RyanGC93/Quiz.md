@@ -69,7 +69,7 @@ export const getRepoList = (userId) => async (dispatch) => {
   if (response.ok) {
     let res = await response.json();
     console.log(res,'repo')
-      dispatch(setRepo(res))
+      dispatch(setRepo(res.repoList))
   }
   return response;
 };
@@ -81,21 +81,27 @@ const initialState = {
 const repoReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_QUIZLIST:
-      return { ...state,repo: action.repo };
+      const repo = action.repo.reduce((acc, ele) => {
+
+        acc[ele.question_id] = ele;
+        return acc;
+      }, {});
+      return { ...state, ...repo };
     case CREATE_QUIZLIST:
       return { ...state, [action.drink.id]: action.drink };
-    case REMOVE_QUIZLIST:
-      const newState = { ...state };
-      delete newState[action.id];
-      return newState;
-    case UPDATE_QUIZLIST:
-      const newRepo = { ...state };
-      const index = action.repo.id;
-      newRepo[index] = action.repo;
-      return newRepo;
+    // case REMOVE_QUESTION:
+    //   const newState = { ...state };
+    //   delete newState[action.id];
+    //   return newState;
+    // case UPDATE_QUESTION:
+    //   const newQuestions = { ...state };
+    //   const index = action.post.id;
+    //   newQuestions[index] = action.post;
+    //   return newQuestions;
     default:
       return state;
   }
 };
+
 
 export default repoReducer;
