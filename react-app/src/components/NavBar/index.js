@@ -21,11 +21,10 @@ const NavBar = ({ setAuthenticated }) => {
 	}
 	
 	const searchStyles = {
-	marginTop:"15px",
     height: "50px",
     border: "1px solid #dfe1e5",
     borderRadius: "24px",
-    backgroundColor: "white",
+    backgroundColor: "rgba(228,237,234,.7)",
     boxShadow: "rgba(32, 33, 36, 0.28) 0px 1px 6px 0px",
     hoverBackgroundColor: "#eee",
     color: "black",
@@ -50,7 +49,7 @@ const NavBar = ({ setAuthenticated }) => {
 	<>
 			<div className={styles.navbar}>
 				<div className={styles.logoHolder} >
-					<div className={styles.navLogo} onClick={homeRedirect}>--LOGO-- </div>
+					<div className={styles.navLogo} onClick={homeRedirect}>Quizes.md </div>
 				</div>
 				<div className={styles.searchBarWrapper}>
 					{searchItems && (

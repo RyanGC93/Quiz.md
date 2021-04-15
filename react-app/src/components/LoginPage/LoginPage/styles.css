@@ -85,7 +85,7 @@
 .login-html .sign-in:checked + .tab__login,
 .login-html .sign-up:checked + .tab__login{
 	color:#e4edea;
-	background-color: rgba(43,47,59,.15);
+	background-color: rgba(43,47,59,.04);
 	border-color: #244a4e;
     border-width: medium
 }
@@ -146,7 +146,7 @@
 	color:#e4edea;
 }
 .login-form .group .check:checked + label .icon{
-	background:#171a26;
+	background:#444b66;
 }
 .login-form .group .check:checked + label .icon:before{
 	transform:scale(1) rotate(45deg);

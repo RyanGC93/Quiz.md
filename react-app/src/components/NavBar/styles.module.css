@@ -19,8 +19,7 @@
 
 
 .searchBarWrapper{
-	margin-top: 10px;
-	z-index:40;
+margin-top: 5px;
 }
 
 .logoHolder{
@@ -31,7 +30,7 @@
 .navLogo{
 	font-family: "Pattaya";
 	color: #e4edea;
-	font-size: 3vh;
+	font-size: 50px;
 	transition: 0.3s;
 	font-weight: bold;
 	cursor:pointer;
