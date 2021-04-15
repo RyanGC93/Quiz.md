@@ -90,3 +90,9 @@
     justify-content:center;
     align-items: center;
 }
+
+.gridContainer {
+    display:grid;
+    grid-template-columns: 35% 45%;
+
+}
