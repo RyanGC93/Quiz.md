@@ -78,12 +78,12 @@ const initialState = {
 
 };
 
-const repoReducer = (state = initialState, action) => {
+const repoListReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_QUIZLIST:
       const repo = action.repo.reduce((acc, ele) => {
 
-        acc[ele.question_id] = ele;
+        acc[ele.repo_id] = ele;
         return acc;
       }, {});
       return { ...state, ...repo };
@@ -104,4 +104,4 @@ const repoReducer = (state = initialState, action) => {
 };
 
 
-export default repoReducer;
+export default repoListReducer;
