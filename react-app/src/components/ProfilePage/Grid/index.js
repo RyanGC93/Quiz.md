@@ -13,6 +13,7 @@ const Grid = () => {
     <>
       <div className={styles.componentName}>
         <div className={styles.componentName}>
+            {/* iterate over the array*/}
 
 
         </div>
