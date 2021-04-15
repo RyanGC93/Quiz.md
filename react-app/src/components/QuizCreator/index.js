@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import QuestionRow from "./QuestionRow";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions } from "../../store/questions";
+import { getQuestions } from "../../store/questions";
 import { useParams } from "react-router-dom";
 import {createQuestion}  from "../../store/questions";
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
@@ -12,6 +13,7 @@ import {IoAddCircle} from "react-icons/io5";
 const QuizCreator = () => {
 	const [rowQuestion,setRowQuestion] =useState('')
 	const [rowAnswer, setRowAnswer] = useState('')
+	const [title,setTitle] = useState('')
 	
 
 	const [isNewForm, setIsNewForm] = useState();
@@ -23,8 +25,16 @@ const QuizCreator = () => {
 		if (!para.id) return;
 		if (para !== 0) {
 			dispatch(getQuestions(para.id));
-			dispatch(getRepo(par)
+			dispatch(getRepo(para.id));
+
+		}
+		setIsNewForm(false);
 	}, [para, dispatch]);
+
+	const updateTitle = () => {
+
+
+	}
 
 	const addQuestionHandler = () => {
 		if(!rowQuestion && !rowAnswer) return alert('Must add add question/answer')
@@ -32,7 +42,6 @@ const QuizCreator = () => {
 		setRowQuestion('')
 		setRowAnswer('')
 	}
-	const updateTitle = () =>		
 
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
