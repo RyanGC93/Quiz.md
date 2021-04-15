@@ -36,6 +36,9 @@ const DropDownMenu = ({ setAuthenticated }) => {
       // history.push(`profile/${username}`)
   }
   
+  const createRedirect = () => {
+    history.push('/create/')
+  }
   
     return (
       <>
@@ -53,6 +56,9 @@ const DropDownMenu = ({ setAuthenticated }) => {
               </li>
               <li>
                 
+              </li>
+              <li>
+                <div onClick={createRedirect}>Create list</div>
               </li>
               <li>
                 <div onClick={onLogout}>Sign Out</div>

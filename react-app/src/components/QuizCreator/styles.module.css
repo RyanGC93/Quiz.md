@@ -1,0 +1,19 @@
+.quizPage{
+    width: 100%;
+    background-color:rgba(228,237,234,.5);
+
+}
+
+.header{
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center
+
+}
+.quizGrid{
+
+}

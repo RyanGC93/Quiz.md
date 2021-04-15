@@ -4,7 +4,9 @@ import LoginPage from './components/LoginPage'
 import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
+import QuizCreator from "./components/QuizCreator";
 import FlashCardQuiz from "./components/FlashCardQuiz";
+
 import User from "./components/User";
 import { authenticate } from "./services/auth";
 import MainPage from "./components/MainPage";
@@ -50,9 +52,15 @@ function App() {
         </ProtectedRoute>
          */}
         
+
+        <ProtectedRoute path="/create/:id"  authenticated={authenticated}>
+            <NavBar setAuthenticated={setAuthenticated} />
+            <QuizCreator />
+        </ProtectedRoute>
+        
+        
         <ProtectedRoute path="/practice/:repoId"  authenticated={authenticated}>
             <NavBar setAuthenticated={setAuthenticated} />
-  
           <FlashCardQuiz />
         </ProtectedRoute>
         
