@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from flask_login import login_required
-from app.models import QuestionsRepo, Questions
+from app.models import db, QuestionsRepo, Questions
 
 questions_routes = Blueprint('questions', __name__)
 
@@ -23,6 +23,6 @@ def delete_question(id):
           ''')
     print(question)
     
-    db.session.delete(post)
+    db.session.delete(question)
     db.session.commit()
     return 'Post Deleted'
