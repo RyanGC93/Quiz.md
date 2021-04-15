@@ -35,7 +35,35 @@ const FlashCardQuiz = () => {
 					</Carousel>
 				</div>
 			</div>
-			// !Section 2<div className={styles.quizList}></div>
+
+			{/* Section 2 Questions Repo  */}
+			<div className={styles.quizInfo} >
+				<div className={styles.infoSpan}>
+					<div className={styles.listOwner}>
+						<div className={styles.ownerName}>;''
+							Owner bane
+							</div>
+
+					</div>
+					<div className={styles.listTitle}>
+						<div>!!!REPO TITLE
+						</div>
+
+					</div>
+					<div className={styles.listOptions}>
+							Future componets
+
+					</div>
+				</div>
+				<div className={styles.listDetails} >
+							<div className={styles.detailsHeader}
+				</div>
+
+
+			</div>
+
+
+			// !Section 3<div className={styles.quizList}></div>
 			<div className={styles.gridContainer}></div>
 		</>
 	);
