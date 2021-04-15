@@ -12,6 +12,8 @@ const Grid = ({ quizList }) => {
   useEffect(() => {
     if (!quizList) return
     if (!user) return
+
+    dispatch(getRepoList(user.id))
     console.log(user)
     
     

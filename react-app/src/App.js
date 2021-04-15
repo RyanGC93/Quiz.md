@@ -7,12 +7,15 @@ import UsersList from "./components/UsersList";
 import QuizCreator from "./components/QuizCreator";
 import FlashCardQuiz from "./components/FlashCardQuiz";
 import ProfilePage from "./components/ProfilePage";
+import { restoreUser } from "./store/session";
+import {useDispatch} from 'react-redux'
 
 import User from "./components/User";
 import { authenticate } from "./services/auth";
 import MainPage from "./components/MainPage";
 
 function App() {
+  const dispatch = useDispatch()
   const [authenticated, setAuthenticated] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -20,6 +23,8 @@ function App() {
     (async() => {
       const user = await authenticate();
       if (!user.errors) {
+        console.log(user)
+        dispatch(restoreUser())
         setAuthenticated(true);
       }
       setLoaded(true);
@@ -60,7 +65,9 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path="/profile/:id"  authenticated={authenticated}>
-            <ProfilePage />
+            <NavBar setAuthenticated={setAuthenticated} />
+ 
+          <ProfilePage />
         </ProtectedRoute>
         
         
