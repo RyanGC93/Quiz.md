@@ -8,9 +8,9 @@ class QuestionsRepo(db.Model):
     type = db.Column(db.String(250), nullable=True)
     subcategory = db.Column(db.String(250), nullable=True)
 
-    user = db.relationship('User', back_populates='questions_repo')
+    user = db.relationship('User',  back_populates='questions_repo')
     
-    questions = db.relationship('Questions', back_populates='questions_repo') 
+    questions = db.relationship('Questions', cascade="all, delete-orphan", back_populates='questions_repo') 
 
     def to_dict(self):
         return {

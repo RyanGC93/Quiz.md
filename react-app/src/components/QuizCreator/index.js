@@ -6,7 +6,8 @@ import { getQuestions } from "../../store/questions";
 import { getRepo } from "../../store/repo";
 import { useParams } from "react-router-dom";
 import { createQuestion } from "../../store/questions";
-import {editRepo}  from "../../store/repo";
+import { editRepo } from "../../store/repo";
+import {deleteRepo}  from "../../store/repo";
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 
 import {IoAddCircle} from "react-icons/io5";
@@ -49,18 +50,18 @@ const QuizCreator = () => {
 		setRowQuestion('')
 		setRowAnswer('')
 	}
-	const removeRepo = (e) => {
-		dispatch(deleteRepo)
-	}
-
 	const changeTitle = () => {
 		dispatch(editRepo(para.id,repoTitle))
 	}
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
 	}
+
 	const questionHandler = (e) => {
 		setRowQuestion(e.target.value)
+	}
+	const removeRepo = (e) => {
+		dispatch(deleteRepo(para.id))
 	}
 	return (
 		<>
@@ -78,8 +79,7 @@ const QuizCreator = () => {
 							  value={repoTitle}
 					/>
 					<div onClick={changeTitle} >change title</div>
-				</div>
-				<div onClick={removeRepo} >change title</div>
+					<div onClick={removeRepo} >Remove Repo</div>
 					</div>
 				<div className={styles.quizGrid}>
 					{/* iterate over the array */}

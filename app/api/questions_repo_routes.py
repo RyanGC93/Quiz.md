@@ -35,10 +35,7 @@ def edit_repo(id):
           ''')
     print(data,id)
     edit_repo = QuestionsRepo.query.get(id)
-    print('''
-          ===========================================
-          ''')
-    print(edit_repo)
+
     edit_repo.name = data['name']
     db.session.commit()
     return edit_repo.to_dict()
@@ -70,9 +67,12 @@ def new_question():
 @questions_repo_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def delete_question(id):
-    question = Questions.query.get(id)
-
+    repo = QuestionsRepo.query.filter(id == QuestionsRepo.id).first()
+    print('''
+          ====post=======================================
+          ''')
+    print(repo)
     
-    db.session.delete(question)
+    db.session.delete(repo)
     db.session.commit()
     return 'Post Deleted'
