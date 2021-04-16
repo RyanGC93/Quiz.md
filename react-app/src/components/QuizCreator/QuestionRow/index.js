@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
-import { deleteQuestion } from '../../../store/questions'
-import { editQuestion } from '../../../store/questions'
-import {useDispatch} from 'react-redux'
+import { deleteQuestion } from "../../../store/questions";
+import { editQuestion } from "../../../store/questions";
+import { useDispatch } from "react-redux";
 
 const QuestionRow = ({ question }) => {
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 	const [rowQuestion, setRowQuestion] = useState("");
 	const [rowAnswer, setRowAnswer] = useState("");
 
@@ -21,13 +21,12 @@ const QuestionRow = ({ question }) => {
 		setRowQuestion(e.target.value);
 	};
 	const updateHandler = (e) => {
-		let id = question.question_id
-		dispatch(editQuestion(id, rowQuestion, rowAnswer))
+		let id = question.question_id;
+		dispatch(editQuestion(id, rowQuestion, rowAnswer));
 	};
 	const deleteHandler = (e) => {
-		let id = question.question_id
-		dispatch(deleteQuestion(id))
-
+		let id = question.question_id;
+		dispatch(deleteQuestion(id));
 	};
 
 	return (
@@ -35,24 +34,29 @@ const QuestionRow = ({ question }) => {
 			<div className={styles.inputRow}>
 				{/* Answer Cell */}
 				<form className={styles.form}>
-					<textarea className={styles.cell} value={rowAnswer} onChange={answerHandler}>
-					
-					
-					</textarea>
-					
-
+					<textarea
+						className={styles.cell}
+						value={rowAnswer}
+						onChange={answerHandler}
+					></textarea>
 				</form>
 				{/* question cell */}
 				<form className={styles.form}>
-					<textarea className={styles.cell} value={rowQuestion} onChange={questionHandler}>					
-					</textarea>
+					<textarea
+						className={styles.cell}
+						value={rowQuestion}
+						onChange={questionHandler}
+					></textarea>
 				</form>
-		
-				{/* <div className={styles.options}>
-					<div onClick={updateHandler} className={styles.optionsBtn}>Update</div>
-					<div onClick={deleteHandler} className={styles.optionsBtn}>Delete</div>
 
-				</div> */}
+				<div className={styles.options}>
+					<div onClick={updateHandler} className={styles.optionsBtn}>
+						Update
+					</div>
+					<div onClick={deleteHandler} className={styles.optionsBtn}>
+						Delete
+					</div>
+				</div>
 			</div>
 		</>
 	);
