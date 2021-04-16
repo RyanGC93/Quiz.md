@@ -29,18 +29,13 @@ const MainPage = () => {
       
         (async () => {
             const data = await dispatch(questionActions.getQuestions())
-            console.log(data)
             const keyed = data.Questions[0].answer
             setContent(keyed)
             // setIsLoaded(true)
-            console.log(keyed)
            let thiss = keyed.split('/n')
-            console.log(thiss)
 
             setContentTwo(thiss)
            
-            // console.log(keyed.indexOf('/n'))
-            // console.log(keyed.charCodeAt(13))
 
 
          })();

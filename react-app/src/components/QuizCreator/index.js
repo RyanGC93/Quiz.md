@@ -24,9 +24,7 @@ const QuizCreator = () => {
 	const questions = useSelector((state) => Object.values(state.questions));
 	const repoInfo = useSelector((state) => state.repo.repo);
 	const [repoTitle,setRepoTitle] = useState('')
-	console.log(repoTitle)
 
-	console.log(repoInfo)
 	useEffect(() => {
 		if (!para.id) return;
 		if(repoInfo) return setRepoTitle(repoInfo.name)
@@ -55,8 +53,6 @@ const QuizCreator = () => {
 	}
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
-console.log(e.target.value)
-		console.log(rowAnswer)
 	}
 
 	const questionHandler = (e) => {

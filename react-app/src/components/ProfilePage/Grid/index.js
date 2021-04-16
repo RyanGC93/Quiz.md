@@ -17,16 +17,12 @@ const Grid = () => {
     if (!user) return 
     if(repoList[0]) return
     dispatch(getRepoList(user.id))
-    console.log(user)
       // have to make a call based on the input 
   })
 
   const determineUser = () => {
-    console.log(user)
-    console.log(repoList)
   }
 
-  console.log(repoList)
   return (
     <>
       <div className={styles.gridContainer} onClick={determineUser}>

@@ -17,7 +17,6 @@ const NavBar = ({ setAuthenticated }) => {
 	}
 	const handleOnSelect = (item) => {
 		// the item selected
-		console.log(item)
 	}
 	
 	const searchStyles = {
@@ -47,7 +46,6 @@ const NavBar = ({ setAuthenticated }) => {
 
 	}, [user]);
 	if (!user) return null
-	console.log('search', searchItems)
 	return (
 	<>
 			<div className={styles.navbar}>

@@ -15,7 +15,6 @@ const removeSession = () => {
 };
 
 export const login = (email, password) => async (dispatch) => {
-	console.log(email, password);
 	const response = await fetch("/api/auth/login", {
 		method: "POST",
 		headers: {
@@ -27,7 +26,6 @@ export const login = (email, password) => async (dispatch) => {
 		}),
 	});
 	let res = await response.json();
-	console.log(res);
 	if (!res.errors) dispatch(setSession(res));
 	return res;
 };
@@ -60,7 +58,6 @@ export const registerUser = (user) => async (dispatch) => {
 		}),
 	});
 	let res = await response.json();
-	console.log(res);
 	dispatch(setSession(res));
 	// dispatch(setSession(response.data.user));
 	return response;

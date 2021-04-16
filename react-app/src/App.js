@@ -24,7 +24,6 @@ function App() {
     (async() => {
       const user = await authenticate();
       if (!user.errors) {
-        console.log(user)
         dispatch(restoreUser())
         setAuthenticated(true);
       }

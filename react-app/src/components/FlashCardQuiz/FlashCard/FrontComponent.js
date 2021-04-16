@@ -13,7 +13,6 @@ const renderers = {
 
 
 const FrontComponent = ({ content,setFlipToggle,flipToggle }) => {
-	console.log(content)
 	return (
 		<div onClick={() => setFlipToggle(!flipToggle)} className={styles.card}>
 			<div className={styles.contentContainer}>

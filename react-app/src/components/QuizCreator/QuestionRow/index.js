@@ -16,15 +16,12 @@ const QuestionRow = ({ question }) => {
 
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value);
-		console.log(rowAnswer)
 	};
 	const questionHandler = (e) => {
 		setRowQuestion(e.target.value);
-		console.log(rowQuestion)
 	};
 	const updateHandler = (e) => {
 		let id = question.question_id
-		console.log(rowQuestion)
 		dispatch(editQuestion(id, rowQuestion, rowAnswer))
 	};
 	const deleteHandler = (e) => {

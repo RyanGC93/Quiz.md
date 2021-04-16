@@ -14,11 +14,8 @@ const FlashCardQuiz = () => {
 	useEffect(() => {
 		if (!repoId) return;
 		if (!questions[0]) dispatch(getQuestions(repoId));
-		if (questions[0]) console.log(questions);
-		console.log(questions);
 	}, [dispatch, repoId]);
 	if (!questions[0]) return null;
-	console.log(questions);
 	// !Section 1 FlashCards
 	return (
 		<>
