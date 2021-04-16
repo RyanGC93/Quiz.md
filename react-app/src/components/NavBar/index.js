@@ -52,7 +52,7 @@ const NavBar = ({ setAuthenticated }) => {
 	<>
 			<div className={styles.navbar}>
 				<div className={styles.logoHolder} >
-					<div className={styles.navLogo} onClick={homeRedirect}>Quizes.md </div>
+					<div className={styles.navLogo} onClick={homeRedirect}>Quiz.md </div>
 				</div>
 				<div className={styles.searchBarWrapper}>
 					{searchItems && (

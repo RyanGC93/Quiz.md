@@ -19,15 +19,18 @@ const RepoCard = ({repo}) => {
       <div className={styles.repoWrapper} >
           <div className={styles.repoContainer} >
             <div className={styles.repoTitle} >Title</div>
-      <div className={styles.repoCard}>
+      <div className={styles.repoName}>
             {repo.name}
-              </div>
+          </div>
+          <div className={styles.btnContainer}>
+
               <div className={styles.cardBtn} onClick={studyHandler}>
                     Study
               </div>
               <div className={styles.cardBtn} onClick={editHandler}>
                     Edit
       </div>
+          </div>
       </div>
       </div>
     </>

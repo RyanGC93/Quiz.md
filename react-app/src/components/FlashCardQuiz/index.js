@@ -31,7 +31,7 @@ const FlashCardQuiz = () => {
 				</div>
 			</div>
 			{/* Section 2 Questions Repo  */}
-			<div className={styles.quizInfo}>
+			<div >
 				{/* <div className={styles.infoSpan}>
 					<div className={styles.listOwner}>
 						<div className={styles.ownerName}>;'' Owner bane</div>

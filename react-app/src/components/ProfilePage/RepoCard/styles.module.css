@@ -1,6 +1,16 @@
 .cardBtn{
+    text-align: center;
+    width: 50%;
     background-color:#e4edea ;
     cursor: pointer;
+    padding: 10px 10px 10px 10px;
+}
+.cardBtn:hover{
+    background-color: red;
+}
+
+.btnContainer {
+    display: flex;
 }
 
 .repoWrapper{
@@ -17,9 +27,16 @@
     height: 100%;
 }
 
-.repoTitle{
-    padding: 2vw;
-    
+div.repoTitle{
+
+    font-size: 6vh;
     text-align: center;
-    background-color: black;
+    text-decoration: underline;
+    /* background-color: black; */
+}
+
+div.repoName {
+    font-size: 4vh;
+    padding: 30px 10px 3px 10px;
+
 }

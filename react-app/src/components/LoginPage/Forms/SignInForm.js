@@ -46,7 +46,7 @@ export const LoginForm = ({ setAuthenticated }) => {
 		<>
 			<form className={styles.form} onSubmit={onLogin}>
 				<div className={styles.errorContainer}>
-					{errors && (
+					{errors[0] && (
 						<>
 						<div className={styles.errorRow}> Wrong Email/Password Combo</div>	
 						</>

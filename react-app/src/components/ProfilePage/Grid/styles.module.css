@@ -1,9 +1,9 @@
 div.gridContainer{
-    margin-top: 10px;
+    margin-top: 4px;
     width: 100%;
     display: grid;
     background-color: #6a7c8b;
-    grid-template-columns: 30% 30% 30% 30%;
+    grid-template-columns: 30% 30% 30%;
     column-gap: 5%;
     grid-row-gap: 4vh;
     padding: 2vw;
