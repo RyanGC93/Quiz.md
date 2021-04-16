@@ -16,12 +16,15 @@ const QuestionRow = ({ question }) => {
 
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value);
+		console.log(rowAnswer)
 	};
 	const questionHandler = (e) => {
 		setRowQuestion(e.target.value);
+		console.log(rowQuestion)
 	};
 	const updateHandler = (e) => {
 		let id = question.question_id
+		console.log(rowQuestion)
 		dispatch(editQuestion(id, rowQuestion, rowAnswer))
 	};
 	const deleteHandler = (e) => {
@@ -33,16 +36,21 @@ const QuestionRow = ({ question }) => {
 	return (
 		<>
 			<div className={styles.inputRow}>
-				<input
-					onChange={questionHandler}
-					className={styles.cell}
-					value={rowQuestion}
-				/>
-				<input
-					onChange={answerHandler}
-					className={styles.cell}
-					value={rowAnswer}
-				/>
+				{/* Answer Cell */}
+				<form>
+					<textarea className={styles.cell} value={rowAnswer} onChange={answerHandler}>
+					
+					
+					</textarea>
+					
+
+				</form>
+				{/* question cell */}
+				<form>
+					<textarea className={styles.cell} value={rowQuestion} onChange={questionHandler}>					
+					</textarea>
+				</form>
+		
 				<div className={styles.options}>
 					<div onClick={updateHandler} className={styles.optionsBtn}>Update</div>
 					<div onClick={deleteHandler} className={styles.optionsBtn}>Delete</div>

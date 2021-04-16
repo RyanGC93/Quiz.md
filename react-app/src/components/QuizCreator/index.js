@@ -55,7 +55,7 @@ const QuizCreator = () => {
 	}
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
-console.log(e.target)
+console.log(e.target.value)
 		console.log(rowAnswer)
 	}
 

@@ -36,31 +36,33 @@ const redirectProfile = () => {
     
     return (
 		<>
-			<div>
-				{/* TODO add the banner */}
-                <div className={styles.banner}>
-                </div>
-				{/* Grid */}
-                <div className={styles.categories}>
+            <div className={styles.mainPage}>
+
+			
+                
+
+
+
+
+                
+				{/* Grid for future development */}
+                {/* <div className={styles.categories}> */}
                     {/* Grid Item One */}
-                    <div className={styles.rightContainer} >
-                        {/* If the is no recent */}
+                    {/* <div className={styles.rightContainer} >
                         <div className={style.altContainer}>
                             <h1 onClick={redirectCreate}>Redirect Create </h1>
                             <h1 onClick={redirect}>Redirect </h1>
                             <h1 onClick={redirectProfile}>Redirect  Profile</h1>
 
                         </div>
-                    {/*  */}
+                    </div> */}
                         {/* Else */}
-                    </div>
-
 
 
 
 
                     {/* Grid Item Two  */}
-					<div className={styles.recentContainer}>
+					{/* <div className={styles.recentContainer}>
 						<div className={styles.topics}>
 							<div className={style.topicsContainer}>
 								<div className={styles.topicHeader}>Popular Subjects</div>
@@ -70,9 +72,8 @@ const redirectProfile = () => {
 								</div>
 							</div>
 						</div>
-				    
-                    </div>
-				</div>
+                    </div> */}
+				{/* </div> */}
 			</div>
 		</>
 	);

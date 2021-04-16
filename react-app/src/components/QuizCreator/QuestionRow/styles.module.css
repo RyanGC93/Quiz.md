@@ -6,8 +6,11 @@
 }
 
 .cell{
+    white-space: pre-wrap;
     height: 100%;
     width: 100%;
+    resize: none;
+    overflow-y: scroll;
     /* font-size:; */
 }
 .options {

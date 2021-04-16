@@ -17,7 +17,7 @@ const ProfilePage = () => {
 
 <div className={styles.container}>
 	<div className={styles.innerwrap}>
-		 <section className={`${styles.section1} ${styles.clearfix}`}>
+		 {/* <section className={`${styles.section1} ${styles.clearfix}`}>
 			<div>
 				<div className={`${styles.row} ${styles.grid} ${styles.clearfix}`}>
 					<div className={`${styles.col2} ${styles.first}`}>
@@ -52,7 +52,7 @@ const ProfilePage = () => {
 				
 			<FaStar className={styles.triIcon} />
 			</span>
-		</section> 
+		</section>  */}
 		<section className={`${styles.section2} ${styles.clearfix}`}>
 
     <Tabs>

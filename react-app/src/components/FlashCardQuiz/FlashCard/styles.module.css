@@ -4,3 +4,6 @@
     border: 2px solid rgba(0, 0, 0, 0.2);
     box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.4);
 }
+.contentContainer {
+    white-space: pre;
+}
