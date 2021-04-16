@@ -9,7 +9,7 @@ const MainPage = () => {
 	let history = useHistory();
 	const user = useSelector((state) => state.session.user);
 	// TODO
-	const redirect = () => {
+	const redirectQuiz = () => {
 		let repoId = 2;
 		history.push(`/practice/${repoId}`);
 	};
@@ -18,8 +18,6 @@ const MainPage = () => {
 		history.push(`/create/${id}`);
 	};
 	const redirectProfile = () => {
-		console.log(user);
-
 		history.push(`/profile/${user.id}`);
 	};
 
@@ -42,9 +40,9 @@ const MainPage = () => {
 						</div>
                         <div className={styles.quickLinks}>Quick Links</div>
 						<div className={styles.contentOptions}>
-							<div className={styles.contentOption}>View Profile</div>
-                            <div className={styles.contentOption}>Sample Quiz</div>
-                            <div className={styles.contentOption}>Create Quiz</div>
+							<div className={styles.contentOption} onClick={redirectProfile}>View Profile</div>
+                            <div className={styles.contentOption} onClick={redirectQuiz}>Sample Quiz</div>
+                            <div className={styles.contentOption} onClick={redirectCreate}>Create Quiz</div>
 
                         </div>
 					</div>
