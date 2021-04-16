@@ -8,6 +8,7 @@ from flask_login import LoginManager
 from .models import db, User, Questions, QuestionsRepo
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
+from .api.search_routes import search_routes
 from .api.questions_routes import questions_routes
 from .api.questions_repo_routes import questions_repo_routes
 from .api.repo_list_routes import repo_list_routes
@@ -36,7 +37,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(questions_routes, url_prefix='/api/questions')
 app.register_blueprint(questions_repo_routes, url_prefix='/api/repo')
 app.register_blueprint(repo_list_routes, url_prefix='/api/repoList')
-
+app.register_blueprint(search_routes, url_prefix='/api/search')
 
 db.init_app(app)
 Migrate(app, db)

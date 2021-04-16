@@ -46,7 +46,8 @@ const NavBar = ({ setAuthenticated }) => {
 		if(!user) return
 
 	}, [user]);
-	if(!user) return null
+	if (!user) return null
+	console.log('search', searchItems)
 	return (
 	<>
 			<div className={styles.navbar}>
@@ -60,8 +61,6 @@ const NavBar = ({ setAuthenticated }) => {
 							onSelect={handleOnSelect}
 							key={searchItems.event_id}
 							items={searchItems}
-            				resultStringKeyName="title"
-            				fuseOptions={{ keys: ["title", "region"] }}
 						/>
 						)}
 				</div>
