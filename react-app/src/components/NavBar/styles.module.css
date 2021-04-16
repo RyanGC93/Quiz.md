@@ -30,7 +30,7 @@ margin-top: 5px;
 .navLogo{
 	font-family: "Pattaya";
 	color: #e4edea;
-	font-size: 50px;
+	font-size: 6vw;
 	transition: 0.3s;
 	font-weight: bold;
 	cursor:pointer;
@@ -41,12 +41,8 @@ margin-top: 5px;
 	color:#9db1c0
 }
 
-
-/* 
-#171a26
-#244a4e
-#6a7c8b
-#9db1c0
-#e4edea
-
-*/
+@media screen and (min-width: 750px) {
+	.navLogo{
+		font-size:53px;
+	}
+}
