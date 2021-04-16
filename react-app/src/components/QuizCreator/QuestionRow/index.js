@@ -34,7 +34,7 @@ const QuestionRow = ({ question }) => {
 		<>
 			<div className={styles.inputRow}>
 				{/* Answer Cell */}
-				<form>
+				<form className={styles.form}>
 					<textarea className={styles.cell} value={rowAnswer} onChange={answerHandler}>
 					
 					
@@ -43,16 +43,16 @@ const QuestionRow = ({ question }) => {
 
 				</form>
 				{/* question cell */}
-				<form>
+				<form className={styles.form}>
 					<textarea className={styles.cell} value={rowQuestion} onChange={questionHandler}>					
 					</textarea>
 				</form>
 		
-				<div className={styles.options}>
+				{/* <div className={styles.options}>
 					<div onClick={updateHandler} className={styles.optionsBtn}>Update</div>
 					<div onClick={deleteHandler} className={styles.optionsBtn}>Delete</div>
 
-				</div>
+				</div> */}
 			</div>
 		</>
 	);

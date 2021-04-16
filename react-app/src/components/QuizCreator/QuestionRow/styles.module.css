@@ -2,15 +2,23 @@
     height: 10vh; 
     width: 100%;
     display:grid;
-    grid-template-columns: 40% 50% 10%;  
+    grid-template-columns: 40% 60%;  
+
 }
+.form{
+    margin: 0
+}
+
 
 .cell{
     white-space: pre-wrap;
     height: 100%;
     width: 100%;
     resize: none;
-    overflow-y: scroll;
+    background-color: rgba(228,237,234,.5);
+    border: none;
+    outline:none;
+    /* overflow-y: scroll; */
     /* font-size:; */
 }
 .options {
@@ -19,5 +27,5 @@
     align-items: center;
 }
 .optionsBtn{
-    width: 80%;
+    width: 10%;
 }
