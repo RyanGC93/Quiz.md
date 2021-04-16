@@ -15,7 +15,8 @@ const RepoCard = ({repo}) => {
     }
     console.log(repo)
   return (
-      <>
+    <>
+      <div className={styles.repoWrapper} >
           <div className={styles.repoContainer} >
             <div className={styles.repoTitle} >Title</div>
       <div className={styles.repoCard}>
@@ -27,7 +28,8 @@ const RepoCard = ({repo}) => {
               <div className={styles.cardBtn} onClick={editHandler}>
                     Edit
       </div>
-          </div>
+      </div>
+      </div>
     </>
   )
 }
