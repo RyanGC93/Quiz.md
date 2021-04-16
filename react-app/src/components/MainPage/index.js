@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import styles from "./styles.module.css";
+import { Modal } from "../../context/Modal";
 // For the grid component
 import { useSelector } from "react-redux";
+import CreateRepoModal from '../CreateRepoModal'
 
 const MainPage = () => {
+	const [showModal, setShowModal] = useState(false);
 	let history = useHistory();
 	const user = useSelector((state) => state.session.user);
 	// TODO
@@ -44,7 +47,13 @@ const MainPage = () => {
                             <div className={styles.contentOption} onClick={redirectQuiz}>Sample Quiz</div>
                             <div className={styles.contentOption} onClick={redirectCreate}>Create Quiz</div>
 
-                        </div>
+						</div>
+						<button onClick={() => setShowModal(true)}>Modal</button>
+						{showModal && (
+										<Modal onClose={() => setShowModal(false)}>
+											<CreateRepoModal setShowModal={setShowModal} />
+										</Modal>
+									)}
 					</div>
 				</div>
 
