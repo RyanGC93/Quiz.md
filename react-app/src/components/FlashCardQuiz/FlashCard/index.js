@@ -20,8 +20,6 @@ const speechStyle = {
 };
 const FlashCard = ({question}) => {
     const [flipToggle, setFlipToggle] = useState(false);
-
-    console.log('flashcard', question)
 	return (
 		<ReactCardFlip
 			containerStyle={{ height: "100%" }}

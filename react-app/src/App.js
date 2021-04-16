@@ -7,6 +7,7 @@ import UsersList from "./components/UsersList";
 import QuizCreator from "./components/QuizCreator";
 import FlashCardQuiz from "./components/FlashCardQuiz";
 import ProfilePage from "./components/ProfilePage";
+import Footer from "./components/Footer";
 import { restoreUser } from "./store/session";
 import {useDispatch} from 'react-redux'
 
@@ -50,6 +51,7 @@ function App() {
         <NavBar setAuthenticated={setAuthenticated} />
 
           <MainPage />
+          <Footer />
         </ProtectedRoute>
         {/* User Profile */}
 
@@ -61,11 +63,13 @@ function App() {
 
         <ProtectedRoute path="/create/:id"  authenticated={authenticated}>
             <NavBar setAuthenticated={setAuthenticated} />
-            <QuizCreator />
+          <QuizCreator />
+          <Footer />
         </ProtectedRoute>
 
         <ProtectedRoute path="/profile/:id"  authenticated={authenticated}>
-            <NavBar setAuthenticated={setAuthenticated} />
+          <NavBar setAuthenticated={setAuthenticated} />
+          <Footer />
  
           <ProfilePage />
         </ProtectedRoute>
@@ -74,6 +78,7 @@ function App() {
         <ProtectedRoute path="/practice/:repoId"  authenticated={authenticated}>
             <NavBar setAuthenticated={setAuthenticated} />
           <FlashCardQuiz />
+          {/* <Footer /> */}
         </ProtectedRoute>
         
 

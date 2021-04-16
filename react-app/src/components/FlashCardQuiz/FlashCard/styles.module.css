@@ -5,5 +5,11 @@
     box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.4);
 }
 .contentContainer {
-    white-space: pre;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+    white-space: pre-wrap;
+    font-size: 4.9vw;
+    /* overflow-y: scroll; */
 }

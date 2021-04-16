@@ -24,7 +24,7 @@ const FlashCardQuiz = () => {
 		<>
 			<div className={styles.quizPageContainer}>
 				<div className={styles.quizCardContainer}>
-					<Carousel>
+					<Carousel showIndicators={false}>
 						{questions[0] &&
 							questions.map((question) => <FlashCard question={question} />)}
 					</Carousel>
@@ -32,7 +32,7 @@ const FlashCardQuiz = () => {
 			</div>
 			{/* Section 2 Questions Repo  */}
 			<div className={styles.quizInfo}>
-				<div className={styles.infoSpan}>
+				{/* <div className={styles.infoSpan}>
 					<div className={styles.listOwner}>
 						<div className={styles.ownerName}>;'' Owner bane</div>
 					</div>
@@ -40,13 +40,13 @@ const FlashCardQuiz = () => {
 						<div>!!!REPO TITLE</div>
 					</div>
 					<div className={styles.listOptions}>Future componets</div>
-				</div>
+				</div> */}
 			</div>
 			{/* Section 3 DetailsInfo */}
 			<div className={styles.detailsInfo}>
 				<div className={styles.gridContainer}>
-					<div>Question</div>
-					<div>Answer</div>
+					<div className={styles.gridTitle}>Question</div>
+					<div className={styles.gridTitle}>Answer</div>
 				
 					{questions[0] && questions.map((question) =>
 						<>

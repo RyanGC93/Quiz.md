@@ -36,7 +36,7 @@ const MainPage = () => {
 						<div className={styles.contentHeader}>Quiz.md</div>
 						<div className={styles.content}>
                             A learning site that allows software engineers to study various
-                            topic using a markdown template
+                            topics using a markdown template
 						</div>
                         <div className={styles.quickLinks}>Quick Links</div>
 						<div className={styles.contentOptions}>

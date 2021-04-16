@@ -15,7 +15,7 @@ const BackComponent = ({content,flipToggle,setFlipToggle}) => {
 	
     return (
     <div onClick={() =>setFlipToggle(!flipToggle)} className={styles.card }>
-			<div onClick={() => alert('')} className="card-content">
+	<div className={styles.contentContainer}>
 			<ReactMarkdown renderers={renderers} allowDangerousHtml={true} source={content} plugins={[gfm]}  >
 				{/* <Speech
 					style={speechStyle}
@@ -28,7 +28,6 @@ const BackComponent = ({content,flipToggle,setFlipToggle}) => {
 					{content}
 					</ReactMarkdown>
 			</div>
-			<div className="card-options"></div>
 		</div>
 	);
 };

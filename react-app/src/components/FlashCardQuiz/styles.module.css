@@ -2,11 +2,14 @@
 
 .quizPageContainer{
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     background-color:rgba(228,237,234,.5);
     position: relative;
 }
-
+.gridTitle {
+    font-size: 5vh;
+    text-align: center;
+}
 .quizCardContainer{
     /* ! set all containers heights */
         position: absolute;
@@ -15,8 +18,8 @@
         left: 50%;
         transform: translate(-50%, -50%);
         /* background-color:green; */
-        height: 25vw;
-        width: 45vw;
+        height: 50vw;
+        width: 70vw;
 
 }
 .flashCard {
@@ -48,7 +51,6 @@
 .quizInfo {
     width: 100%; 
     height: 15vh;;
-    background-color:red;
     display: flex;
     justify-content:center;
     align-items: center;
@@ -93,6 +95,12 @@
 
 .gridContainer {
     display:grid;
-    grid-template-columns: 35% 45%;
+    grid-template-columns: 40% 60%;
+    grid-gap: 3vh;
+    padding: 3vw;
+    
 
+}
+.detailsInfo {    
+    background-color:rgba(228,237,234,.5);
 }
