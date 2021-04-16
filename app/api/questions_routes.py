@@ -23,14 +23,6 @@ def questions(repoId):
 def edit_questions(id):
     
     data = request.get_json()
-    print('''
-          ===========================================
-          ''')
-    print(data,id)
-    print('''
-          ===========================================
-          ''')
-    print(id)
     edit_question = Questions.query.get(id)
     edit_question.question = data['question']
     edit_question.answer = data['answer']
@@ -43,11 +35,6 @@ def edit_questions(id):
 @questions_routes.route('/', methods=['POST'])
 def new_question():
     if current_user.is_authenticated:
-        print(current_user.id)
-        print('''
-            ===========================================^^ current user
-            ''')
-    
         data = request.get_json()
         answer = data['answer']
         question = data['question']

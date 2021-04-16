@@ -9,7 +9,6 @@ search_routes = Blueprint('search', __name__)
 @login_required
 def Events():
     x = db.session.query(QuestionsRepo.id,QuestionsRepo.name).all()
-    print(x)
     keys = ['id', 'name']
     search = {"search": [dict(zip(keys,values)) for values in x]}
     return search

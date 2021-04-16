@@ -12,13 +12,6 @@ questions_repo_routes = Blueprint('repo', __name__)
 @login_required
 def repo(repoId):
     repo = QuestionsRepo.query.get(repoId)
-    print('''
-          
-          
-          =====================repo===================
-          
-          ''')
-    print(repo.to_dict())
     resObj = repo.to_dict()
     return resObj if resObj else {"repo": []} 
     return resObj
@@ -30,12 +23,7 @@ def repo(repoId):
 def edit_repo(id):
     
     data = request.get_json()
-    print('''
-          ===========================================
-          ''')
-    print(data,id)
     edit_repo = QuestionsRepo.query.get(id)
-
     edit_repo.name = data['name']
     db.session.commit()
     return edit_repo.to_dict()
@@ -46,11 +34,6 @@ def edit_repo(id):
 @questions_repo_routes.route('/', methods=['POST'])
 def new_question():
     if current_user.is_authenticated:
-        print(current_user.id)
-        print('''
-            ===========================================^^ current user
-            ''')
-    
         data = request.get_json()
         answer = data['answer']
         question = data['question']
@@ -68,10 +51,6 @@ def new_question():
 @login_required
 def delete_question(id):
     repo = QuestionsRepo.query.filter(id == QuestionsRepo.id).first()
-    print('''
-          ====post=======================================
-          ''')
-    print(repo)
     
     db.session.delete(repo)
     db.session.commit()

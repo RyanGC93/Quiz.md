@@ -14,13 +14,3 @@ def repo(ownerId):
     resObj = {"repoList": [repo.to_dict() for repo in repoList]}
     return resObj if resObj else {"questions": []} 
     return resObj
-    print('''
-          
-          
-          =====================repo===================
-          
-          ''')
-    print(repoList)
-    # resObj = repo.to_dict()
-    # return resObj if resObj else {"repo": []} 
-    # return resObj
