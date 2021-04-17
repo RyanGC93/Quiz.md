@@ -1,11 +1,17 @@
 .mainPage {
     height: 90vh;
     width: 100%;
-    background-image: url('https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg');
-    background-size: cover;
+    /* background-image: url('https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg');
+    background-size: cover; */
     opacity: 0.5;
     position: relative;
 }
+.backgroundImg{
+    position:fixed;
+    height: 100vh;
+    width: 100%;
+}
+
 .contentWrapper{
     position:absolute;
     top: 50%;  

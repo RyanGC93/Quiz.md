@@ -6,10 +6,12 @@ import LoginForm from "../Forms/SignInForm";
 import SignUpForm from "../Forms/SignUpForm";
 
 const LoginPage = ({ setAuthenticated }) => {
+	
+	
+	
+	
 	return (
 		<>
-			<div>
-
       <img className='background-img' alt='' src='https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'/>
 			<div className="login-wrap">
 				<div className="login-html">
@@ -41,7 +43,6 @@ const LoginPage = ({ setAuthenticated }) => {
 							<PortfolioNavigator />
 				</div>
 			</div>
-						</div>
 		</>
 	);
 };

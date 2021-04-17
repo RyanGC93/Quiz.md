@@ -6,7 +6,7 @@ fake = Faker()
 # ! Seeds with lorem for quick build
 def seed_questions_repo():
     seed_list = []
-    count = 0 
+    count = 1 
     for _ in range(10):
         seed = QuestionsRepo(id=count, owner_id=1, name=fake.word(), type=fake.word(), subcategory=fake.word())
         count +=1

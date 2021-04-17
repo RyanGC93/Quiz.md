@@ -4,7 +4,6 @@
 	font-family: 'Rochester', cursive;
 	font-weight:bolder;
 	letter-spacing: 4.7px;
-	color:#244a4e;
 	font-size: 40px;
 	height: 40px;
 	margin-top: 10px;
@@ -14,7 +13,7 @@
 }
 
 .background-img{
-	position:absolute;
+	position:fixed;
 	height: 100%;
 	width:100%
 }

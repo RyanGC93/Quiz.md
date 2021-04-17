@@ -31,6 +31,7 @@ const MainPage = () => {
 
 	return (
 		<>
+				<img className={styles.backgroundImg} alt='' src='https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg'/>
 			<div className={styles.mainPage}>
 				<div className={styles.contentWrapper}>
 					{/* <div className={styles.contentWrapper}>     

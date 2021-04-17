@@ -1,5 +1,37 @@
 .createRepoContainer{
-    height: 300px;
-    width: 100vw;
-    background-color: red;
+    width: 40vw;
+    background-color: #6a7c8b;
+}
+
+.repoWrapper{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px
+}
+
+.repoTitle{
+    font-size:30px;
+    padding: 5px;
+
+}
+
+.input {
+    border: none;
+    /* margin-left: 10%; */
+    padding: 15px 0px 15px 0px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+    width: 100%;
+    display: block;
+    text-align: center;
+    outline-style: none;
+    color: #fff;
+}
+
+.icon{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
 }

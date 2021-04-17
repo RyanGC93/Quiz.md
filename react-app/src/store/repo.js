@@ -24,7 +24,7 @@ const removeRepo = (id) => {
   }
 }
 
-export const createRepo = (repoId,repo, answer) => async dispatch => {
+export const createRepo = (title) => async dispatch => {
 
     const options =
     {
@@ -32,11 +32,12 @@ export const createRepo = (repoId,repo, answer) => async dispatch => {
       headers: {
         'Content-Type': 'Application/json'
       },
-      body: JSON.stringify({ repoId, repo,answer })
+      body: JSON.stringify({ title })
     }
-    const res = await fetch('/api/repo/', options)
-    const json = await res.json()
-    dispatch(setRepo([json]))
+    const data = await fetch('/api/repo/', options)
+    const res = await data.json()
+    return res
+    dispatch(setRepo([res]))
 }
 export const editRepo = (repoId, name) =>     async dispatch => {
   const options = {

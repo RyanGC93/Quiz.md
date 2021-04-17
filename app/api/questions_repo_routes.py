@@ -1,9 +1,10 @@
 from flask import Blueprint, jsonify, request
 from flask_login import current_user, login_required
-
+from sqlalchemy import exc
 from flask import Blueprint, jsonify
 from flask_login import login_required
 from app.models import db, QuestionsRepo, Questions
+
 
 questions_repo_routes = Blueprint('repo', __name__)
 
@@ -30,21 +31,24 @@ def edit_repo(id):
 
 
 
-# CREATE QUESTION
+# CREATE REPO
 @questions_repo_routes.route('/', methods=['POST'])
 def new_question():
     if current_user.is_authenticated:
         data = request.get_json()
-        answer = data['answer']
-        question = data['question']
-        repo_id = data['repoId']
+        title = data['title']
         owner_id = current_user.id
-        new_post = Questions(question=question, answer=answer,
-                        repo_id=repo_id)
-        db.session.add(new_post)
-        db.session.commit()
-        return(new_post.to_dict())
-
+        try:
+            new_repo = QuestionsRepo(owner_id=owner_id, name=title
+                        )
+            db.session.add(new_repo)
+            db.session.commit()
+            return(new_repo.to_dict())
+        except exc.SQLAlchemyError as e:
+            print('hit error')
+            print(type(e))
+            return {'errors': ['Cannot Create Repo Please Try again']}, 500
+        
 
 # DELETE
 @questions_repo_routes.route('/<int:id>', methods=['DELETE'])
