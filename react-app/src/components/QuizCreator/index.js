@@ -8,14 +8,13 @@ import { useParams } from "react-router-dom";
 import { createQuestion } from "../../store/questions";
 import { editRepo } from "../../store/repo";
 import {deleteRepo}  from "../../store/repo";
-import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
-
 import {IoAddCircle} from "react-icons/io5";
 
 const QuizCreator = () => {
 	const [rowQuestion,setRowQuestion] =useState('')
 	const [rowAnswer, setRowAnswer] = useState('')
-	const [title,setTitle] = useState('')
+	const [title, setTitle] = useState('')
+
 	
 
 	const [isNewForm, setIsNewForm] = useState();
@@ -41,6 +40,7 @@ const QuizCreator = () => {
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value)
 	}
+
 
 	const addQuestionHandler = () => {
 		if(!rowQuestion && !rowAnswer) return alert('Must add add question/answer')
