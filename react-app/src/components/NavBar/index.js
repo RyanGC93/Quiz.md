@@ -23,7 +23,7 @@ const NavBar = ({ setAuthenticated }) => {
     height: "50px",
     border: "1px solid #dfe1e5",
     borderRadius: "24px",
-    backgroundColor: "rgba(228,237,234,.7)",
+    backgroundColor: "rgba(228,237,234,1)",
     boxShadow: "rgba(32, 33, 36, 0.28) 0px 1px 6px 0px",
     hoverBackgroundColor: "#eee",
     color: "black",
@@ -31,7 +31,8 @@ const NavBar = ({ setAuthenticated }) => {
     fontFamily: "Arial",
     iconColor: "grey",
     lineColor: "rgb(232, 234, 237)",
-    placeholderColor: "grey",
+		placeholderColor: "grey",
+	zIndex: "1000"
   };
 
 	useEffect(() => {

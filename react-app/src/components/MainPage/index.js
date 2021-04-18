@@ -16,10 +16,7 @@ const MainPage = () => {
 		let repoId = 2;
 		history.push(`/practice/${repoId}`);
 	};
-	const redirectCreate = () => {
-		let id = 2;
-		history.push(`/create/${id}`);
-	};
+
 	const redirectProfile = () => {
 		history.push(`/profile/${user.id}`);
 	};
@@ -46,15 +43,15 @@ const MainPage = () => {
 						<div className={styles.contentOptions}>
 							<div className={styles.contentOption} onClick={redirectProfile}>View Profile</div>
                             <div className={styles.contentOption} onClick={redirectQuiz}>Sample Quiz</div>
-                            <div className={styles.contentOption} onClick={redirectCreate}>Create Quiz</div>
-
-						</div>
-						<button onClick={() => setShowModal(true)}>Modal</button>
-						{showModal && (
+							<div className={styles.contentOption} onClick={() => setShowModal(true)}>Create Quiz
+							</div>
+							{/* Create Quiz modal */}
+							{showModal && (
 										<Modal onClose={() => setShowModal(false)}>
 											<CreateRepoModal setShowModal={setShowModal} />
 										</Modal>
 									)}
+						</div>
 					</div>
 				</div>
 
