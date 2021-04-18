@@ -9,13 +9,13 @@ from app.models import db, QuestionsRepo, Questions
 questions_repo_routes = Blueprint('repo', __name__)
 
 # Gets the repo
-@questions_repo_routes.route('/<int:repoId>')
+@questions_repo_routes.route('/<int:ownerId>')
 @login_required
-def repo(repoId):
-    repo = QuestionsRepo.query.get(repoId)
-    resObj = repo.to_dict()
-    return resObj if resObj else {"repo": []} 
-    return resObj
+def repo(ownerId):
+    repoList = QuestionsRepo.query.filter(QuestionsRepo.owner_id == ownerId).all()
+    resObj = {"repos": [repo.to_dict() for repo in repoList]}
+    return resObj if resObj else {"repos": []} 
+    
 
 
 # Edit question

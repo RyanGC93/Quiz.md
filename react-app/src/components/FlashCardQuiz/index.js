@@ -20,7 +20,7 @@ const FlashCardQuiz = () => {
 		if (!repoId) return;
 		if (!questions[0]) dispatch(getQuestions(repoId));
 	}, [dispatch, repoId]);
-	if (!questions[0]) return null;
+	// if (!questions[0]) return null;
 	// !Section 1 FlashCards
 	return (
 		<>

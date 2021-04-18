@@ -36,8 +36,9 @@ export const createRepo = (title) => async dispatch => {
     }
     const data = await fetch('/api/repo/', options)
     const res = await data.json()
-    return res
+    console.log(res,'res')
     dispatch(setRepo([res]))
+    return res
 }
 export const editRepo = (repoId, name) =>     async dispatch => {
   const options = {
@@ -63,15 +64,25 @@ export const deleteRepo = (id) => async dispatch => {
   }
 }
 
-export const getRepo = (repoId) => async (dispatch) => {
-  const response = await fetch(`/api/repo/${repoId}`);
+// export const getRepo = (repoId) => async (dispatch) => {
+//   const response = await fetch(`/api/repo/${repoId}`);
+//   if (response.ok) {
+//     let res = await response.json();
+//     console.log(res,'repo')
+//       dispatch(setRepo(res))
+//   }
+//   return response;
+// };
+
+export const getRepos = (userId) => async (dispatch) => {
+  const response = await fetch(`/api/repo/${userId}`);
   if (response.ok) {
     let res = await response.json();
-    console.log(res,'repo')
-      dispatch(setRepo(res))
+      dispatch(setRepo(res.repos))
   }
   return response;
 };
+
 
 const initialState = {
 

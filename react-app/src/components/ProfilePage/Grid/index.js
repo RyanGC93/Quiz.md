@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getRepoList } from '../../../store/repoList'
+import { getRepos } from '../../../store/repo'
 import RepoCard from '../RepoCard'
 // Component => component Name
 
@@ -9,16 +9,19 @@ import styles from "./styles.module.css";
 const Grid = () => {
   const dispatch = useDispatch()
   const user = useSelector(state => state.session.user)
-  const repoList = useSelector((state) => Object.values(state.repoList));
+  const repoList = useSelector((state) => state.repo.repo)
 
   
   useEffect(() => {
 
     if (!user) return 
-    if(repoList[0]) return
-    dispatch(getRepoList(user.id))
+    dispatch(getRepos(user.id))
+    if (!repoList) return
+    
       // have to make a call based on the input 
   })
+  console.log(repoList)
+  if (!repoList) return null
 
   return (
     <>

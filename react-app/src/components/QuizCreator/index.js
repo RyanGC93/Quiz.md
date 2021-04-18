@@ -4,13 +4,14 @@ import QuestionRow from "./QuestionRow";
 import {useHistory} from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions } from "../../store/questions";
-import { getRepo } from "../../store/repo";
+import { getRepos } from "../../store/repo";
 import { useParams } from "react-router-dom";
 import { createQuestion } from "../../store/questions";
 import { editRepo } from "../../store/repo";
 import {deleteRepo}  from "../../store/repo";
 import {IoAddCircle} from "react-icons/io5";
 import { MdDelete} from "react-icons/md";
+
 const QuizCreator = () => {
 	const user = useSelector(state => state.session.user)
 	const [rowQuestion,setRowQuestion] =useState('')
@@ -29,11 +30,11 @@ const QuizCreator = () => {
 	useEffect(() => {
 		if (!para.id) return;
 		if (!user) return;
-		if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
+		// if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
 		if (repoInfo) return setRepoTitle(repoInfo.name)
 		if (para !== 0) {
 			dispatch(getQuestions(para.id));
-			dispatch(getRepo(para.id));
+			dispatch(getRepos(user.id));
 			
 		}
 		if (!repoInfo) return
@@ -77,7 +78,7 @@ const QuizCreator = () => {
 	}
 
 	if (!user && !repoInfo) return null
-	if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
+	// if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
 
 	return (
 		<>

@@ -11,6 +11,6 @@ repo_list_routes = Blueprint('repoList', __name__)
 @login_required
 def repo(ownerId):
     repoList = QuestionsRepo.query.filter(QuestionsRepo.owner_id == ownerId).all()
-    resObj = {"repoList": [repo.to_dict() for repo in repoList]}
+    resObj = {"repos": [repo.to_dict() for repo in repoList]}
     return resObj if resObj else {"questions": []} 
     return resObj
