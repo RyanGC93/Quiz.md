@@ -3,6 +3,8 @@ import styles from "./styles.module.css";
 import { deleteQuestion } from "../../../store/questions";
 import { editQuestion } from "../../../store/questions";
 import { useDispatch } from "react-redux";
+import { MdDelete} from "react-icons/md";
+
 
 const QuestionRow = ({ question }) => {
 	const dispatch = useDispatch();
@@ -39,6 +41,7 @@ const QuestionRow = ({ question }) => {
 		dispatch(editQuestion(id, rowQuestion, rowAnswer));
 	};
 	const deleteHandler = (e) => {
+		if(timedUpdate) clearTimeout(timedUpdate)
 		let id = question.question_id;
 		dispatch(deleteQuestion(id));
 	};
@@ -61,16 +64,9 @@ const QuestionRow = ({ question }) => {
 						value={rowQuestion}
 						onChange={questionHandler}
 					></textarea>
-				</form>
+										<MdDelete onClick={deleteHandler}  className={styles.icon}/>
 
-				<div className={styles.options}>
-					<div onClick={updateHandler} className={styles.optionsBtn}>
-						Update
-					</div>
-					<div onClick={deleteHandler} className={styles.optionsBtn}>
-						Delete
-					</div>
-				</div>
+				</form>
 			</div>
 		</>
 	);

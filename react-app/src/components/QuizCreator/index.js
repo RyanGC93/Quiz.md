@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import QuestionRow from "./QuestionRow";
+import {useHistory} from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions } from "../../store/questions";
 import { getRepo } from "../../store/repo";
@@ -9,11 +10,14 @@ import { createQuestion } from "../../store/questions";
 import { editRepo } from "../../store/repo";
 import {deleteRepo}  from "../../store/repo";
 import {IoAddCircle} from "react-icons/io5";
-
+import { MdDelete} from "react-icons/md";
 const QuizCreator = () => {
+	const user = useSelector(state => state.session.user)
 	const [rowQuestion,setRowQuestion] =useState('')
 	const [rowAnswer, setRowAnswer] = useState('')
 	const [title, setTitle] = useState('')
+	const history = useHistory()
+	
 
 	
 
@@ -59,8 +63,13 @@ const QuizCreator = () => {
 		setRowQuestion(e.target.value)
 	}
 	const removeRepo = (e) => {
-		dispatch(deleteRepo(para.id))
+		console.log(user)
+		let res = dispatch(deleteRepo(para.id))
+		if(!res.errors) history.push(`/profile/${user.id}`)
 	}
+
+	if (!user) return null
+
 	return (
 		<>
 			
@@ -76,8 +85,7 @@ const QuizCreator = () => {
 							  onChange={updateTitle}
 							  value={repoTitle}
 					/>
-					<div onClick={changeTitle} >change title</div>
-					<div onClick={removeRepo} >Remove Repo</div>
+					<MdDelete onClick={removeRepo}  className={styles.icon}/>
 					</div>
 				<div className={styles.quizGrid}>
 					{/* iterate over the array */}
@@ -85,6 +93,7 @@ const QuizCreator = () => {
 						questions.map((question) => <QuestionRow question={question} />)}
 					
 					{/* To add More */}
+					<div className={styles.inputTitle} >Create More</div> 
 					<div className={styles.inputRow}>
 						<textarea
 							onChange={questionHandler}
