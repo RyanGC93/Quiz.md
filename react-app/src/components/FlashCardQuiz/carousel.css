@@ -1,5 +1,9 @@
 .carousel,.carousel-root,.slider-wrapper,.slider,.slide {
-    height:100%
+    height:100%;
+
 }
 
-
+p.carousel-status{
+    color: #6a7c8b !important;
+    font-size: 2.5vh !important;
+}

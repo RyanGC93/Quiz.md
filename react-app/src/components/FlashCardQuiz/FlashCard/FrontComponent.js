@@ -12,11 +12,12 @@ const renderers = {
   }
 
 
-const FrontComponent = ({ content,setFlipToggle,flipToggle }) => {
+const FrontComponent = ({ content, setFlipToggle, flipToggle }) => {
+	console.log(content,'md')
 	return (
 		<div onClick={() => setFlipToggle(!flipToggle)} className={styles.card}>
 			<div className={styles.contentContainer}>
-			<ReactMarkdown renderers={renderers} allowDangerousHtml={true} source={content} plugins={[gfm]}  >
+			<ReactMarkdown className={styles.md} renderers={renderers} allowDangerousHtml={true} source={content} plugins={[gfm]}  >
 				{/* <Speech
 					style={speechStyle}
 					stop={true}

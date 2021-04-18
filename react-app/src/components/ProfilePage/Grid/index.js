@@ -20,16 +20,12 @@ const Grid = () => {
       // have to make a call based on the input 
   })
 
-  const determineUser = () => {
-  }
-
   return (
     <>
-      <div className={styles.gridContainer} onClick={determineUser}>
+      <div className={styles.gridContainer} >
           {repoList.map((repo) => (
             <RepoCard repo={repo} />
           ))}
-          {}
       </div>
     </>
   );

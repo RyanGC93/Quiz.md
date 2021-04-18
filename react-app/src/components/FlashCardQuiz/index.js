@@ -7,6 +7,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { getQuestions } from "../../store/questions";
 import FlashCard from "./FlashCard";
+import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+
+
+
+
 const FlashCardQuiz = () => {
 	let { repoId } = useParams();
 	const dispatch = useDispatch();
@@ -26,7 +31,12 @@ const FlashCardQuiz = () => {
 							questions.map((question) => <FlashCard question={question} />)}
 					</Carousel>
 				</div>
-			</div>
+				<div className={styles.quizOptions}>
+							<BsFillCaretLeftFill/>
+							<BsFillCaretRightFill/>
+
+				</div>
+			</div>	
 			{/* Section 2 Questions Repo  */}
 			<div >
 				{/* <div className={styles.infoSpan}>

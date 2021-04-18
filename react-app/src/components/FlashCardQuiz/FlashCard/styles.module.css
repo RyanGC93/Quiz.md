@@ -6,6 +6,7 @@
 }
 .contentContainer {
     display: flex;
+    height: 100%;
     justify-content: center;
     align-items: center;
     padding: 3vw;
@@ -16,9 +17,20 @@
 
 /* md Container */
 .contentContainer pre {
-    width:100%
+    width:100%;
+    height: 100%;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+
+}
+.contentContainer * {
+    line-height: 1em !important;
 }
 
-.contentContainer code {
-   font-size: 2.5vh
+div.contentContainer code {
+   font-size: 24px;
+   height: 100%;
+   width:100%;
+   white-space: pre-wrap !important;
 }
+

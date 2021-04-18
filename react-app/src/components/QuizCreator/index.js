@@ -20,9 +20,6 @@ const QuizCreator = () => {
 	const history = useHistory()
 	
 
-	
-
-	const [isNewForm, setIsNewForm] = useState();
 	let para = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
@@ -31,16 +28,20 @@ const QuizCreator = () => {
 
 	useEffect(() => {
 		if (!para.id) return;
-		if(repoInfo) return setRepoTitle(repoInfo.name)
+		if (!user) return;
+		if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
+		if (repoInfo) return setRepoTitle(repoInfo.name)
 		if (para !== 0) {
 			dispatch(getQuestions(para.id));
 			dispatch(getRepo(para.id));
-
+			
 		}
-		setIsNewForm(false);
 		if (!repoInfo) return
+		console.log(user,'user')
+		console.log(user,para,'para')
 		setRepoTitle(repoInfo.name)
-	}, [para, repoInfo, dispatch]);
+		// if(para.owner_id !== user.id) history.push('/')
+	}, [user,para, repoInfo, dispatch]);
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value)
@@ -54,7 +55,6 @@ const QuizCreator = () => {
 			dispatch(editRepo(para.id,repoTitle))
 		}, updateTime);
 		setTimedUpdate(()=>timedSave)
-
 	}
 
 	const addQuestionHandler = () => {
@@ -71,13 +71,12 @@ const QuizCreator = () => {
 	const questionHandler = (e) => {
 		setRowQuestion(e.target.value)
 	}
-	const removeRepo = (e) => {
-		console.log(user)
+	const removeRepo = () => {
 		let res = dispatch(deleteRepo(para.id))
 		if(!res.errors) history.push(`/profile/${user.id}`)
 	}
 
-	if (!user) return null
+	if (!user && !repoInfo) return null
 
 	return (
 		<>
@@ -105,19 +104,18 @@ const QuizCreator = () => {
 					<div className={styles.inputTitle} >Create More</div> 
 					<div className={styles.inputRow}>
 						<textarea
-							onChange={questionHandler}
+							onChange={(e)=>{setRowQuestion(e.target.value)}}
 							className={styles.cell}
 							value={rowQuestion}
 						/>
 						<textarea
-							onChange={answerHandler}
+							onChange={(e) => setRowAnswer(e.target.value)}
 							className={styles.cell}
 							value={rowAnswer}
 						/>
 					</div>
 					<div className={styles.addBtnContainer} >
 						< IoAddCircle className={styles.addIcon} onClick={addQuestionHandler} />
-					
 					</div>
 				</div>
 			</div>
