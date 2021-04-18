@@ -1,21 +1,25 @@
 .mainPage {
-    height: 90vh;
+    height: 100%;
     width: 100%;
-    position: relative;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
 .backgroundImg{
     position:fixed;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     z-index: -22;
     opacity: 0.7;
 }
 
 .contentWrapper{
-    position:absolute;
+    /* position:absolute;
     top: 50%;  
     left: 50%; 
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    display:flex;
+    justify-content:center;
     width: 60vw;
     text-align: center;
     background-color: #9db1c0;

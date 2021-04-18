@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import styles from "./styles.module.css";
-import { Modal } from "../../context/Modal";
-// For the grid component
-import { useSelector } from "react-redux";
 import CreateRepoModal from '../CreateRepoModal'
+import { Modal } from "../../context/Modal";
+import { useSelector } from "react-redux";
 
 const MainPage = () => {
 	const [showModal, setShowModal] = useState(false);
@@ -28,7 +27,7 @@ const MainPage = () => {
 
 	return (
 		<>
-				<img className={styles.backgroundImg} alt='' src='https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg'/>
+				{/* <img className={styles.backgroundImg} alt='' src='https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg'/> */}
 			<div className={styles.mainPage}>
 				<div className={styles.contentWrapper}>
 					{/* <div className={styles.contentWrapper}>     

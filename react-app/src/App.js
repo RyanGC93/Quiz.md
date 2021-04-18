@@ -50,7 +50,7 @@ function App() {
         <NavBar setAuthenticated={setAuthenticated} />
 
           <MainPage />
-          <Footer />
+          {/* <Footer /> */}
         </ProtectedRoute>
         {/* User Profile */}
 
@@ -63,12 +63,12 @@ function App() {
         <ProtectedRoute path="/create/:id"  authenticated={authenticated}>
             <NavBar setAuthenticated={setAuthenticated} />
           <QuizCreator />
-          <Footer />
+          {/* <Footer /> */}
         </ProtectedRoute>
 
         <ProtectedRoute path="/profile/:id"  authenticated={authenticated}>
           <NavBar setAuthenticated={setAuthenticated} />
-          <Footer />
+          {/* <Footer /> */}
  
           <ProfilePage />
         </ProtectedRoute>
@@ -85,6 +85,7 @@ function App() {
           
           <h1>My Home Page</h1>
         </Route>  */}
+        <Footer/>
       </Switch>
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@ import { IoAddCircle } from "react-icons/io5";
 import { useDispatch} from 'react-redux'
 import { createRepo } from '../../store/repo'
 
-const CreateRepoModal = () => {
+const CreateRepoModal = ({setShowModal}) => {
 	const dispatch = useDispatch();
 	const history = useHistory();
 	const [title, setTitle] = useState('')
@@ -20,6 +20,7 @@ const CreateRepoModal = () => {
 		if(res.errors) return setErrors(res.errors)
 		console.log('newrepo res', res)
 		history.push(`/create/${res.repo_id}`)
+		setShowModal(false)
     }
     
     return (

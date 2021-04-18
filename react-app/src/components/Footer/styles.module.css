@@ -1,11 +1,11 @@
 .footer {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
+    
 }
 
 .linksContainer {
-    width: 100%;
+
+    bottom: 0;
+
     display: flex;
     justify-content: center;
     

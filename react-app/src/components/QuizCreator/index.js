@@ -15,6 +15,7 @@ const QuizCreator = () => {
 	const user = useSelector(state => state.session.user)
 	const [rowQuestion,setRowQuestion] =useState('')
 	const [rowAnswer, setRowAnswer] = useState('')
+	const [timedUpdate,setTimedUpdate] = useState(null)
 	const [title, setTitle] = useState('')
 	const history = useHistory()
 	
@@ -43,8 +44,18 @@ const QuizCreator = () => {
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value)
+		timedDataUpdate()
 	}
+	const timedDataUpdate = () => {
+		if(timedUpdate) clearTimeout(timedUpdate)
+		
+		const updateTime = 4000;
+		let timedSave =setTimeout(function(){
+			dispatch(editRepo(para.id,repoTitle))
+		}, updateTime);
+		setTimedUpdate(()=>timedSave)
 
+	}
 
 	const addQuestionHandler = () => {
 		if(!rowQuestion && !rowAnswer) return alert('Must add add question/answer')
@@ -52,9 +63,7 @@ const QuizCreator = () => {
 		setRowQuestion('')
 		setRowAnswer('')
 	}
-	const changeTitle = () => {
-		dispatch(editRepo(para.id,repoTitle))
-	}
+
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value)
 	}
