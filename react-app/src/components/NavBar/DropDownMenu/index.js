@@ -1,12 +1,10 @@
 import React, { useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,useHistory } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import CreateRepoModal from "../../CreateRepoModal";
 import { Modal } from "../../../context/Modal";
-
 import { useDetectOutsideClick } from "../../../services/detectOutsideClick";
 import "./styles.css";
-import { useHistory } from "react-router-dom";
 import { logout } from "../../../services/auth";
 
 const DropDownMenu = ({ setAuthenticated, userId }) => {

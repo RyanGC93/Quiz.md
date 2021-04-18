@@ -7,6 +7,16 @@ div.gridContainer{
     column-gap: 5%;
     grid-row-gap: 4vh;
     padding: 2vw;
+}
 
-    
+.addIcon {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+.addBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px
 }

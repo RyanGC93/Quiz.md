@@ -3,16 +3,11 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session'
 import questionsReducer from './questions'
 import repoReducer from './repo'
-import repoListReducer from './repoList'
-
-
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   questions: questionsReducer,
-  repo: repoReducer,
-  repoList: repoListReducer,
-  
+  repo: repoReducer,  
 });
 
 let enhancer;

@@ -1,12 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getRepos } from '../../../store/repo'
-import RepoCard from '../RepoCard'
+import RepoCard from '../RepoCard';
+import { IoAddCircle } from "react-icons/io5";
+import { useHistory } from "react-router-dom";
+import CreateRepoModal from "../../CreateRepoModal";
+import { Modal } from "../../../context/Modal";
+
 // Component => component Name
 
 import styles from "./styles.module.css";
 
 const Grid = () => {
+  const history = useHistory();
+	const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch()
   const user = useSelector(state => state.session.user)
   const repoList = useSelector((state) => {
@@ -32,6 +39,14 @@ const Grid = () => {
             <RepoCard repo={repo} />
           ))}
       </div>
+      <div className={styles.addBtnContainer} >
+						< IoAddCircle className={styles.addIcon} onClick={() => setShowModal(true)} />
+					</div>
+          {showModal && (
+										<Modal onClose={() => setShowModal(false)}>
+											<CreateRepoModal setShowModal={setShowModal} />
+										</Modal>
+									)}
     </>
   );
 };

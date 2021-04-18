@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import { deleteRepo } from "../../../store/repo";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { getRepoList } from '../../../store/repoList'
+
 
 
 
@@ -23,7 +23,6 @@ const RepoCard = ({ repo }) => {
 	const deleteHandler = () => {
 		dispatch(deleteRepo(repo.repo_id))
 		// if(!res.errors) history.push(`/profile/${user.id}`)
-		dispatch(getRepoList(user.id))
 
 	}
 
