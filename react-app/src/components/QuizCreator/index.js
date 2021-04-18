@@ -77,6 +77,7 @@ const QuizCreator = () => {
 	}
 
 	if (!user && !repoInfo) return null
+	if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
 
 	return (
 		<>
