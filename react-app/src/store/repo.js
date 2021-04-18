@@ -78,6 +78,7 @@ export const getRepos = (userId) => async (dispatch) => {
   const response = await fetch(`/api/repo/${userId}`);
   if (response.ok) {
     let res = await response.json();
+    console.log(res,'sdsdsdsd')
       dispatch(setRepo(res.repos))
   }
   return response;
@@ -91,7 +92,12 @@ const initialState = {
 const repoReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_REPO:
-      return { ...state,repo: action.repo };
+      const repos = action.repo.reduce((acc, ele) => {
+
+        acc[ele.repo_id] = ele;
+        return acc;
+      }, {});
+      return { ...state, ...repos };
     case CREATE_REPO:
       return { ...state, [action.drink.id]: action.drink };
     case REMOVE_REPO:
