@@ -33,11 +33,7 @@ const MainPage = () => {
             setContent(keyed)
             // setIsLoaded(true)
            let thiss = keyed.split('/n')
-
             setContentTwo(thiss)
-           
-
-
          })();
 
     },[dispatch])

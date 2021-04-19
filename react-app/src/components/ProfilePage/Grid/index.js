@@ -20,20 +20,26 @@ const Grid = () => {
   
   useEffect(() => {
     if (!user) return 
-    let res= dispatch(getRepos(user.id))
-    if (!repoList) {
-      let res= dispatch(getRepos(user.id))
-    }
-    if (!repoList) return
+    // // let res= dispatch(getRepos(user.id))
+    // if (!repoList) {
+    //   // let res= dispatch(getRepos(user.id))
+    // }
     
-  },[repoList])
+    (async () => {
+      const data = await dispatch(getRepos(user.id))
 
+
+   })();
+
+
+    
+  },[])
   return (
     <>
       {repoList[0] && (
       <div className={styles.gridContainer} >
           {repoList.map((repo) => (
-            <RepoCard repo={repo} />
+            <RepoCard key={repo.repo_id} repo={repo} />
           ))}
       </div>
 
