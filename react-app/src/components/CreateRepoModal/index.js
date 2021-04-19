@@ -18,7 +18,6 @@ const CreateRepoModal = ({setShowModal}) => {
     const addNewRepo = async () => {
 		let res = await dispatch(createRepo(title))
 		if(res.errors) return setErrors(res.errors)
-		console.log('newrepo res', res)
 		history.push(`/create/${res.repo_id}`)
 		setShowModal(false)
     }

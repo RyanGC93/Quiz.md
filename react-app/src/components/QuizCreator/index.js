@@ -24,7 +24,9 @@ const QuizCreator = () => {
 	let para = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
-	const repoInfo = useSelector((state) => state.repo.repo);
+	const repoInfo = useSelector((state) => {
+		if(state.repo[0])return Object.values(state.repo).filter((repository) => para.id === repository.repo_id)
+	});
 	const [repoTitle,setRepoTitle] = useState('')
 
 	useEffect(() => {
@@ -34,12 +36,9 @@ const QuizCreator = () => {
 		if (repoInfo) return setRepoTitle(repoInfo.name)
 		if (para !== 0) {
 			dispatch(getQuestions(para.id));
-			dispatch(getRepos(user.id));
-			
+			dispatch(getRepos(user.id));			
 		}
 		if (!repoInfo) return
-		console.log(user,'user')
-		console.log(user,para,'para')
 		setRepoTitle(repoInfo.name)
 		// if(para.owner_id !== user.id) history.push('/')
 	}, [user,para, repoInfo, dispatch]);

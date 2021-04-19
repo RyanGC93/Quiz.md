@@ -6,6 +6,7 @@
     padding: 10px 10px 10px 10px;
 }
 .cardBtn:hover{
+    cursor: pointer;
     background-color: red;
 }
 

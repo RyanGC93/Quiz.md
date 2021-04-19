@@ -39,7 +39,6 @@ export const createQuestion = (repoId,question, answer) => async dispatch => {
     dispatch(setQuestions([json]))
 }
 export const editQuestion = (questionId, question, answer) => async dispatch => {
-  console.log('w', questionId)
   const options = {
     method: 'PUT',
     headers: {

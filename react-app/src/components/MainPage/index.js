@@ -22,7 +22,6 @@ const MainPage = () => {
 
 	useEffect(() => {
 		if (!user) return;
-		console.log(user);
 	}, [user]);
 
 	return (

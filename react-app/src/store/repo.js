@@ -36,7 +36,6 @@ export const createRepo = (title) => async dispatch => {
     }
     const data = await fetch('/api/repo/', options)
     const res = await data.json()
-    console.log(res,'res')
     dispatch(setRepo([res]))
     return res
 }
@@ -78,16 +77,13 @@ export const getRepos = (userId) => async (dispatch) => {
   const response = await fetch(`/api/repo/${userId}`);
   if (response.ok) {
     let res = await response.json();
-    console.log(res,'sdsdsdsd')
       dispatch(setRepo(res.repos))
   }
   return response;
 };
 
 
-const initialState = {
-
-};
+const initialState = {}
 
 const repoReducer = (state = initialState, action) => {
   switch (action.type) {

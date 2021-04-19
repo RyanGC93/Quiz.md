@@ -31,7 +31,7 @@ const NavBar = ({ setAuthenticated }) => {
     fontFamily: "Arial",
     iconColor: "grey",
     lineColor: "rgb(232, 234, 237)",
-		placeholderColor: "grey",
+	placeholderColor: "grey",
 	zIndex: "1000"
   };
 
@@ -39,7 +39,6 @@ const NavBar = ({ setAuthenticated }) => {
 		(async () => {
 			const url = '/api/search/'
 		  const res = await fetch(url)
-			if (!res.ok) console.error(res)
 			const data = await res.json()
 			setSearchItems(data.search)
 		})();

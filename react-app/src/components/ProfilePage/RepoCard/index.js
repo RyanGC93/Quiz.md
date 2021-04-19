@@ -25,8 +25,7 @@ const RepoCard = ({ repo }) => {
 		// if(!res.errors) history.push(`/profile/${user.id}`)
 
 	}
-
-	console.log(repo, 'in repo card')
+	if(!repo) return null
 	
 	return (
 		<>

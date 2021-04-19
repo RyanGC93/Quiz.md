@@ -1,24 +1,34 @@
-import React from 'react'
+import React from "react";
 import ReactMarkdown from "react-markdown";
-import styles from './styles.module.css'
-import gfm from 'remark-gfm'
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {atomDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import styles from "./styles.module.css";
+import gfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const renderers = {
-    code: ({language, value}) => {
-      return <SyntaxHighlighter style={atomDark} language={language} children={value} />
-    }
-  }
-
+	code: ({ language, value }) => {
+		return (
+			<SyntaxHighlighter
+				style={atomDark}
+				language={language}
+				children={value}
+			/>
+		);
+	},
+};
 
 const FrontComponent = ({ content, setFlipToggle, flipToggle }) => {
-	console.log(content,'md')
 	return (
 		<div onClick={() => setFlipToggle(!flipToggle)} className={styles.card}>
 			<div className={styles.contentContainer}>
-			<ReactMarkdown className={styles.md} renderers={renderers} allowDangerousHtml={true} source={content} plugins={[gfm]}  >
-				{/* <Speech
+				<ReactMarkdown
+					className={styles.md}
+					renderers={renderers}
+					allowDangerousHtml={true}
+					source={content}
+					plugins={[gfm]}
+				>
+					{/* <Speech
 					style={speechStyle}
 					stop={true}
 					pause={true}
@@ -27,10 +37,10 @@ const FrontComponent = ({ content, setFlipToggle, flipToggle }) => {
 					voice="Google UK English Female"
 				/> */}
 					{content}
-					</ReactMarkdown>
+				</ReactMarkdown>
 			</div>
 		</div>
 	);
 };
 
-export default FrontComponent
+export default FrontComponent;
