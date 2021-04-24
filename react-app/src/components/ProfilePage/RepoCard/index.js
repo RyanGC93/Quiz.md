@@ -31,8 +31,7 @@ const RepoCard = ({ repo }) => {
 		<>
 			<div className={styles.repoWrapper}>
 				<div className={styles.repoContainer}>
-					<div className={styles.repoTitle}>Title</div>
-					<div className={styles.repoName}>{repo.name}</div>
+					<div className={styles.repoTitle}>{repo.name}</div>
 					<div className={styles.btnContainer}>
 						<div className={styles.cardBtn} onClick={studyHandler}>
 							Study

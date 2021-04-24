@@ -10,30 +10,23 @@ import { Modal } from "../../../context/Modal";
 import styles from "./styles.module.css";
 
 const Grid = () => {
-	const [showModal, setShowModal] = useState(false);
-  const dispatch = useDispatch()
-  const user = useSelector(state => state.session.user)
+  const [showModal, setShowModal] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false)
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.session.user);
   const repoList = useSelector((state) => {
     return Object.values(state.repo);
-  })
+  });
 
   
   useEffect(() => {
-    if (!user) return 
-    // // let res= dispatch(getRepos(user.id))
-    // if (!repoList) {
-    //   // let res= dispatch(getRepos(user.id))
-    // }
-    
+    if (!user) return;
+    if(isLoaded) return
     (async () => {
-      const data = await dispatch(getRepos(user.id))
-
-
-   })();
-
-
-    
-  },[])
+      const data = await dispatch(getRepos(user.id));
+      if(data) setIsLoaded(true)
+    })();
+  }, [repoList])
   return (
     <>
       {repoList[0] && (

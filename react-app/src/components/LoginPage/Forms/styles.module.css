@@ -85,6 +85,7 @@ form{
     width: 100%;
     color: #fff;
     display: block;
+    font-size: 3em;
 }
 
 .form{
@@ -125,4 +126,8 @@ color: white
 
 .label:focus{
     border-style:none;
+}
+
+.remember{
+    font-size: 3em
 }

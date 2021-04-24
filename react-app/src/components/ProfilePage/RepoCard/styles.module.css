@@ -4,6 +4,7 @@
     background-color:#e4edea ;
     cursor: pointer;
     padding: 10px 10px 10px 10px;
+    font-size:3em
 }
 .cardBtn:hover{
     cursor: pointer;
