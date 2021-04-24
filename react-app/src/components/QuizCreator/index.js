@@ -64,21 +64,12 @@ const QuizCreator = () => {
 		setRowAnswer('')
 	}
 
-	const answerHandler = (e) => {
-		setRowAnswer(e.target.value)
-	}
 
-	const questionHandler = (e) => {
-		setRowQuestion(e.target.value)
-	}
 	const removeRepo = () => {
 		let res = dispatch(deleteRepo(para.id))
 		if(!res.errors) history.push(`/profile/${user.id}`)
 	}
-
 	if (!user && !repoInfo) return null
-	// if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
-
 	return (
 		<>
 			
