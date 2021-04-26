@@ -34,13 +34,18 @@
 }
 
 .cell{
+    margin-top: 10px;
     white-space: pre-wrap;
     height: 100%;
-    width: 100%;
+    width: 80%;
     resize: none;
-    background-color: rgba(228,237,234,.5);
-    border: none;
+    background-color: white;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-right: none;
     outline:none;
+    font-size: 2.5vw;
     /* overflow-y: scroll; */
     /* font-size:; */
 }

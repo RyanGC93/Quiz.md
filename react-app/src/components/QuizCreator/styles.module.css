@@ -2,6 +2,15 @@
     width: 100%;
     background-color:rgba(228,237,234,.5);
 }
+.quizGrid{
+    padding: 5vw
+}
+
+
+
+.addMore {
+    margin-top: 20vh;
+}
 
 .titleInput{
     border: none;
@@ -26,17 +35,33 @@
 
 }
 .gridTitle{
+    text-decoration: underline;
     width: 100%;
     display:grid;
     grid-template-columns: 40% 60%; 
-    font-size: 4em;
+    font-size: 6em;
+    margin-bottom: 40px;
 }
 
 
 .inputTitle{
     text-align: center;
+    text-decoration: underline;
     width: 100%;
     font-size: 4vh;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-size:6vh;
+    font-size:5vh;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-size:5vh;
+}
+  :-ms-input-placeholder { /* IE 10+ */
+    font-size:5vh;
+}
+  :-moz-placeholder { /* Firefox 18- */
+    font-size:5vh;
 }
 
 .title{
@@ -77,10 +102,12 @@
 
 .cell{
     white-space: pre-wrap;
+    margin: 5px 5px 5px 5px;
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     resize: none;
-    background-color: rgba(228,237,234,.5);
+    background-color: white;
+    font-size: 3vw;
     border: none;
     outline:none;
 

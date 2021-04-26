@@ -37,7 +37,7 @@ const QuizCreator = () => {
 
 	useEffect(() => {
 		if (!para.id || !user) return;
-		if (!repoInfo[0] && !questions[0]) {
+		if (!repoInfo[0] && !questions[0] ) {
 			dispatch(getQuestions(para.id));
 			dispatch(getRepos(user.id));
 		}
@@ -118,11 +118,13 @@ const QuizCreator = () => {
 								}}
 								className={styles.cell}
 								value={rowQuestion}
+								placeholder="Enter New Question"
 							/>
 							<textarea
 								onChange={(e) => setRowAnswer(e.target.value)}
 								className={styles.cell}
 								value={rowAnswer}
+								placeholder="Enter New Answer"
 							/>
 						</div>
 						<div className={styles.addBtnContainer}>
