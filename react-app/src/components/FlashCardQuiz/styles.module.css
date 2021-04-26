@@ -12,7 +12,8 @@
 }
 
 .question,.answer {
-    font-size: 3vw;
+    font-size: 3.5vw;
+    white-space: pre-wrap;
 }
 
 .quizCardContainer{

@@ -8,22 +8,11 @@ import { Carousel } from "react-responsive-carousel";
 import { getQuestions } from "../../store/questions";
 import FlashCard from "./FlashCard";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
-import CardOptions from "./CardOptions"
 
 
 
 
 const FlashCardQuiz = () => {
-
-
-
-
-
-	function textAreaAdjust(element) {
-	  element.style.height = "1px";
-	  element.style.height = (25+element.scrollHeight)+"px";
-	}
-
 	let { repoId } = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
@@ -31,6 +20,7 @@ const FlashCardQuiz = () => {
 		if (!repoId) return;
 		if (!questions[0]) dispatch(getQuestions(repoId));
 	}, [dispatch, repoId]);
+	// if (!questions[0]) return null;
 	// !Section 1 FlashCards
 	return (
 		<>
@@ -42,7 +32,9 @@ const FlashCardQuiz = () => {
 					</Carousel>
 				</div>
 				<div className={styles.quizOptions}>
-					<CardOptions />
+							<BsFillCaretLeftFill/>
+							<BsFillCaretRightFill/>
+
 				</div>
 			</div>	
 			{/* Section 2 Questions Repo  */}
@@ -65,11 +57,11 @@ const FlashCardQuiz = () => {
 				
 					{questions[0] && questions.map((question) =>
 						<>
-						<textarea className={styles.question}>{question.question}
-							</textarea>
-							<textarea className={styles.answer}>
+						<div className={styles.question}>{question.question}
+							</div>
+							<div className={styles.answer}>
 							{question.answer}
-							</textarea>
+							</div>
 					</>
 					)}
 				</div>
