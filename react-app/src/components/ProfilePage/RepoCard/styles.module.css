@@ -4,7 +4,7 @@
     background-color:#e4edea ;
     cursor: pointer;
     padding: 10px 10px 10px 10px;
-    font-size:3em
+    font-size:3vw
 }
 .cardBtn:hover{
     cursor: pointer;
@@ -34,7 +34,6 @@
 }
 
 div.repoTitle{
-
     font-size: 4.5vw;
     text-align: center;
     text-decoration: underline;
