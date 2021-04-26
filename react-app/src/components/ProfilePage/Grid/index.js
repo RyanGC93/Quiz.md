@@ -5,8 +5,6 @@ import RepoCard from '../RepoCard';
 import { IoAddCircle } from "react-icons/io5";
 import CreateRepoModal from "../../CreateRepoModal";
 import { Modal } from "../../../context/Modal";
-
-
 import styles from "./styles.module.css";
 
 const Grid = () => {

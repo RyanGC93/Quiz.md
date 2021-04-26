@@ -28,24 +28,23 @@ const QuizCreator = () => {
 		return Object.values(state.repo).filter((repo) => para.id == repo.repo_id);
 	});
 
-	const autoSaveDisplay = async() => {
-		let saveDiv = document.getElementById('autoSave');
+	const autoSaveDisplay = async () => {
+		let saveDiv = document.getElementById("autoSave");
 		saveDiv.classList.add(`${styles.autoSaveActive}`);
-		await new Promise(resolve => setTimeout(resolve, 2000));
+		await new Promise((resolve) => setTimeout(resolve, 2000));
 		saveDiv.classList.remove(`${styles.autoSaveActive}`);
-	}
-
+	};
 
 	useEffect(() => {
-		if (!para.id || !user ) return;
+		if (!para.id || !user) return;
 		if (!repoInfo[0] && !questions[0]) {
 			dispatch(getQuestions(para.id));
 			dispatch(getRepos(user.id));
 		}
-		if (!repoInfo[0]) return
+		if (!repoInfo[0]) return;
 
-		if(!repoTitle.length) setRepoTitle(repoInfo[0].name);
-	}, [user, para,repoInfo, dispatch]);
+		if (!repoTitle.length) setRepoTitle(repoInfo[0].name);
+	}, [user, para, repoInfo, dispatch]);
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value);
@@ -55,9 +54,9 @@ const QuizCreator = () => {
 		if (timedUpdate) clearTimeout(timedUpdate);
 
 		const updateTime = 3000;
-		let timedSave = setTimeout(function() {
+		let timedSave = setTimeout(function () {
 			// dispatch(editRepo(para.id, repoTitle));
-			autoSaveDisplay()
+			autoSaveDisplay();
 		}, updateTime);
 		setTimedUpdate(() => timedSave);
 	};
@@ -80,49 +79,58 @@ const QuizCreator = () => {
 		<>
 			<div className={styles.quizPage}>
 				<div className={styles.titleContainer}>
-					<div className={styles.title}></div>
-					<input 
+					<div className={styles.title}>Title</div>
+					<input
 						type="text"
 						name="title"
 						onChange={(e) => updateTitle(e)}
 						value={repoTitle}
 						maxLength="14"
 						className={styles.titleInput}
-
 					/>
 					<MdDelete onClick={removeRepo} className={styles.icon} />
 				</div>
 				<div className={styles.quizGrid}>
-					<div id='autoSave' className={styles.autoSave} >Auto Saved</div>
+					<div id="autoSave" className={styles.autoSave}>
+						Auto Saved
+					</div>
 					<div className={styles.gridTitle}>
 						<div>Question</div>
 						<div>Answer</div>
 					</div>
-					
+
 					{questions[0] &&
-						questions.map((question) => <QuestionRow autoSaveDisplay={autoSaveDisplay} key={question.question_id} question={question} />)}
+						questions.map((question) => (
+							<QuestionRow
+								autoSaveDisplay={autoSaveDisplay}
+								key={question.question_id}
+								question={question}
+							/>
+						))}
 
 					{/* To Add Additional Questions */}
-					<div className={styles.inputTitle}>Create More</div>
-					<div className={styles.inputRow}>
-						<textarea
-							onChange={(e) => {
-								setRowQuestion(e.target.value);
-							}}
-							className={styles.cell}
-							value={rowQuestion}
-						/>
-						<textarea
-							onChange={(e) => setRowAnswer(e.target.value)}
-							className={styles.cell}
-							value={rowAnswer}
-						/>
-					</div>
-					<div className={styles.addBtnContainer}>
-						<IoAddCircle
-							className={styles.addIcon}
-							onClick={addQuestionHandler}
-						/>
+					<div className={styles.addMore}>
+						<div className={styles.inputTitle}>Create More</div>
+						<div className={styles.inputRow}>
+							<textarea
+								onChange={(e) => {
+									setRowQuestion(e.target.value);
+								}}
+								className={styles.cell}
+								value={rowQuestion}
+							/>
+							<textarea
+								onChange={(e) => setRowAnswer(e.target.value)}
+								className={styles.cell}
+								value={rowAnswer}
+							/>
+						</div>
+						<div className={styles.addBtnContainer}>
+							<IoAddCircle
+								className={styles.addIcon}
+								onClick={addQuestionHandler}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
