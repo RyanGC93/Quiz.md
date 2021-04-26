@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.module'
+import styles from './styles.module.css'
 
 const CardOptions = () => {
 
