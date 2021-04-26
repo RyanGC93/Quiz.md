@@ -77,7 +77,7 @@ const QuizCreator = () => {
 			<div className={styles.quizPage}>
 				<div className={styles.titleContainer}>
 					<div className={styles.title}></div>
-					<input
+					<input 
 						type="text"
 						name="title"
 						onChange={(e) => updateTitle(e)}
@@ -86,6 +86,10 @@ const QuizCreator = () => {
 					<MdDelete onClick={removeRepo} className={styles.icon} />
 				</div>
 				<div className={styles.quizGrid}>
+					<div className={styles.gridTitle}>
+						<div>Question</div>
+						<div>Answer</div>
+					</div>
 					
 					{questions[0] &&
 						questions.map((question) => <QuestionRow question={question} />)}

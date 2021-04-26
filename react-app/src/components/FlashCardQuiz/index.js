@@ -20,7 +20,6 @@ const FlashCardQuiz = () => {
 		if (!repoId) return;
 		if (!questions[0]) dispatch(getQuestions(repoId));
 	}, [dispatch, repoId]);
-	// if (!questions[0]) return null;
 	// !Section 1 FlashCards
 	return (
 		<>
@@ -34,7 +33,6 @@ const FlashCardQuiz = () => {
 				<div className={styles.quizOptions}>
 							<BsFillCaretLeftFill/>
 							<BsFillCaretRightFill/>
-
 				</div>
 			</div>	
 			{/* Section 2 Questions Repo  */}

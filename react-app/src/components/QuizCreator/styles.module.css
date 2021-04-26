@@ -13,6 +13,14 @@
     position: relative;
 
 }
+.gridTitle{
+    width: 100%;
+    display:grid;
+    grid-template-columns: 40% 60%; 
+    font-size: 4em;
+}
+
+
 .inputTitle{
     text-align: center;
     width: 100%;
