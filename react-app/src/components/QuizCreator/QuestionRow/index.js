@@ -64,7 +64,7 @@ const QuestionRow = ({ question }) => {
 						value={rowQuestion}
 						onChange={questionHandler}
 					></textarea>
-										<MdDelete onClick={deleteHandler}  className={styles.icon}/>
+										{/* <MdDelete onClick={deleteHandler}  className={styles.icon}/> */}
 
 				</form>
 			</div>

@@ -28,6 +28,17 @@ const QuizCreator = () => {
 		return Object.values(state.repo).filter((repo) => para.id == repo.repo_id);
 	});
 
+	const autoSaveDisplay = async () => {
+		let saveDiv = document.getElementById('autoSave');
+		console.log('xsfsdfsd')
+		saveDiv.classList.add(`${styles.autoSaveActive}`);
+		await new Promise(resolve => setTimeout(resolve, 1000));
+		console.log('xsfsdfsd')
+
+		// saveDiv.classList.remove(`styles.autoSaveActive`);
+	}
+
+
 	useEffect(() => {
 		if (!para.id || !user ) return;
 		if (!repoInfo[0] && !questions[0]) {
@@ -36,20 +47,20 @@ const QuizCreator = () => {
 		}
 		if (!repoInfo[0]) return
 
-		setRepoTitle(repoInfo[0].name);
+		if(!repoTitle.length) setRepoTitle(repoInfo[0].name);
 	}, [user, para,repoInfo, dispatch]);
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value);
-		console.log(repoTitle);
 		timedDataUpdate();
 	};
 	const timedDataUpdate = () => {
 		if (timedUpdate) clearTimeout(timedUpdate);
 
-		const updateTime = 4000;
+		const updateTime = 3000;
 		let timedSave = setTimeout(function () {
 			dispatch(editRepo(para.id, repoTitle));
+			autoSaveDisplay()
 		}, updateTime);
 		setTimedUpdate(() => timedSave);
 	};
@@ -85,13 +96,14 @@ const QuizCreator = () => {
 					<MdDelete onClick={removeRepo} className={styles.icon} />
 				</div>
 				<div className={styles.quizGrid}>
+					<div id='autoSave' className={styles.autoSave} >Auto Saved</div>
 					<div className={styles.gridTitle}>
 						<div>Question</div>
 						<div>Answer</div>
 					</div>
 					
 					{questions[0] &&
-						questions.map((question) => <QuestionRow question={question} />)}
+						questions.map((question) => <QuestionRow key={question.question_id} question={question} />)}
 
 					{/* To Add Additional Questions */}
 					<div className={styles.inputTitle}>Create More</div>
