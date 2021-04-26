@@ -86,11 +86,11 @@ const QuizCreator = () => {
 					<MdDelete onClick={removeRepo} className={styles.icon} />
 				</div>
 				<div className={styles.quizGrid}>
-					{/* iterate over the array */}
+					
 					{questions[0] &&
 						questions.map((question) => <QuestionRow question={question} />)}
 
-					{/* To add More */}
+					{/* To Add Additional Questions */}
 					<div className={styles.inputTitle}>Create More</div>
 					<div className={styles.inputRow}>
 						<textarea
