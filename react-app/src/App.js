@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginPage from './components/LoginPage'
 import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
 import QuizCreator from "./components/QuizCreator";
 import FlashCardQuiz from "./components/FlashCardQuiz";
 import ProfilePage from "./components/ProfilePage";
@@ -11,7 +10,6 @@ import Footer from "./components/Footer";
 import { restoreUser } from "./store/session";
 import {useDispatch} from 'react-redux'
 
-import User from "./components/User";
 import { authenticate } from "./services/auth";
 import MainPage from "./components/MainPage";
 
@@ -30,7 +28,6 @@ function App() {
       setLoaded(true);
     })();
   }, []);
-
   if (!loaded) {
     return null;
   }
