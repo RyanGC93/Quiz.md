@@ -1,7 +1,19 @@
 .quizPage{
     width: 100%;
     background-color:rgba(228,237,234,.5);
+}
 
+.titleInput{
+    border: none;
+    /* margin-left: 10%; */
+    padding: 15px 0px 15px 0px;
+    border-radius: 25px;
+    background: white;
+    width: 60%;
+    display: block;
+    text-align: center;
+    outline-style: none;
+    color:black;
 }
 
 .titleContainer{

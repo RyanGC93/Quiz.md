@@ -1,5 +1,5 @@
 .inputRow{
-    height: 10vh; 
+    max-height: 30vh; 
     width: 100%;
     display:grid;
     grid-template-columns: 40% 60%;  

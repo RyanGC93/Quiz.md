@@ -35,7 +35,7 @@ const CreateRepoModal = ({setShowModal}) => {
 					onChange={updateTitle}
 					value={title}
 					required={true}
-					maxLength="16"
+					maxLength="14"
                 ></input>
 				{title.length > 0 && <IoAddCircle className={styles.icon} onClick={addNewRepo} />
 				}

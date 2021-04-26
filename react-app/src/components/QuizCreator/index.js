@@ -29,18 +29,15 @@ const QuizCreator = () => {
 	});
 
 	useEffect(() => {
-		if (!para.id) return;
-		if (!user) return;
-		if (!repoInfo) return;
-		// if(repoInfo && user.id !== repoInfo.owner_id) history.push(`/profile/${user.id}`)
-		console.log(repoInfo);
-		if (repoInfo[0]) setRepoTitle(repoInfo[0].name);
-		if (repoInfo[0] && questions) return;
-		if (para !== 0) {
+		if (!para.id || !user ) return;
+		if (!repoInfo[0] && !questions[0]) {
 			dispatch(getQuestions(para.id));
 			dispatch(getRepos(user.id));
 		}
-	}, [user, para, dispatch]);
+		if (!repoInfo[0]) return
+
+		setRepoTitle(repoInfo[0].name);
+	}, [user, para,repoInfo, dispatch]);
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value);
@@ -70,10 +67,9 @@ const QuizCreator = () => {
 		if (!res.errors) history.push(`/profile/${user.id}`);
 	};
 
-	if (!user && !repoInfo) return null;
+	if (!user && !repoInfo && !repoTitle.length) return null;
 	return (
 		<>
-			{!repoInfo && null}
 			<div className={styles.quizPage}>
 				<div className={styles.titleContainer}>
 					<div className={styles.title}></div>
@@ -82,6 +78,9 @@ const QuizCreator = () => {
 						name="title"
 						onChange={(e) => updateTitle(e)}
 						value={repoTitle}
+						maxLength="14"
+						className={styles.titleInput}
+
 					/>
 					<MdDelete onClick={removeRepo} className={styles.icon} />
 				</div>
