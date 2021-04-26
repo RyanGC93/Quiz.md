@@ -7,7 +7,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** RyanGC93, Sherwood-Group, twitter_handle, ryangconk@gmail.com, project_title, This a clone of Instagram that is built with 
+*** RyanGC93, InterviewMaster, twitter_handle, ryangconk@gmail.com, project_title, This a clone of Instagram that is built with 
 -->
 
 
@@ -31,20 +31,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/RyanGC93/Sherwood-Group">
+  <a href="https://github.com/RyanGC93/InterviewMaster">
     <img src="https://i.imgur.com/JoipYSm.png?1" alt="Logo" width="700" height="80">
   </a>
 
-  <h3 align="center">Instantaneous Gramme</h3>
+  <h3 align="center">Quiz.md</h3>
   <p align="center">
-    A clone of Instagram that is built with a React/Redux Frontend and a Flask Backend
+    A learning site built upon a Flask Backend and React/Redux frontend that allows software engineers to study various topics using a markdown template
     <br />
-    <a href="https://github.com/TolulopeVerissimo/InstantaneousGramme/wiki"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/RyanGC93/InterviewMaster/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://instantaneous-gramme.herokuapp.com">View Demo</a>
     ·
-    <a href="https://github.com/TolulopeVerissimo/InstantaneousGramme/issues">Report Bug</a>
+    <a href="https://github.com/RyanGC93/InterviewMaster/issues">Report Bug</a>
     ·
   </p>
 </p>
@@ -116,14 +116,14 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the InstantaneousGramme
    ```sh
-   git clone https://github.com/TolulopeVerissimo/InstantaneousGramme
+   git clone https://github.com/RyanGC93/InterviewMaster
    ```
 
 2. Backend Installation
-- Follow Instructions for Backend [Instructions](https://github.com/TolulopeVerissimo/InstantaneousGramme/blob/readme/README_BACKEND.md)
+- Follow Instructions for Backend [Instructions](https://github.com/RyanGC93/InterviewMaster/blob/readme/README_BACKEND.md)
 
 3. Frontend Installation
-- Follow Instructions for Frontend [Instructions](https://github.com/TolulopeVerissimo/InstantaneousGramme/blob/readme/README_FRONTEND.md)
+- Follow Instructions for Frontend [Instructions](https://github.com/RyanGC93/InterviewMaster/blob/readme/README_FRONTEND.md)
 
 
 
@@ -219,7 +219,7 @@ export async function uploadFile(file, s3Data, url){
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/TolulopeVerissimo/InstantaneousGramme/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/RyanGC93/InterviewMaster/issues) for a list of proposed features (and known issues).
 
 
 
@@ -236,16 +236,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Ryan Conk- [Github](https://github.com/RyanGC93) - ryangconk@gmail.com
 
-Ryan Maloney- [Github](https://github.com/r-maloney) - ryangconk@gmail.com
-
-Lu Verissimo- [Github](https://github.com/TolulopeVerissimo) - ryangconk@gmail.com
-
-Jon Werner- [Github](https://github.com/jon-wehner) - ryangconk@gmail.com
-
-Project Link: [https://github.com/TolulopeVerissimo/InstantaneousGramme](https://github.com/TolulopeVerissimo/InstantaneousGramme)
-
-
-
 <!-- ACKNOWLEDGEMENTS -->
 
 
@@ -255,12 +245,12 @@ Project Link: [https://github.com/TolulopeVerissimo/InstantaneousGramme](https:/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[contributors-url]: https://github.com/TolulopeVerissimo/InstantaneousGramme/graphs/contributors
+[contributors-url]: https://github.com/RyanGC93/InterviewMaster/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[forks-url]: https://github.com/TolulopeVerissimo/InstantaneousGramme/network/members
+[forks-url]: https://github.com/RyanGC93/InterviewMaster/network/members
 [stars-shield]: https://img.shields.io/github/stars/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[stars-url]: https://github.com/TolulopeVerissimo/InstantaneousGramme/stargazers
+[stars-url]: https://github.com/RyanGC93/InterviewMaster/stargazers
 [issues-shield]: https://img.shields.io/github/issues/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[issues-url]: https://github.com/TolulopeVerissimo/InstantaneousGramme/issues
+[issues-url]: https://github.com/RyanGC93/InterviewMaster/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/TolulopeVerissimo
