@@ -94,7 +94,8 @@
 }
 
 .autoSave {
-    visibility:hidden
+    visibility:hidden;
+    font-size: 4em;
 }
 
 .autoSaveActive {

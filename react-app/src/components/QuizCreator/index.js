@@ -28,14 +28,11 @@ const QuizCreator = () => {
 		return Object.values(state.repo).filter((repo) => para.id == repo.repo_id);
 	});
 
-	const autoSaveDisplay = async () => {
+	const autoSaveDisplay = async() => {
 		let saveDiv = document.getElementById('autoSave');
-		console.log('xsfsdfsd')
 		saveDiv.classList.add(`${styles.autoSaveActive}`);
-		await new Promise(resolve => setTimeout(resolve, 1000));
-		console.log('xsfsdfsd')
-
-		// saveDiv.classList.remove(`styles.autoSaveActive`);
+		await new Promise(resolve => setTimeout(resolve, 2000));
+		saveDiv.classList.remove(`${styles.autoSaveActive}`);
 	}
 
 
@@ -58,8 +55,8 @@ const QuizCreator = () => {
 		if (timedUpdate) clearTimeout(timedUpdate);
 
 		const updateTime = 3000;
-		let timedSave = setTimeout(function () {
-			dispatch(editRepo(para.id, repoTitle));
+		let timedSave = setTimeout(function() {
+			// dispatch(editRepo(para.id, repoTitle));
 			autoSaveDisplay()
 		}, updateTime);
 		setTimedUpdate(() => timedSave);
@@ -103,7 +100,7 @@ const QuizCreator = () => {
 					</div>
 					
 					{questions[0] &&
-						questions.map((question) => <QuestionRow key={question.question_id} question={question} />)}
+						questions.map((question) => <QuestionRow autoSaveDisplay={autoSaveDisplay} key={question.question_id} question={question} />)}
 
 					{/* To Add Additional Questions */}
 					<div className={styles.inputTitle}>Create More</div>

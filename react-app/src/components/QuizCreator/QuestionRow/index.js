@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { MdDelete} from "react-icons/md";
 
 
-const QuestionRow = ({ question }) => {
+const QuestionRow = ({ question,autoSaveDisplay }) => {
 	const dispatch = useDispatch();
 	const [rowQuestion, setRowQuestion] = useState("");
 	const [rowAnswer, setRowAnswer] = useState("");
@@ -23,6 +23,7 @@ const QuestionRow = ({ question }) => {
 		const updateTime = 4000;
 		let timedSave =setTimeout(function(){
 			updateHandler()
+			autoSaveDisplay()
 		}, updateTime);
 		setTimedUpdate(()=>timedSave)
 
