@@ -8,6 +8,7 @@ import { Carousel } from "react-responsive-carousel";
 import { getQuestions } from "../../store/questions";
 import FlashCard from "./FlashCard";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import CardOptions from "./CardOptions"
 
 
 
@@ -30,7 +31,6 @@ const FlashCardQuiz = () => {
 		if (!repoId) return;
 		if (!questions[0]) dispatch(getQuestions(repoId));
 	}, [dispatch, repoId]);
-	// if (!questions[0]) return null;
 	// !Section 1 FlashCards
 	return (
 		<>
@@ -42,9 +42,7 @@ const FlashCardQuiz = () => {
 					</Carousel>
 				</div>
 				<div className={styles.quizOptions}>
-							<BsFillCaretLeftFill/>
-							<BsFillCaretRightFill/>
-
+					<CardOptions />
 				</div>
 			</div>	
 			{/* Section 2 Questions Repo  */}

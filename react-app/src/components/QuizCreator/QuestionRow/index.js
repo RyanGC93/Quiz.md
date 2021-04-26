@@ -3,14 +3,13 @@ import styles from "./styles.module.css";
 import { deleteQuestion } from "../../../store/questions";
 import { editQuestion } from "../../../store/questions";
 import { useDispatch } from "react-redux";
-import { MdDelete} from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
-
-const QuestionRow = ({ question }) => {
+const QuestionRow = ({ question, autoSaveDisplay }) => {
 	const dispatch = useDispatch();
 	const [rowQuestion, setRowQuestion] = useState("");
 	const [rowAnswer, setRowAnswer] = useState("");
-	const [timedUpdate,setTimedUpdate] = useState(null)
+	const [timedUpdate, setTimedUpdate] = useState(null);
 
 	useEffect(() => {
 		setRowQuestion(question.question);
@@ -18,30 +17,30 @@ const QuestionRow = ({ question }) => {
 	}, []);
 
 	const timedDataUpdate = () => {
-		if(timedUpdate) clearTimeout(timedUpdate)
-		
-		const updateTime = 4000;
-		let timedSave =setTimeout(function(){
-			updateHandler()
-		}, updateTime);
-		setTimedUpdate(()=>timedSave)
+		if (timedUpdate) clearTimeout(timedUpdate);
 
-	}
+		const updateTime = 4000;
+		let timedSave = setTimeout(function () {
+			updateHandler();
+			autoSaveDisplay();
+		}, updateTime);
+		setTimedUpdate(() => timedSave);
+	};
 
 	const answerHandler = (e) => {
 		setRowAnswer(e.target.value);
-		timedDataUpdate()
+		timedDataUpdate();
 	};
 	const questionHandler = (e) => {
 		setRowQuestion(e.target.value);
-		timedDataUpdate()
+		timedDataUpdate();
 	};
 	const updateHandler = (e) => {
 		let id = question.question_id;
 		dispatch(editQuestion(id, rowQuestion, rowAnswer));
 	};
 	const deleteHandler = (e) => {
-		if(timedUpdate) clearTimeout(timedUpdate)
+		if (timedUpdate) clearTimeout(timedUpdate);
 		let id = question.question_id;
 		dispatch(deleteQuestion(id));
 	};
@@ -64,8 +63,7 @@ const QuestionRow = ({ question }) => {
 						value={rowQuestion}
 						onChange={questionHandler}
 					></textarea>
-										<MdDelete onClick={deleteHandler}  className={styles.icon}/>
-
+					<MdDelete onClick={deleteHandler} className={styles.icon} />
 				</form>
 			</div>
 		</>

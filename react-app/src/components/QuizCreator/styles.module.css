@@ -1,11 +1,23 @@
 .quizPage{
     width: 100%;
     background-color:rgba(228,237,234,.5);
+}
 
+.titleInput{
+    border: none;
+    /* margin-left: 10%; */
+    padding: 15px 0px 15px 0px;
+    border-radius: 25px;
+    background: white;
+    width: 40%;
+    display: block;
+    text-align: center;
+    outline-style: none;
+    color:black;
 }
 
 .titleContainer{
-    margin-top: 100px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +25,14 @@
     position: relative;
 
 }
+.gridTitle{
+    width: 100%;
+    display:grid;
+    grid-template-columns: 40% 60%; 
+    font-size: 4em;
+}
+
+
 .inputTitle{
     text-align: center;
     width: 100%;
@@ -44,12 +64,11 @@
 .icon:hover{
     transform: scale(1.3);
     fill: rgba(128,0,0,1)
-    
 }
 
-
 .inputRow{
-    height: 10vh; 
+    max-height: 20vh; 
+    height: 20vh;
     width: 100%;
     display:grid;
     grid-template-columns: 40% 60%;  
@@ -72,4 +91,13 @@
     height: 80px;
     width: 80px;
     cursor: pointer;
+}
+
+.autoSave {
+    visibility:hidden;
+    font-size: 4em;
+}
+
+.autoSaveActive {
+    visibility:visible
 }
