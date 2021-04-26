@@ -10,6 +10,11 @@
     font-size: 5vh;
     text-align: center;
 }
+
+.question,.answer {
+    font-size: 3vw;
+}
+
 .quizCardContainer{
     /* ! set all containers heights */
         position: absolute;

@@ -13,6 +13,16 @@ import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 
 
 const FlashCardQuiz = () => {
+
+
+
+
+
+	function textAreaAdjust(element) {
+	  element.style.height = "1px";
+	  element.style.height = (25+element.scrollHeight)+"px";
+	}
+
 	let { repoId } = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
@@ -57,11 +67,11 @@ const FlashCardQuiz = () => {
 				
 					{questions[0] && questions.map((question) =>
 						<>
-						<div>{question.question}
-							</div>
-							<div>
+						<textarea className={styles.question}>{question.question}
+							</textarea>
+							<textarea className={styles.answer}>
 							{question.answer}
-							</div>
+							</textarea>
 					</>
 					)}
 				</div>
