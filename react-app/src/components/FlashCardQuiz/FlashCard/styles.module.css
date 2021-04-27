@@ -11,7 +11,7 @@
     align-items: center;
     padding: 3vw;
     white-space: pre-wrap;
-    font-size: 4.9vw;
+    font-size: 24px;
     /* overflow-y: scroll; */
 }
 
@@ -23,7 +23,7 @@
     overflow-x: hidden !important;
 
 }
-.contentContainer * {
+.contentContainer code * {
     line-height: 1em !important;
 }
 

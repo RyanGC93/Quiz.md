@@ -37,10 +37,10 @@ const QuizCreator = () => {
 
 	useEffect(() => {
 		if (!para.id || !user) return;
-		if (!repoInfo[0] && !questions[0] ) {
+		// if (!repoInfo[0] ) {
 			dispatch(getQuestions(para.id));
 			dispatch(getRepos(user.id));
-		}
+		// }
 		if (!repoInfo[0]) return;
 		setRepoTitle(repoInfo[0].name)
 		// if (!repoTitle.length) setRepoTitle(repoInfo[0].name);
