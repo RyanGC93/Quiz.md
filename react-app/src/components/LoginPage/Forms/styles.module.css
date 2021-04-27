@@ -86,7 +86,7 @@ form{
     width: 100%;
     color: #fff;
     display: block;
-    font-size: 3em;
+    font-size: 4vh;
 }
 
 .form{
@@ -130,5 +130,5 @@ color: white
 }
 
 .remember{
-    font-size: 3em
+    font-size: 4vh
 }
