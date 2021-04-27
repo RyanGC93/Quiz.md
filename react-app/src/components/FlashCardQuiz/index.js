@@ -18,7 +18,7 @@ const FlashCardQuiz = () => {
 	const questions = useSelector((state) => Object.values(state.questions));
 	useEffect(() => {
 		if (!repoId) return;
-		if (!questions[0]) dispatch(getQuestions(repoId));
+		dispatch(getQuestions(repoId));
 	}, [dispatch, repoId]);
 	// if (!questions[0]) return null;
 	// !Section 1 FlashCards
