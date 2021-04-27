@@ -28,7 +28,7 @@ export default function () {
 				</a>
         <FaAngellist
 					className={styles.professionalFa}
-					onClick={() => (window.location.href = "https://github.com/RyanGC93")}
+					onClick={() => (window.location.href = "https://angel.co/u/ryan-conk")}
 				/>
 			</div>
 		</div>
