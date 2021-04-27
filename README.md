@@ -32,7 +32,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/RyanGC93/InterviewMaster">
-    <img src="https://i.imgur.com/JoipYSm.png?1" alt="Logo" width="700" height="80">
+    <img src="https://i.imgur.com/JbX5XyW.png" alt="Logo" width="300" height="100">
   </a>
 
   <h3 align="center">Quiz.md</h3>

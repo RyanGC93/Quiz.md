@@ -42,9 +42,9 @@ const QuizCreator = () => {
 			dispatch(getRepos(user.id));
 		}
 		if (!repoInfo[0]) return;
-
-		if (!repoTitle.length) setRepoTitle(repoInfo[0].name);
-	}, [user, para, repoInfo, dispatch]);
+		setRepoTitle(repoInfo[0].name)
+		// if (!repoTitle.length) setRepoTitle(repoInfo[0].name);
+	}, [user, para, dispatch]);
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value);
@@ -55,7 +55,7 @@ const QuizCreator = () => {
 
 		const updateTime = 3000;
 		let timedSave = setTimeout(function () {
-			// dispatch(editRepo(para.id, repoTitle));
+			dispatch(editRepo(para.id, repoTitle));
 			autoSaveDisplay();
 		}, updateTime);
 		setTimedUpdate(() => timedSave);
