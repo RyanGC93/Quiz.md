@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import {
 	BsFillCaretLeftFill,
@@ -9,19 +9,26 @@ import {
 import { MdFlip } from "react-icons/md";
 
 const CardOptions = ({ setFlipToggle, flipToggle }) => {
-    
+	const [isAutoPlay, setIsAutoPlay] = useState(false);
 
-    const next = () => {
-        let next = document.querySelector('.control-next');
-        next.click()
-    }
-    const prev = () => {
-        let prev = document.querySelector('.control-prev');
-        prev.click()
-    }
+	const next = () => {
+		let next = document.querySelector(".control-next");
+		next.click();
+	};
+	const prev = () => {
+		let prev = document.querySelector(".control-prev");
+		prev.click();
+	};
 
-
-
+	const play = async () => {
+		setIsAutoPlay(!isAutoPlay);
+		while (isAutoPlay) {
+            // await new Promise((resolve) => setTimeout(resolve, 10000));
+			await setFlipToggle(!flipToggle);
+			await new Promise((resolve) => setTimeout(resolve, 10000));
+			await next();
+		}
+	};
 
 	return (
 		<>
@@ -39,20 +46,16 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 					<div className={styles.cellTitle}>Next</div>
 					<BsFillCaretRightFill />
 				</div>
-				<div onClick={() =>setFlipToggle(!flipToggle) } className={styles.cell}>
-                    <div  className={styles.cellTitle}>Flip</div>
+				<div onClick={() => setFlipToggle(!flipToggle)} className={styles.cell}>
+					<div className={styles.cellTitle}>Flip</div>
 					<MdFlip />
 				</div>
 
-				<div className={styles.cell}>
+				<div onClick={play} className={styles.cell}>
 					<div className={styles.cellTitle}>Play</div>
 					<BsFillPlayFill />
 				</div>
 			</div>
-			{/* 
-            show keyboard options
-            
-            */}
 		</>
 	);
 };
