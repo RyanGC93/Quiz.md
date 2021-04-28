@@ -4,8 +4,7 @@ import BackComponent from "./BackComponent";
 import FrontComponent from "./FrontComponent";
 import styles from './styles.module.css'
 
-const FlashCard = ({question}) => {
-    const [flipToggle, setFlipToggle] = useState(false);
+const FlashCard = ({question, flipToggle, setFlipToggle}) => {
 	return (
 		<ReactCardFlip
 			containerStyle={{ height: "100%" }}
@@ -15,7 +14,7 @@ const FlashCard = ({question}) => {
 			flipDirection="vertical"
 		>
             <FrontComponent flipToggle={flipToggle} setFlipToggle={setFlipToggle} content={question.answer}/>
-			<BackComponent flipToggle={flipToggle}setFlipToggle={setFlipToggle}  content={question.question} />
+			<BackComponent flipToggle={flipToggle} setFlipToggle={setFlipToggle}  content={question.question} />
 		</ReactCardFlip>
 	);
 };

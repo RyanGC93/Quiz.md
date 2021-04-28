@@ -1,0 +1,23 @@
+.optionsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+    width: 650px;
+    border: none;
+    /* margin-left: 10%; */
+    padding: 10px 0px 10px 0px;
+    border-radius: 25px;
+    background: #6a7c8b;
+    text-align: center;
+    outline-style: none;
+    color: #fff;
+}
+.cell:hover svg {
+    fill: black;
+    transform: scale(1.5);
+}
+
+.cell {
+    cursor: pointer;
+}
