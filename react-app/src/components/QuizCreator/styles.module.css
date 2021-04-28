@@ -39,7 +39,7 @@
     width: 100%;
     display:grid;
     grid-template-columns: 40% 60%; 
-    font-size: 6em;
+    font-size: 8vw;
     margin-bottom: 40px;
 }
 
