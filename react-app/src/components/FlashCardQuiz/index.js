@@ -25,13 +25,13 @@ const FlashCardQuiz = () => {
 		<>
 			<div className={styles.quizPageContainer}>
 				<div className={styles.quizCardContainer}>
-					<Carousel showIndicators={false}>
+					<Carousel infiniteLoop={true} showIndicators={false}>
 						{questions[0] &&
 							questions.map((question) => <FlashCard flipToggle={flipToggle} setFlipToggle={setFlipToggle} question={question} />)}
 					</Carousel>
 				</div>
 				<div className={styles.quizOptions}>
-				<CardOptions />
+				<CardOptions flipToggle={flipToggle} setFlipToggle={setFlipToggle}  />
 					<BsFillCaretLeftFill />
 					<BsFillCaretRightFill />
 				</div>
