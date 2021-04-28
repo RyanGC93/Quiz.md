@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import CardOptions from "./CardOptions"
 import "./carousel.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,10 +10,8 @@ import { getQuestions } from "../../store/questions";
 import FlashCard from "./FlashCard";
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 
-
-
-
 const FlashCardQuiz = () => {
+	const [flipToggle, setFlipToggle] = useState(false);
 	let { repoId } = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
@@ -28,17 +27,17 @@ const FlashCardQuiz = () => {
 				<div className={styles.quizCardContainer}>
 					<Carousel showIndicators={false}>
 						{questions[0] &&
-							questions.map((question) => <FlashCard question={question} />)}
+							questions.map((question) => <FlashCard flipToggle={flipToggle} setFlipToggle={setFlipToggle} question={question} />)}
 					</Carousel>
 				</div>
 				<div className={styles.quizOptions}>
-							<BsFillCaretLeftFill/>
-							<BsFillCaretRightFill/>
-
+				<CardOptions />
+					<BsFillCaretLeftFill />
+					<BsFillCaretRightFill />
 				</div>
-			</div>	
+			</div>
 			{/* Section 2 Questions Repo  */}
-			<div >
+			<div>
 				{/* <div className={styles.infoSpan}>
 					<div className={styles.listOwner}>
 						<div className={styles.ownerName}>;'' Owner bane</div>
@@ -54,16 +53,14 @@ const FlashCardQuiz = () => {
 				<div className={styles.gridContainer}>
 					<div className={styles.gridTitle}>Question</div>
 					<div className={styles.gridTitle}>Answer</div>
-				
-					{questions[0] && questions.map((question) =>
-						<>
-						<div className={styles.question}>{question.question}
-							</div>
-							<div className={styles.answer}>
-							{question.answer}
-							</div>
-					</>
-					)}
+
+					{questions[0] &&
+						questions.map((question) => (
+							<>
+								<div className={styles.question}>{question.question}</div>
+								<div className={styles.answer}>{question.answer}</div>
+							</>
+						))}
 				</div>
 			</div>
 		</>
