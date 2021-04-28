@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![product-screenshot](https://i.imgur.com/n3vzM1f.png)
+![product-screenshot](https://i.imgur.com/2Bm1Haq.png)
 
 
 
@@ -127,51 +127,28 @@ This is an example of how to list things you need to use the software and how to
 
 
 
-## Project Challenges
-<details>
-  <summary>Click to expand!</summary>
-  
-  
-  ## Heading
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
-</details>
+
 
 ## Feature Highlights
 
-### (1) Uploading Images From the Frontend Using AWS buckets
+### (1) Auto Saving Changes While Editing 
 <details>
   <summary>Click to expand!</summary>
   
   ### Summary
-  TODO >>>>> ADD Summary
+  An added Feature that is implemented Quizmd is an autosave feature on editing the Questions Repo. This was implemented to allow for a simpler UI and user experience. This was implemented by using a timeout. If any values were changed an onchange called a the following code snippet. If more changes were made within three second the timeout was reset by storing the callback in the local react state. If after 3 seconds of no additonal onchange events the timeout dispatches a redux thunk that updates the changes by updating the resources on the server side
   ### Code Snippet
   ```
-  export async function getSignedRequest(photo){
-  let res = await fetch('/sign_s3/?file_name='+photo.name+"&file_type="+photo.type);
-  if (res.ok) {
-    res= await res.json()
-    uploadFile(photo, res.data, res.url);
-  } else {
-    console.error('could not get url')
-  }
-  return res.data.url + res.data.fields.key
-}
+	const timedDataUpdate = () => {
+		if (timedUpdate) clearTimeout(timedUpdate);
 
-export async function uploadFile(file, s3Data, url){
-  const data = new FormData()
-  for(const key in s3Data.fields){
-    data.append(key, s3Data.fields[key]);
-  }
-  data.append('file', file)
-  const res = await fetch(url, {
-    method:'POST',
-    body: data
-  })
-  return res
-}
+		const updateTime = 3000;
+		let timedSave = setTimeout(function () {
+			dispatch(editRepo(para.id, repoTitle));
+			autoSaveDisplay();
+		}, updateTime);
+		setTimedUpdate(() => timedSave);
+	};
   ```
 </details>
 
