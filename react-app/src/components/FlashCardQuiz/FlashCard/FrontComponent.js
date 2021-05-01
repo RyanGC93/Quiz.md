@@ -17,10 +17,10 @@ const renderers = {
 	},
 };
 
-const FrontComponent = ({ content, setFlipToggle, flipToggle }) => {
+const FrontComponent = ({ content }) => {
 	return (
-		<div onClick={() => setFlipToggle(!flipToggle)} className={styles.card}>
-			<div className={styles.contentContainer}>
+		<div  className={styles.card}>
+			<div className={`${styles.contentContainer} ${styles.frontFlashCard}`}>
 				<ReactMarkdown
 					className={styles.md}
 					renderers={renderers}

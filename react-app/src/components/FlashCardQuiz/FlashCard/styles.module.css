@@ -44,3 +44,8 @@ div.contentContainer code {
    white-space: pre-wrap !important;
 }
 
+
+.frontFlashCard {
+    font-size: 8vh;
+    text-align: center;
+}

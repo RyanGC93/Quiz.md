@@ -15,13 +15,20 @@ const FlashCardQuiz = () => {
 	let { repoId } = useParams();
 	const dispatch = useDispatch();
 	const questions = useSelector((state) => Object.values(state.questions));
+
+	const nextSlideHandler = () => {
+		setFlipToggle(false)
+	}
+	const trial = () => {
+		setFlipToggle(!flipToggle)
+		// return
+	}
 	useEffect(() => {
 		if (!repoId) return;
 		(async() => {
 			const response = await fetch(`/api/repo/info/${repoId}`);
 			  if (response.ok) {
 			    let res = await response.json();
-				  console.log(res, 'repo')
 				  setRepoInfo(res)
 			  }
 		  })();
@@ -34,12 +41,15 @@ const FlashCardQuiz = () => {
 			<div className={styles.quizPageContainer}>
 				<div className={styles.quizCardContainer}>
 					<Carousel
+						autoPlay={false}
+						onClickItem={trial} 
+						onChange={nextSlideHandler}
 						infiniteLoop={true}
 						showIndicators={false}
 						showThumbs={false}
 					>
 						{questions[0] &&
-							questions.map((question) => <FlashCard flipToggle={flipToggle} setFlipToggle={setFlipToggle} question={question} key={question.question_id} />)}
+							questions.map((question) => <FlashCard flipToggle={flipToggle} question={question} key={question.question_id} />)}
 					</Carousel>
 				</div>
 				<div className={styles.quizOptions}>

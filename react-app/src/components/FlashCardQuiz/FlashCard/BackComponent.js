@@ -11,10 +11,10 @@ const renderers = {
     }
   }
 
-const BackComponent = ({content,flipToggle,setFlipToggle}) => {
+const BackComponent = ({content}) => {
 	
     return (
-    <div onClick={() =>setFlipToggle(!flipToggle)} className={styles.card }>
+    <div className={styles.card }>
 	<div className={styles.contentContainer}>
 			<ReactMarkdown renderers={renderers} allowDangerousHtml={true} source={content} plugins={[gfm]}  >
 				{/* <Speech
