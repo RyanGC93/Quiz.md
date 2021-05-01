@@ -67,10 +67,12 @@ const FlashCardQuiz = () => {
 
 					{questions[0] &&
 						questions.map((question) => (
-							<div key={question.question_id}>
+							<>
+							{/* <div key={question.question_id}> */}
 								<div className={styles.question}>{question.question}</div>
 								<div className={styles.answer}>{question.answer}</div>
-							</div>
+						{/* </div> */}
+								</>
 						))}
 				</div>
 			</div>

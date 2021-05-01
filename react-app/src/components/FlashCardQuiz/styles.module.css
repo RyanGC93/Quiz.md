@@ -23,7 +23,6 @@
         padding: 50px;
         left: 50%;
         transform: translate(-50%, -50%);
-        /* background-color:green; */
         height: 50vw;
         width: 70vw;
 
@@ -48,8 +47,8 @@
 }
 .contentContainer {
     margin: 15px 15px 15px 15px;
-    background-color: yellow;
     height:100%;
+
 }
 
 /* Section 2 */
