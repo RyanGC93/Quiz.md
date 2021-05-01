@@ -17,8 +17,7 @@
 
 .input, .signInBtn{
     border:none;
-    /* margin-left: 10%; */
-	padding: 15px 0px 15px 0px;
+	padding: 1.2vh 0px 1.2vh 0px;
 	border-radius:25px;
 	background:rgba(255,255,255,.1);
     width: 100%;
@@ -29,24 +28,21 @@
 
 }
 .signInBtn{
-    position: relative;
     cursor: pointer;
     width: 75%;
     margin-left: 12.5%;
 }
+.signUpBtn{
+   margin-left: 15% 
+}
 .signInBtn:hover{
-    /* background-color:#6a7c8b;
-    outline-style: solid */
+
     transform: scale(1.1);
     border: 3px solid #244a4e
 }
 form{
     margin-left: 10%;
     margin-right: 10%;
-}
-
-.remember{
-    font-weight: bold;
 }
 
 .inputWrap{
@@ -58,35 +54,32 @@ form{
 }
 .options{
     width: 100%;
-    position: absolute;
     bottom:0;
     display: grid;
     grid-template-columns: 50% 50%;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 }
 
 .bottom{
     width: 80%;
-    position: absolute;
     bottom:0;
     margin-bottom: 7px;  
 }
 
 .opts{
     width: 100%;
-    /* position: absolute; */
     bottom:0;
     display: grid;
     grid-template-columns: 50% 50%;
     margin-bottom: 7px;
 }
 .label {
-    padding: 1px 0px 5px 3px;
+    padding: 2px 2px 2px 2px;
     text-align: center;
     width: 100%;
     color: #fff;
     display: block;
-    font-size: 4vh;
+    font-size: 3.5vw;
 }
 
 .form{
@@ -94,17 +87,21 @@ form{
     position: relative;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 color: white;
+font-size: 2.5vw;
 opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-color: white
+.input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: white;
+
+font-size: 2.5vw;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
-color: white
+.input::-ms-input-placeholder { /* Microsoft Edge */
+color: white;
+font-size: 2.5vw;
 }
 
 .group {
@@ -130,5 +127,7 @@ color: white
 }
 
 .remember{
-    font-size: 3.5vw
+    font-size: 3.5vw;
+    font-weight: bold;
 }
+

@@ -23,10 +23,10 @@ export default function () {
 					onClick={() => (window.location.href = "https://github.com/RyanGC93")}
 				/>
 				{/* TODO redirect to email */}
-				<a href="mailto:ryangconk@gmail.com">
-					<SiGmail className={styles.professionalFa}  />
-				</a>
-        <FaAngellist
+					<SiGmail className={styles.professionalFa}
+					onClick={() => (window.open("mailto:ryangconk@gmail.com"))}
+					/>
+        		<FaAngellist
 					className={styles.professionalFa}
 					onClick={() => (window.location.href = "https://angel.co/u/ryan-conk")}
 				/>

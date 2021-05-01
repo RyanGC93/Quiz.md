@@ -54,7 +54,7 @@ export const LoginForm = ({ setAuthenticated }) => {
 				</div>
 				<div className={styles.group}>
 					<label className={styles.label} htmlFor="email">
-						Username or Email
+						Email
 					</label>
 					<input
 						className={styles.input}

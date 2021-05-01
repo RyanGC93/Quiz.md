@@ -52,22 +52,24 @@ const SignUpForm = (authenticated, setAuthenticated) => {
 					required={true}
 				></input>
 			</div>
+			<label className={styles.label}>Password</label>
 			<div className={styles.opts}>
-				<div className={styles.group}>
-					<label className={styles.label}>Password</label>
-					<input
+				<div className={styles.group}>					<input
 						className={styles.input}
+						placeHolder='Password'
 						type="password"
+						label="password"
 						name="password"
 						onChange={(e) => setPassword(e.target.value)}
 						value={password}
 						required={true}
 					></input>
 				</div>
+				
 				<div className={styles.group}>
-					<div className={StyleSheet.inputWrapper}>
-						<label className={styles.label}>Repeat Password</label>
+					<div className={StyleSheet.group}>
 						<input
+							placeHolder='Repeat Password'
 							className={styles.input}
 							type="password"
 							name="repeat_password"
@@ -79,7 +81,7 @@ const SignUpForm = (authenticated, setAuthenticated) => {
 				</div>
 			</div>
 			<div className={styles.bottom}>
-				<input type="submit" className={styles.signInBtn} value="Sign Up" />
+				<input type="submit" className={`${styles.input} ${styles.signUpBtn}`} value="Sign Up" />
 			</div>
 		</form>
 	);
