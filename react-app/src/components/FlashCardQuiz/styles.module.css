@@ -65,10 +65,9 @@
 .infoSpan {
     background-color:yellow;
     background-color:#e4edea ;
-    height: 50%;
-    width: 80%;
+    width: 100%;
     display:grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 50% 50%;
 }
 
 .listTitle {
@@ -109,6 +108,13 @@
 }
 .detailsInfo {    
     background-color:rgba(228,237,234,.5);
+}
+
+.repoTitle{
+    padding: 1vh;
+    width:100%;
+    text-align: center;
+    font-size: 7vh;
 }
 
 @media screen and (min-width: 775px) {
