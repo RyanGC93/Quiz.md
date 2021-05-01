@@ -48,20 +48,20 @@ const QuestionRow = ({ question, autoSaveDisplay }) => {
 	return (
 		<>
 			<div className={styles.inputRow}>
-				{/* Answer Cell */}
-				<form className={styles.form}>
-					<textarea
-						className={styles.cell}
-						value={rowAnswer}
-						onChange={answerHandler}
-					></textarea>
-				</form>
 				{/* question cell */}
 				<form className={styles.form}>
 					<textarea
 						className={styles.cell}
 						value={rowQuestion}
 						onChange={questionHandler}
+					></textarea>
+				</form>
+				{/* Answer Cell */}
+				<form className={styles.form}>
+					<textarea
+						className={styles.cell}
+						value={rowAnswer}
+						onChange={answerHandler}
 					></textarea>
 					<MdDelete onClick={deleteHandler} className={styles.icon} />
 				</form>
