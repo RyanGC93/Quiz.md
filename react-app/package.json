@@ -19,6 +19,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-search-autocomplete": "^5.0.3",
+    "react-slick": "^0.28.1",
     "react-social-icons": "^4.1.0",
     "react-speech": "^1.0.2",
     "react-syntax-highlighter": "^15.4.3",

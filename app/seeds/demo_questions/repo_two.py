@@ -1,120 +1,67 @@
-# First Demo Repo That Holds Markdown Examples
+# Python Examples
 from app.models import db, Questions
-from faker import Faker
-fake = Faker()
 
-example_repo_id = 1
+example_repo_id = 2
 
-
-question_one ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-
-question_two ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-
-question_three ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-question_four ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-question_five='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-question_six ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-question_seven ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-question_eight ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-question_nine ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-question_ten ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-
-
-answer_one ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-
-answer_two ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-
-answer_three ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-answer_four ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-answer_five='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-answer_six ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-answer_seven ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-answer_eight ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-answer_nine ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
-answer_ten ='''```js
-let this = []
-let this = []
-let this = []
-```''' 
+question_one='''```python
+list.append()
+```'''
+question_two='''```python
+list.extend()
+```'''
+question_three='''```python
+list.insert()
+```'''
+question_four='''```python
+list.remove()
+```'''
+question_five='''```python
+list.index()
+```'''
+question_six='''```python
+list.reverse()
+```'''
+question_seven='''```python
+list.sort()
+```'''
+question_eight='''```python
+a.copy(), and why use it? When to use something different?
+```'''
+question_nine='''```python
+list.clear()
+```'''
+question_ten='''```python
+list.count()
+```'''
+question_eleven='''```python
+list.pop()
+```'''
+question_twelve='''```python
+any(object)
+```'''
+question_thirteen='''```python
+all(object)
+```'''
+question_fourteen='''```python
+ascii(list)
+```'''
+answer_one='''Add a single element to the end of a list'''
+answer_two='''Add Elements of a List to Another ListTakes new list as argument'''
+answer_three='''Adds Element to The ListTakes item and index as argument'''
+answer_four='''Removes the first element of a list that matches the input'''
+answer_five='''Gets position of first element of list that matches input'''
+answer_six='''Reverse the elements of the list, in place.'''
+answer_seven='''Sorts element in a list,Takes two params, key and reversekey can be len, otherwise it will just run a-z/ standard'''
+answer_eight='''if a = [1,2,3]And you set:b=aAnd thenb.append(4)b = [1,2,3,4]but unforunately:a=[1,2,3,4]so to avoid this, set b = a likeb = a.copy()It returns a shallow copy. A good alternative is copy.deepcopy() if you want to catch more'''
+answer_nine='''Empties a list'''
+answer_ten='''Returns number of element (passed through as an arg) within a list'''
+answer_eleven='''Removes item from a list at index and returns it'''
+answer_twelve='''Checks if any part of an object is iterable'''
+answer_thirteen='''Checks if all of the object is iterable'''
+answer_fourteen='''Takes in list and returns new list with readable characters.['Python', 'Pythön', 5]->['Python', 'Pyth\xf6n', 5]'''
 
 # ! Markdown Examples
-def seed_example_one_questions():
+def seed_example_two_questions():
     seed_list = [
         Questions( repo_id=example_repo_id, question=question_one, answer=answer_one),
         Questions( repo_id=example_repo_id, question=question_two, answer=answer_two),
@@ -126,10 +73,12 @@ def seed_example_one_questions():
         Questions( repo_id=example_repo_id, question=question_eight, answer=answer_eight),
         Questions( repo_id=example_repo_id, question=question_nine, answer=answer_nine),
         Questions( repo_id=example_repo_id, question=question_ten, answer=answer_ten),
+        Questions( repo_id=example_repo_id, question=question_eleven, answer=answer_eleven),
+        Questions( repo_id=example_repo_id, question=question_twelve, answer=answer_twelve),
+        Questions( repo_id=example_repo_id, question=question_thirteen, answer=answer_thirteen),
+        Questions( repo_id=example_repo_id, question=question_fourteen, answer=answer_fourteen),
     ]
     db.session.add_all(seed_list)
     db.session.commit()
-    seed= Questions( repo_id=fake.random_int(min=1, max=10, step=1), question=question_one, answer=fake.paragraph())
-    db.session.add(seed)
-    db.session.commit()    
+
         

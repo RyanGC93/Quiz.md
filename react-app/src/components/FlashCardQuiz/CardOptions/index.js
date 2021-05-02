@@ -5,11 +5,13 @@ import {
 	BsFillCaretRightFill,
 	BsFillHeartFill,
 	BsFillPlayFill,
+	BsPauseFill,
 } from "react-icons/bs";
 import { MdFlip } from "react-icons/md";
 
 const CardOptions = ({ setFlipToggle, flipToggle }) => {
 	const [isAutoPlay, setIsAutoPlay] = useState(false);
+	const [statusTimeout, setStatusTimeout] = useState(10000)
 
 	const next = () => {
 		let next = document.querySelector(".control-next");
@@ -19,14 +21,30 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 		let prev = document.querySelector(".control-prev");
 		prev.click();
 	};
-
-	const play = async () => {
-		setIsAutoPlay(!isAutoPlay);
-		while (isAutoPlay) {
-            // await new Promise((resolve) => setTimeout(resolve, 10000));
-			await setFlipToggle(!flipToggle);
-			await new Promise((resolve) => setTimeout(resolve, 10000));
+	const autoPlay = () => {
+		let timeout = parseInt((statusTimeout / 2));
+		console.log(timeout);
+			(async () => {
+			if (!flipToggle) {
+				await new Promise((resolve) => setTimeout(resolve, timeout));
+				setFlipToggle(true);
+			}
+			await new Promise((resolve) => setTimeout(resolve, timeout));
 			await next();
+		})();
+		
+	}
+
+
+
+
+	const play = () => {
+		console.log('dfsfd')
+		setIsAutoPlay(!isAutoPlay);
+		if (!isAutoPlay) {
+			
+		} else {
+			// const autoPlayInterval = setInterval(autoPlay,statusTimeout);
 		}
 	};
 
@@ -51,10 +69,24 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 					<MdFlip />
 				</div>
 
-				<div onClick={play} className={styles.cell}>
-					<div className={styles.cellTitle}>Play</div>
-					<BsFillPlayFill />
-				</div>
+					{!isAutoPlay ? (
+						<>
+							<div onClick={() => play()} className={styles.cell}>
+							<div className={styles.cellTitle}>Play</div>
+							<BsFillPlayFill />
+							</div>
+						</>
+					) : (
+						<>
+						<div onClick={() => play()} className={styles.cell}>
+							<div className={styles.cellTitle}>Pause</div>
+								<BsPauseFill />
+								</div>
+						</>
+					)}
+					{/* <div className={styles.cellTitle}>Play</div>
+					<BsFillPlayFill /> */}
+				
 			</div>
 		</>
 	);

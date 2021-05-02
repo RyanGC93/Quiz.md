@@ -1,8 +1,7 @@
-# First Demo Repo That Holds Markdown Examples
+# Markdown Examples
 from app.models import db, Questions
 
-example_repo_id = 2
-
+example_repo_id = 1
 question_one ='''Example of Headers''' 
 
 answer_one ='''# Heading level 1		
