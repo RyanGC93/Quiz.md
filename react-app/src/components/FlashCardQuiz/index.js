@@ -10,11 +10,11 @@ import { getQuestions } from "../../store/questions";
 import FlashCard from "./FlashCard";
 import 'react-slick'
 
-const FlashCardList = ({question}) => {
+const FlashCardList = ({ question, i }) => {
 	return (
 		<>
-			<div className={styles.question}>{question.question}</div>
-			<div className={styles.answer}>{question.answer}</div>
+			<div className={ i%2 ? `${styles.question} ${styles.white}` : `${styles.question}` }>{question.question}</div>
+			<div className={ i%2 ? `${styles.answer} ${styles.white}` : `${styles.answer}` }>{question.answer}</div>
 		</>	
 	)
 }
@@ -99,7 +99,7 @@ const FlashCardQuiz = () => {
 					<div className={styles.gridTitle}>Answer</div>
 
 					{questions[0] && questions.map((question, i) => (
-						<FlashCardList question={question} />	
+						<FlashCardList i={i} id='flashCard'   question={question} />
 						))}
 				</div>
 			</div>
