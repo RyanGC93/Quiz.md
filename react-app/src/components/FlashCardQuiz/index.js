@@ -19,15 +19,12 @@ const FlashCardQuiz = () => {
 	const questions = useSelector((state) => Object.values(state.questions));
 
 	const nextSlideHandler = (currentSlide) => {
-		console.log(currentSlide,itemIndex
-		)
+
 		if(currentSlide !== itemIndex) setItemIndex(itemIndex)
 		setFlipToggle(false);
 	};
 	const trial = (e, items) => {
-		console.log(e,items)
-
-		
+		setFlipToggle(!flipToggle)	
 	};
 	useEffect(() => {
 		if (!repoId &&!itemIndex) return;
