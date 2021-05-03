@@ -34,8 +34,7 @@
 
 .icon:hover{
     transform: scale(1.3);
-    fill: rgba(128,0,0,1)
-    
+    fill: rgba(128,0,0,1) 
 }
 
 .cell{

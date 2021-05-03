@@ -23,6 +23,7 @@
     text-align: center;
     outline-style: none;
     color:black;
+    cursor:default;
 }
 
 .titleContainer{
@@ -35,6 +36,7 @@
 
 }
 .gridTitle{
+    cursor:default;
     text-decoration: underline;
     width: 100%;
     display:grid;
@@ -45,6 +47,7 @@
 
 
 .inputTitle{
+    cursor:default;
     text-align: center;
     text-decoration: underline;
     width: 100%;

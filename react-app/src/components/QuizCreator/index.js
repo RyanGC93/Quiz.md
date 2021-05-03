@@ -41,7 +41,6 @@ const QuizCreator = () => {
 		if (!para.id || !user) return;
 			dispatch(getQuestions(para.id));
 			dispatch(getRepos(user.id));
-		// }
 		if (!repoInfo[0]) return;
 		setRepoTitle(repoInfo[0].name)
 
