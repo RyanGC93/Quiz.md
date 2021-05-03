@@ -17,7 +17,6 @@ seed_commands = AppGroup('seed')
 # Seed With Proper Data
 @seed_commands.command('questions')
 def seed_demo():
-    # seed_users()
     # seed_questions_repo()
     seed_example_one_questions()
     seed_example_two_questions()
