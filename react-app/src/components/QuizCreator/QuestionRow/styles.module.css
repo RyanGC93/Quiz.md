@@ -9,6 +9,9 @@
 .inputRow:hover .icon {
     visibility:visible;
 }
+form.form code {
+    white-space: pre-wrap !important
+}
 
 .form{
     height: 100%;
