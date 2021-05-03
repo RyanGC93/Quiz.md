@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "./styles.module.css";
 import {
 	BsFillCaretLeftFill,
 	BsFillCaretRightFill,
-	BsFillHeartFill,
 	BsFillPlayFill,
 	BsPauseFill,
 } from "react-icons/bs";
@@ -12,7 +11,8 @@ import { MdFlip } from "react-icons/md";
 const CardOptions = ({ setFlipToggle, flipToggle }) => {
 	const [isAutoPlay, setIsAutoPlay] = useState(false);
 	const [statusTimeout, setStatusTimeout] = useState(10000)
-
+	const [intervalFunc,setIntervalFunc] = useState()
+	let autoPlayInterval 
 	const next = () => {
 		let next = document.querySelector(".control-next");
 		next.click();
@@ -23,7 +23,6 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 	};
 	const autoPlay = () => {
 		let timeout = parseInt((statusTimeout / 2));
-		console.log(timeout);
 			(async () => {
 			if (!flipToggle) {
 				await new Promise((resolve) => setTimeout(resolve, timeout));
@@ -32,34 +31,24 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 			await new Promise((resolve) => setTimeout(resolve, timeout));
 			await next();
 		})();
-		
 	}
 
-
-
-
 	const play = () => {
-		console.log('dfsfd')
 		setIsAutoPlay(!isAutoPlay);
 		if (!isAutoPlay) {
-			
+			autoPlayInterval = setInterval(autoPlay, statusTimeout)
+			setIntervalFunc(autoPlayInterval)
 		} else {
-			// const autoPlayInterval = setInterval(autoPlay,statusTimeout);
+			clearInterval(intervalFunc)
 		}
 	};
-
 	return (
 		<>
 			<div className={styles.optionsContainer}>
-				{/* <div className={styles.cell}>
-					<div className={styles.cellTitle}>Like</div>
-					<BsFillHeartFill />
-				</div> */}
 				<div onClick={prev} className={styles.cell}>
 					<div className={styles.cellTitle}>Prev</div>
 					<BsFillCaretLeftFill />
 				</div>
-
 				<div onClick={next} className={styles.cell}>
 					<div className={styles.cellTitle}>Next</div>
 					<BsFillCaretRightFill />
@@ -68,7 +57,6 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 					<div className={styles.cellTitle}>Flip</div>
 					<MdFlip />
 				</div>
-
 					{!isAutoPlay ? (
 						<>
 							<div onClick={() => play()} className={styles.cell}>
@@ -84,9 +72,6 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 								</div>
 						</>
 					)}
-					{/* <div className={styles.cellTitle}>Play</div>
-					<BsFillPlayFill /> */}
-				
 			</div>
 		</>
 	);

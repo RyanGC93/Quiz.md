@@ -49,7 +49,6 @@ const FlashCardQuiz = () => {
 		})();
 		dispatch(getQuestions(repoId));
 	}, [dispatch, repoId,itemIndex,setItemIndex]);
-	console.log(questions)
 	// !Section 1 FlashCards
 	return (
 		<>
@@ -74,9 +73,9 @@ const FlashCardQuiz = () => {
 							))}
 					</Carousel>
 				</div>
-				{/* <div className={styles.quizOptions}>
+				<div className={styles.quizOptions}>
 					<CardOptions flipToggle={flipToggle} setFlipToggle={setFlipToggle} />
-				</div> */}
+				</div>
 			</div>
 			{/* Section 2 Questions Repo  */}
 			<div>
@@ -99,7 +98,7 @@ const FlashCardQuiz = () => {
 					<div className={styles.gridTitle}>Answer</div>
 
 					{questions[0] && questions.map((question, i) => (
-						<FlashCardList i={i} id='flashCard'   question={question} />
+						<FlashCardList key={question.question_id}  i={i} id='flashCard'   question={question} />
 						))}
 				</div>
 			</div>

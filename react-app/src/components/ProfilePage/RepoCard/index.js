@@ -5,15 +5,9 @@ import { deleteRepo } from "../../../store/repo";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 
-
-
-
-
 const RepoCard = ({ repo }) => {
 	const history = useHistory();
-	const user = useSelector(state => state.session.user)
 	const dispatch = useDispatch();
-
 	const studyHandler = () => {
 		history.push(`/practice/${repo.repo_id}`);
 	};
@@ -22,11 +16,8 @@ const RepoCard = ({ repo }) => {
 	};
 	const deleteHandler = () => {
 		dispatch(deleteRepo(repo.repo_id))
-		// if(!res.errors) history.push(`/profile/${user.id}`)
-
 	}
 	if(!repo) return null
-	
 	return (
 		<>
 			<div className={styles.repoWrapper}>

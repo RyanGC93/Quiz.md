@@ -12,9 +12,10 @@ const QuestionRow = ({ question, autoSaveDisplay }) => {
 	const [timedUpdate, setTimedUpdate] = useState(null);
 
 	useEffect(() => {
+		if(rowQuestion && rowAnswer) return
 		setRowQuestion(question.question);
 		setRowAnswer(question.answer);
-	}, []);
+	});
 
 	const timedDataUpdate = () => {
 		if (timedUpdate) clearTimeout(timedUpdate);

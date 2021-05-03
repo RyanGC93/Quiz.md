@@ -11,12 +11,7 @@ const setRepo = (repo) => {
   };
 };
 
-const updateRepo = (repo) => {
-  return {
-    type: UPDATE_REPO,
-    repo,
-  };
-};
+
 const removeRepo = (id) => {
   return {
     type: REMOVE_REPO,
@@ -48,8 +43,8 @@ export const editRepo = (repoId, name) =>     async dispatch => {
     body: JSON.stringify({repoId, name})
   }
   const res = await fetch(`/api/repo/${repoId}`, options)
-  if (res.ok) {
-    const newRepo = await res.json()
+  if (!res.ok) {
+    alert('Editing error')
   }
 }
 
@@ -62,16 +57,6 @@ export const deleteRepo = (id) => async dispatch => {
     dispatch(removeRepo(id))
   }
 }
-
-// export const getRepo = (repoId) => async (dispatch) => {
-//   const response = await fetch(`/api/repo/${repoId}`);
-//   if (response.ok) {
-//     let res = await response.json();
-//     console.log(res,'repo')
-//       dispatch(setRepo(res))
-//   }
-//   return response;
-// };
 
 export const getRepos = (userId) => async (dispatch) => {
   const response = await fetch(`/api/repo/${userId}`);
