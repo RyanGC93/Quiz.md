@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import { deleteRepo } from "../../../store/repo";
 import { MdDelete } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 
 const RepoCard = ({ repo }) => {
 	const history = useHistory();

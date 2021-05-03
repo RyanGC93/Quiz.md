@@ -37,12 +37,13 @@ div.repoTitle{
     font-size: 3.5vw;
     text-align: center;
     text-decoration: underline;
-    /* background-color: black; */
+    cursor: default
 }
 
 div.repoName {
     font-size: 4vh;
     padding: 30px 10px 3px 10px;
+
 
 }
 
@@ -54,6 +55,7 @@ div.repoName {
     width: 20px;
     padding: 5px;
     visibility: hidden;
+    cursor: pointer;
 }
 
 .deleteIcon:hover{

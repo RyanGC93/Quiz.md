@@ -34,7 +34,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* <NavBar setAuthenticated={setAuthenticated} /> */}
       <Switch>
         <Route path="/login" exact={true}>
           <LoginPage
@@ -42,46 +41,24 @@ function App() {
             setAuthenticated={setAuthenticated}
           />
         </Route>
-        {/* Main Page */}
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
         <NavBar setAuthenticated={setAuthenticated} />
 
           <MainPage />
-          {/* <Footer /> */}
         </ProtectedRoute>
-        {/* User Profile */}
-
-        {/* <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
-          <User />
-        </ProtectedRoute>
-         */}
-        
-
         <ProtectedRoute path="/create/:id"  authenticated={authenticated}>
             <NavBar setAuthenticated={setAuthenticated} />
           <QuizCreator />
-          {/* <Footer /> */}
         </ProtectedRoute>
 
         <ProtectedRoute path="/profile/:id"  authenticated={authenticated}>
           <NavBar setAuthenticated={setAuthenticated} />
-          {/* <Footer /> */}
- 
           <ProfilePage />
-        </ProtectedRoute>
-        
-        
+        </ProtectedRoute>        
         <ProtectedRoute path="/practice/:repoId"  authenticated={authenticated}>
             <NavBar setAuthenticated={setAuthenticated} />
           <FlashCardQuiz />
-          {/* <Footer /> */}
         </ProtectedRoute>
-        
-
-{/* <Route path="/" exact={true} authenticated={authenticated}>
-          
-          <h1>My Home Page</h1>
-        </Route>  */}
         <Footer/>
       </Switch>
     </BrowserRouter>

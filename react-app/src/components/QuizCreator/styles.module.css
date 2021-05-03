@@ -97,22 +97,18 @@
     width: 100%;
     display:grid;
     grid-template-columns: 40% 60%;  
-    /* background-color:#9db1c0 */
 }
 
 .cell{
     white-space: pre-wrap;
     margin: 5px 5px 5px 5px;
     height: 100%;
-    /* width: 100%; */
     resize: none;
     background-color: white;
     font-size: 3vw;
     border: none;
     outline:none;
 
-    /* overflow-y: scroll; */
-    /* font-size:; */
 }
 .addIcon {
     height: 80px;

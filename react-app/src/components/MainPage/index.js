@@ -10,7 +10,6 @@ const MainPage = () => {
 	const [showModal, setShowModal] = useState(false);
 	let history = useHistory();
 	const user = useSelector((state) => state.session.user);
-	// TODO
 	const redirectQuiz = () => {
 		let repoId = 2;
 		history.push(`/practice/${repoId}`);
@@ -26,12 +25,9 @@ const MainPage = () => {
 
 	return (
 		<>
-			{/* src={require('./logo.jpeg')}  */}
 				<img className={styles.backgroundImg} alt='' src={require('../../images/backgrounds/mainPageBackground.jpeg')} />
 			<div className={styles.mainPage}>
 				<div className={styles.contentWrapper}>
-					{/* <div className={styles.contentWrapper}>     
-                    </div> */}
 					<div className={styles.contentContainer}>
 						<div className={styles.contentHeader}>Quiz.md</div>
 						<div className={styles.content}>

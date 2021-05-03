@@ -36,7 +36,6 @@ const LoginPage = ({ setAuthenticated }) => {
 						</div>
 						<div className="sign-up-htm">
 							<SignUpForm />
-							{/* <div className="hr"></div> */}
 						</div>
 					</div>
 							{/* <SocialLogins type="Signup" facebook=" with Facebook" /> */}

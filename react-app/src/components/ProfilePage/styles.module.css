@@ -74,12 +74,8 @@
     /* Dark Option */
     /* background: #244a4e; */
     /* light Option */
-    background: #6a7c8b
-    ;
-  
-    
-      position: relative;
-      border-radius: 2px;
+    background: #6a7c8b;
+    border-radius: 2px;
   }
   .section1 div .row:first-child {
       padding: 25px;

@@ -51,8 +51,6 @@
     border-right: none;
     outline:none;
     font-size: 2.5vw;
-    /* overflow-y: scroll; */
-    /* font-size:; */
 }
 .options {
     display: flex;
