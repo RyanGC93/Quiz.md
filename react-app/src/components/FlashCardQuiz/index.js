@@ -10,13 +10,25 @@ import { getQuestions } from "../../store/questions";
 import FlashCard from "./FlashCard";
 import 'react-slick'
 
+const FlashCardList = ({question}) => {
+	return (
+		<>
+			<div className={styles.question}>{question.question}</div>
+			<div className={styles.answer}>{question.answer}</div>
+		</>	
+	)
+}
+
+
 const FlashCardQuiz = () => {
 	const [flipToggle, setFlipToggle] = useState(false);
 	const [itemIndex,setItemIndex] = useState(0)
 	const [repoInfo, setRepoInfo] = useState({});
 	let { repoId } = useParams();
 	const dispatch = useDispatch();
-	const questions = useSelector((state) => Object.values(state.questions));
+	const questions = useSelector((state) => {
+		return Object.values(state.questions).filter((questions) => repoId == questions.repo_id);
+	})
 
 	const nextSlideHandler = (currentSlide) => {
 
@@ -37,7 +49,7 @@ const FlashCardQuiz = () => {
 		})();
 		dispatch(getQuestions(repoId));
 	}, [dispatch, repoId,itemIndex,setItemIndex]);
-
+	console.log(questions)
 	// !Section 1 FlashCards
 	return (
 		<>
@@ -86,14 +98,8 @@ const FlashCardQuiz = () => {
 					<div className={styles.gridTitle}>Question</div>
 					<div className={styles.gridTitle}>Answer</div>
 
-					{questions[0] &&
-						questions.map((question) => (
-							<div key={question.question_id}>
-								{/* <div key={question.question_id}> */}
-								<div className={styles.question}>{question.question}</div>
-								<div className={styles.answer}>{question.answer}</div>
-								{/* </div> */}
-							</div>
+					{questions[0] && questions.map((question, i) => (
+						<FlashCardList question={question} />	
 						))}
 				</div>
 			</div>

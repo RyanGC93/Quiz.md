@@ -23,7 +23,10 @@ const QuizCreator = () => {
 	const [repoTitle, setRepoTitle] = useState("");
 
 	const user = useSelector((state) => state.session.user);
-	const questions = useSelector((state) => Object.values(state.questions));
+	// const questions = useSelector((state) => Object.values(state.questions));
+	const questions = useSelector((state) => {
+		return Object.values(state.questions).filter((questions) => para.id == questions.repo_id);
+	})
 	const repoInfo = useSelector((state) => {
 		return Object.values(state.repo).filter((repo) => para.id == repo.repo_id);
 	});

@@ -31,16 +31,17 @@ def seed_demo():
 def seed():
     seed_users()
     seed_questions_repo()
-    seed_questions()
-
+    # seed_questions()
+    seed_example_one_questions()
+    seed_example_two_questions()
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
-    # undo_users()
-    # undo_questions_repo()
-    undo_questions()
+    undo_users()
+    undo_questions_repo()
+    # undo_questions()
 
 
     # Add other undo functions here
