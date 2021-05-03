@@ -3,7 +3,7 @@
     background-color:rgba(228,237,234,.5);
 }
 .quizGrid{
-    padding: 5vw
+    padding: 0 5vw 5vw 5vw
 }
 
 
@@ -14,7 +14,7 @@
 
 .titleInput{
     border: none;
-    /* margin-left: 10%; */
+    font-size: 5vh;
     padding: 15px 0px 15px 0px;
     border-radius: 25px;
     background: white;

@@ -16,10 +16,15 @@
     position: relative;
 
 }
-.icon{
+.iconContainer{
     position: absolute;
+    display: flex;
     top: 0;
     right: 0;
+
+}
+
+.icon{
     height: 25px;
     width: 25px; 
     padding: 5px;
