@@ -23,7 +23,6 @@ const QuizCreator = () => {
 	const [repoTitle, setRepoTitle] = useState("");
 
 	const user = useSelector((state) => state.session.user);
-	// const questions = useSelector((state) => Object.values(state.questions));
 	const questions = useSelector((state) => {
 		return Object.values(state.questions).filter((questions) => para.id == questions.repo_id);
 	})
@@ -40,14 +39,13 @@ const QuizCreator = () => {
 
 	useEffect(() => {
 		if (!para.id || !user) return;
-		// if (!repoInfo[0] ) {
 			dispatch(getQuestions(para.id));
 			dispatch(getRepos(user.id));
 		// }
 		if (!repoInfo[0]) return;
 		setRepoTitle(repoInfo[0].name)
-		// if (!repoTitle.length) setRepoTitle(repoInfo[0].name);
-	}, [user, para, dispatch]);
+
+	}, [user, para, dispatch,repoInfo]);
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value);
