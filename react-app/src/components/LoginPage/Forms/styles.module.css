@@ -87,21 +87,21 @@ form {
 
 .input::placeholder {
 	/* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: white;
-	font-size: 3vh;
+	color: #ffffff;
+	font-size: 2.5vh;
 	opacity: 1; /* Firefox */
 }
 
 .input:-ms-input-placeholder {
 	/* Internet Explorer 10-11 */
 	color: white;
-	font-size: 3vh;
+	font-size: 2.5vh;
 }
 
 .input::-ms-input-placeholder {
 	/* Microsoft Edge */
 	color: white;
-	font-size: 3vh;
+	font-size: 2.5vh;
 }
 
 .group {
