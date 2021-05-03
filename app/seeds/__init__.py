@@ -2,8 +2,8 @@ from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .demo_questions.repo_one import seed_example_one_questions
 from .demo_questions.repo_two import seed_example_two_questions
-# from .demo_questions.repo_three import seed_example_three_questions
-# from .demo_questions.repo_four import seed_example_four_questions
+from .demo_questions.repo_three import seed_example_three_questions
+from .demo_questions.repo_four import seed_example_four_questions
 # from .demo_questions.repo_five import seed_example_five_questions
 # from .demo_questions.repo_six import seed_example_six_questions
 
@@ -21,8 +21,8 @@ def seed_demo():
     # seed_questions_repo()
     seed_example_one_questions()
     seed_example_two_questions()
-    # seed_example_three_questions()
-    # seed_example_four_questions()
+    seed_example_three_questions()
+    seed_example_four_questions()
     # seed_example_five_questions()
     # seed_example_six_questions()
 
@@ -34,6 +34,10 @@ def seed():
     # seed_questions()
     seed_example_one_questions()
     seed_example_two_questions()
+    seed_example_three_questions()
+    seed_example_four_questions()
+
+
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
@@ -41,7 +45,7 @@ def seed():
 def undo():
     undo_users()
     undo_questions_repo()
-    # undo_questions()
+    undo_questions()
 
 
     # Add other undo functions here

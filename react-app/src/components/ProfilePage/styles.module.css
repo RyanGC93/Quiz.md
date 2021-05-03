@@ -11,6 +11,7 @@
   
   .profilePage {
       background-color:rgba(228,237,234,.5);
+      height: 100%;
     color: #171a26;
       font-weight: bold;
       font-size: 1em;

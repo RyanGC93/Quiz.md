@@ -21,8 +21,8 @@ def seed_questions_repo():
     seedOne = QuestionsRepo(id=1, owner_id=1, name='Md Example', type=fake.word(), subcategory=fake.word())
     seedTwo = QuestionsRepo(id=2, owner_id=1, name='Python', type=fake.word(), subcategory=fake.word())
     seedThree = QuestionsRepo(id=3, owner_id=1, name='Javascript', type=fake.word(), subcategory=fake.word())
-    seedFour = QuestionsRepo(id=4, owner_id=1, name='More Ex 1', type=fake.word(), subcategory=fake.word())
-    seedFive = QuestionsRepo(id=5, owner_id=1, name='More Ex 2', type=fake.word(), subcategory=fake.word())
+    seedFour = QuestionsRepo(id=4, owner_id=1, name='Javscript Array Methods', type=fake.word(), subcategory=fake.word())
+    seedFive = QuestionsRepo(id=5, owner_id=1, name='Javascript Time Methods', type=fake.word(), subcategory=fake.word())
     seedSix = QuestionsRepo(id=6, owner_id=1, name='More Ex 3', type=fake.word(), subcategory=fake.word())
    
     seed_list = [seedOne,seedTwo,seedThree,seedFour,seedFive,seedSix]
