@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import { useLocation,useHistory } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import CreateRepoModal from "../../CreateRepoModal";
 import { Modal } from "../../../context/Modal";
 import { useDetectOutsideClick } from "../../../services/detectOutsideClick";
-import "./styles.css";
+import styles from "./styles.module.css";
 import { logout } from "../../../services/auth";
 
 const DropDownMenu = ({ setAuthenticated, userId }) => {
@@ -30,19 +30,17 @@ const DropDownMenu = ({ setAuthenticated, userId }) => {
 		}
 		setIsActive(false);
 		history.push(`/profile/${userId}`);
-		// history.push(`profile/${username}`)
 	};
-
 
 	return (
 		<>
-			<div className="menu-container">
-				<div onClick={onClick} className="menu-trigger">
-					<AiOutlineMenu className="menu-icon" />
+			<div className={styles.menuContainer}>
+				<div onClick={onClick} className={styles.menuTrigger}>
+					<AiOutlineMenu className={styles.menuIcon} />
 				</div>
 				<nav
 					ref={dropdownRef}
-					className={`menu abs ${isActive ? "active" : "inactive"}`}
+					className={`${styles.menu} ${isActive ? `${styles.active}` : ""}`}
 				>
 					<ul>
 						<li>
@@ -50,12 +48,12 @@ const DropDownMenu = ({ setAuthenticated, userId }) => {
 						</li>
 						<li></li>
 						<li>
-              <div onClick={() => setShowModal(true)}>Create Quiz</div>
-              {showModal && (
-										<Modal onClose={() => setShowModal(false)}>
-											<CreateRepoModal setShowModal={setShowModal} />
-										</Modal>
-									)}
+							<div onClick={() => setShowModal(true)}>Create Quiz</div>
+							{showModal && (
+								<Modal onClose={() => setShowModal(false)}>
+									<CreateRepoModal setShowModal={setShowModal} />
+								</Modal>
+							)}
 						</li>
 						<li>
 							<div onClick={onLogout}>Sign Out</div>

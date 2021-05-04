@@ -22,7 +22,6 @@ export default function () {
 					className={styles.professionalFa}
 					onClick={() => (window.location.href = "https://github.com/RyanGC93")}
 				/>
-				{/* TODO redirect to email */}
 					<SiGmail className={styles.professionalFa}
 					onClick={() => (window.open("mailto:ryangconk@gmail.com"))}
 					/>

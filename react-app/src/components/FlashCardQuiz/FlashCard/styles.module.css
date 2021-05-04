@@ -1,52 +1,49 @@
 .card {
-    cursor:pointer;
-    height:100%;
-    background-color: white;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	height: 100%;
+	background-color: white;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 4px 3px 3px 2px rgba(0, 0, 0, 0.4);
 }
 .contentContainer {
-    height: 100%;
-    padding: 3vw;
-    white-space: pre-wrap;
-    font-size: 24px;
-    overflow: auto;
-    overflow-y: scroll;
-    text-align: left;
+	height: 100%;
+	padding: 3vw;
+	white-space: pre-wrap;
+	font-size: 24px;
+	overflow: auto;
+	overflow-y: scroll;
+	text-align: left;
 }
 
 ::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-      border-radius: 4px;
-      background-color: rgba(0, 0, 0, .5);
-      box-shadow: 0 0 1px rgba(255, 255, 255, .5);
-    }
-    
-    /* md Container */
-    .contentContainer pre {
-    line-height:0.1;
-    width:100%;
-    height: 100%;
-    overflow-y: scroll !important;
-    overflow-x: hidden !important;
-    line-height:0.2 !important;
-
+	-webkit-appearance: none;
+	width: 7px;
 }
 
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* md Container */
+.contentContainer pre {
+	line-height: 0.1;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll !important;
+	overflow-x: hidden !important;
+	line-height: 0.2 !important;
+}
 
 div.contentContainer code {
-   font-size: 24px;
-   height: 100%;
-   width:100%;
-   white-space: pre-wrap !important;
+	font-size: 24px;
+	height: 100%;
+	width: 100%;
+	white-space: pre-wrap !important;
 }
 
-
 .frontFlashCard {
-    font-size: 8vh;
-    text-align: center;
+	font-size: 8vh;
+	text-align: center;
 }

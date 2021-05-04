@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import styles from "./styles.module.css";
-import CreateRepoModal from '../CreateRepoModal'
+import CreateRepoModal from "../CreateRepoModal";
 import { Modal } from "../../context/Modal";
 import { useSelector } from "react-redux";
 
@@ -25,31 +24,43 @@ const MainPage = () => {
 
 	return (
 		<>
-				<img className={styles.backgroundImg} alt='' src={require('../../images/backgrounds/mainPageBackground.jpeg')} />
+			<img
+				className={styles.backgroundImg}
+				alt=""
+				src={require("../../images/backgrounds/mainPageBackground.jpeg")}
+			/>
 			<div className={styles.mainPage}>
 				<div className={styles.contentWrapper}>
 					<div className={styles.contentContainer}>
 						<div className={styles.contentHeader}>Quiz.md</div>
 						<div className={styles.content}>
-                            A learning site that allows software engineers to study various
-                            topics using a markdown template
+							A learning site that allows software engineers to study various
+							topics using a markdown template
 						</div>
-                        <div className={styles.quickLinks}>Quick Links</div>
+						<div className={styles.quickLinks}>Quick Links</div>
 						<div className={styles.contentOptions}>
-							<div className={styles.contentOption} onClick={redirectProfile}>View Profile</div>
-                            <div className={styles.contentOption} onClick={redirectQuiz}>Sample Quiz</div>
-							<div className={styles.contentOption} onClick={() => setShowModal(true)}>Create Quiz
+							<div className={styles.contentOption} onClick={redirectProfile}>
+								View Profile
+							</div>
+							<div className={styles.contentOption} onClick={redirectQuiz}>
+								Sample Quiz
+							</div>
+							<div
+								className={styles.contentOption}
+								onClick={() => setShowModal(true)}
+							>
+								Create Quiz
 							</div>
 							{/* Create Quiz modal */}
 							{showModal && (
-										<Modal onClose={() => setShowModal(false)}>
-											<CreateRepoModal setShowModal={setShowModal} />
-										</Modal>
-									)}
+								<Modal onClose={() => setShowModal(false)}>
+									<CreateRepoModal setShowModal={setShowModal} />
+								</Modal>
+							)}
 						</div>
 					</div>
 				</div>
-
+				{/* TODO: ADD In Future Development  */}
 				{/* Grid for future development */}
 				{/* <div className={styles.categories}> */}
 				{/* Grid Item One */}
