@@ -8,95 +8,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { getQuestions } from "../../store/questions";
 import FlashCard from "./FlashCard";
-import { HiEye, HiEyeOff } from "react-icons/hi";
-import ReactMarkdown from "react-markdown";
-import gfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import FlashCardList from './FlashCardList'
 
-const FlashCardList = ({ question, i }) => {
-	const [mdToggle, setMdToggle] = useState(false);
-	const renderers = {
-		code: ({ language, value }) => {
-			return (
-				<SyntaxHighlighter
-					style={atomDark}
-					language={language}
-					children={value}
-				/>
-			);
-		},
-	};
 
-	return (
-		<>
-			{mdToggle ? (
-				<>
-					<ReactMarkdown
-						renderers={renderers}
-						allowDangerousHtml={true}
-						source={question.question}
-						plugins={[gfm]}
-						className={styles.question}
-					>
-						{question.question}
-					</ReactMarkdown>
-					<ReactMarkdown
-						renderers={renderers}
-						allowDangerousHtml={true}
-						source={question.answer}
-						plugins={[gfm]}
-						className={styles.answer}
-					>
-						{question.answer}
-					</ReactMarkdown>
-						{mdToggle ? (
-							<HiEyeOff
-								className={styles.icon}
-								onClick={() => setMdToggle(!mdToggle)}
-							/>
-						) : (
-							<HiEye
-								className={styles.icon}
-								onClick={() => setMdToggle(!mdToggle)}
-							/>
-						)}
-				</>
-			) : (
-				<>
-					<div
-						className={
-							i % 2
-								? `${styles.question} ${styles.white}`
-								: `${styles.question}`
-						}
-					>
-							{question.question}
-							
-					</div>
-					<div
-						className={
-							i % 2 ? `${styles.answer} ${styles.white}` : `${styles.answer}`
-						}
-					>
-							{question.answer}
-					</div>
-							{mdToggle ? (
-							<HiEyeOff
-								className={styles.icon}
-								onClick={() => setMdToggle(!mdToggle)}
-							/>
-						) : (
-							<HiEye
-								className={styles.icon}
-								onClick={() => setMdToggle(!mdToggle)}
-							/>
-						)}
-				</>
-			)}
-		</>
-	);
-};
 
 const FlashCardQuiz = () => {
 	const [flipToggle, setFlipToggle] = useState(false);
@@ -131,7 +45,7 @@ const FlashCardQuiz = () => {
 	// !Section 1 FlashCards
 	return (
 		<>
-			<div className={styles.quizPageContainer}>
+			<div className={styles.quizPageContainer}>{itemIndex}
 				<div className={styles.quizCardContainer}>
 					<Carousel
 						selectedItem={itemIndex}

@@ -33,7 +33,7 @@ const QuestionRow = ({ question, autoSaveDisplay }) => {
 		if (rowQuestion && rowAnswer) return;
 		setRowQuestion(question.question);
 		setRowAnswer(question.answer);
-	});
+	},[rowQuestion, rowAnswer, question.question, question.answer]);
 
 	const timedDataUpdate = () => {
 		if (timedUpdate) clearTimeout(timedUpdate);

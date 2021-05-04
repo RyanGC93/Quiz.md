@@ -4,7 +4,8 @@ import BackComponent from "./BackComponent";
 import FrontComponent from "./FrontComponent";
 import styles from './styles.module.css'
 
-const FlashCard = ({question, flipToggle}) => {
+const FlashCard = ({question, flipToggle, setFlipToggle}) => {
+
 
 	return (
 		<ReactCardFlip

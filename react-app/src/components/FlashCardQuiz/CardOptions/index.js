@@ -15,11 +15,11 @@ const CardOptions = ({ setFlipToggle, flipToggle }) => {
 	let autoPlayInterval 
 	const next = () => {
 		let next = document.querySelector(".control-next");
-		next.click();
+		if(next)next.click();
 	};
 	const prev = () => {
 		let prev = document.querySelector(".control-prev");
-		prev.click();
+		if(prev)prev.click();
 	};
 	const autoPlay = () => {
 		let timeout = parseInt((statusTimeout / 2));

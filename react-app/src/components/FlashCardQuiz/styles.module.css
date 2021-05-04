@@ -12,15 +12,7 @@
 	cursor: default;
 }
 
-.question,
-.answer {
-	font-size: 3.5vw;
-	white-space: pre-wrap;
-    position: relative;
-}
-div.question code,div.answer code{
-	white-space: pre-wrap !important;
-}
+
 
 .quizCardContainer {
 	/* ! set all containers heights */
@@ -110,18 +102,7 @@ div.question code,div.answer code{
 	background-color: rgba(228, 237, 234, 0.5);
 }
 
-.icon{
 
-    height: 25px;
-    width: 25px; 
-    padding: 5px;
-    cursor: pointer;
-}
-
-.icon:hover{
-    transform: scale(1.3);
-    fill: rgba(128,0,0,1) 
-}
 
 .repoTitle {
 	padding: 1vh;
@@ -146,6 +127,4 @@ div.question code,div.answer code{
 	bottom: 0;
 }
 
-.white {
-	background-color: white;
-}
+
