@@ -28,14 +28,6 @@ const FrontComponent = ({ content }) => {
 					source={content}
 					plugins={[gfm]}
 				>
-					{/* <Speech
-					style={speechStyle}
-					stop={true}
-					pause={true}
-					resume={true}
-					text="I have altered my voice"
-					voice="Google UK English Female"
-				/> */}
 					{content}
 				</ReactMarkdown>
 			</div>

@@ -1,13 +1,10 @@
-import React,{useEffect} from "react";
+import React from "react";
 import ReactCardFlip from "react-card-flip";
 import BackComponent from "./BackComponent";
 import FrontComponent from "./FrontComponent";
 import styles from './styles.module.css'
 
-const FlashCard = ({question, flipToggle, setFlipToggle}) => {
-
-	useEffect(() => {
-	})
+const FlashCard = ({question, flipToggle}) => {
 
 	return (
 		<ReactCardFlip
