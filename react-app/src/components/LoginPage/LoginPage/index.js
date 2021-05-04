@@ -35,7 +35,8 @@ const LoginPage = ({ setAuthenticated }) => {
 							<LoginForm setAuthenticated={setAuthenticated} />
 						</div>
 						<div className={styles.signUpHtm}>
-							<SignUpForm />
+							<SignUpForm
+							setAuthenticated={setAuthenticated}/>
 						</div>
 					</div>
 					{/* <SocialLogins type="Signup" facebook=" with Facebook" /> */}
