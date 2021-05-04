@@ -13,6 +13,7 @@
    color: rgba(36,74,78,.9);
    font-weight: bold;
    text-align: center;
+   cursor: default;
    /* text-decoration: underline */
 }
 .professionalFa:hover{

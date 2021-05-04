@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../../../store/session";
 import styles from "./styles.module.css";
 
-const SignUpForm = (authenticated, setAuthenticated) => {
+const SignUpForm = ( setAuthenticated) => {
 	const dispatch = useDispatch();
 	const [username, setUsername] = useState("");
 	const [email, setEmail] = useState("");
@@ -17,6 +17,7 @@ const SignUpForm = (authenticated, setAuthenticated) => {
 		if (password === repeatPassword) {
 			const user = { username, email, password };
 			const res = await dispatch(registerUser(user));
+			setAuthenticated(true);
 			return res ? history.push("/") : alert("backend server issue");
 		}
 	};

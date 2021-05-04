@@ -14,7 +14,6 @@ export const LoginForm = ({ setAuthenticated }) => {
 	const history = useHistory();
 
 	const onLogin = async (e) => {
-		// form validation_errors
 		if (!password) return alert("Please enter a password");
 		if (!email) return alert("please enter an email");
 		e.preventDefault();

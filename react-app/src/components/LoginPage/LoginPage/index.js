@@ -1,4 +1,4 @@
-import "./styles.css";
+import styles from "./styles.module.css";
 import SocialLogins from "../SocialLogins";
 import PortfolioNavigator from "../PortfolioNavigator";
 import React from "react";
@@ -6,40 +6,40 @@ import LoginForm from "../Forms/SignInForm";
 import SignUpForm from "../Forms/SignUpForm";
 
 const LoginPage = ({ setAuthenticated }) => {
-	
-	
-	
-	
 	return (
 		<>
-      <img className='background-img' alt='' src='https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'/>
-			<div className="login-wrap">
-				<div className="login-html">
-					<div className="login-title">Quizs.md</div>
+			<img
+				className={styles.backgroundImg}
+				alt=""
+				src="https://images.pexels.com/photos/5088017/pexels-photo-5088017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+			/>
+			<div className={styles.loginWrap}>
+				<div className={styles.loginContainer}>
+					<div className={styles.loginTitle}>Quiz.md</div>
 					<input
 						id="tab-1"
 						type="radio"
 						name="tab"
-						className="sign-in"
+						className={styles.signIn}
 						defaultChecked
-						/>
-					<label htmlFor="tab-1" className="tab__login ">
+					/>
+					<label htmlFor="tab-1" className={styles.tabLogin}>
 						Sign In
 					</label>
-					<input id="tab-2" type="radio" name="tab" className="sign-up" />
-					<label htmlFor="tab-2" className="tab__login  ">
+					<input id="tab-2" type="radio" name="tab" className={styles.signUp} />
+					<label htmlFor="tab-2" className={styles.tabLogin}>
 						Sign Up
 					</label>
-					<div className="login-form">
-						<div className="sign-in-htm">
+					<div className={styles.loginForm}>
+						<div className={styles.signInHtm}>
 							<LoginForm setAuthenticated={setAuthenticated} />
 						</div>
-						<div className="sign-up-htm">
+						<div className={styles.signUpHtm}>
 							<SignUpForm />
 						</div>
 					</div>
-							{/* <SocialLogins type="Signup" facebook=" with Facebook" /> */}
-							<PortfolioNavigator />
+					{/* <SocialLogins type="Signup" facebook=" with Facebook" /> */}
+					<PortfolioNavigator />
 				</div>
 			</div>
 		</>
