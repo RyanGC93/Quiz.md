@@ -1,23 +1,21 @@
-import React from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import Grid from './Grid'
-import styles from './styles.module.css'
-import { BsFilePost} from "react-icons/bs";
-import { MdFavorite} from "react-icons/md";
-import { FaCheck} from "react-icons/fa";
-import { FaThumbsUp} from "react-icons/fa";
-import { FaStar} from "react-icons/fa";
+import React from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import Grid from "./Grid";
+import styles from "./styles.module.css";
+// import { BsFilePost} from "react-icons/bs";
+// import { MdFavorite} from "react-icons/md";
+// import { FaCheck} from "react-icons/fa";
+// import { FaThumbsUp} from "react-icons/fa";
+// import { FaStar} from "react-icons/fa";
 
 const ProfilePage = () => {
-
-  return (
-    <>
-<div className={styles.profilePage}>
-
-<div className={styles.container}>
-	<div className={styles.innerwrap}>
-		 {/* <section className={`${styles.section1} ${styles.clearfix}`}>
+	return (
+		<>
+			<div className={styles.profilePage}>
+				<div className={styles.container}>
+					<div className={styles.innerwrap}>
+						{/* <section className={`${styles.section1} ${styles.clearfix}`}>
 			<div>
 				<div className={`${styles.row} ${styles.grid} ${styles.clearfix}`}>
 					<div className={`${styles.col2} ${styles.first}`}>
@@ -53,29 +51,26 @@ const ProfilePage = () => {
 			<FaStar className={styles.triIcon} />
 			</span>
 		</section>  */}
-		<section className={`${styles.section2} ${styles.clearfix}`}>
+						<section className={`${styles.section2} ${styles.clearfix}`}>
+							<Tabs>
+								<TabList className={styles.tabList}>
+									<Tab>My Quizes</Tab>
+									{/* <Tab>Bookmarked</Tab> */}
+								</TabList>
 
-    <Tabs>
-    <TabList className={styles.tabList}>
-      <Tab>My Quizes</Tab>
-      {/* <Tab>Bookmarked</Tab> */}
-    </TabList>
-
-    <TabPanel>
-      <Grid />
-    </TabPanel>
-    {/* <TabPanel>
+								<TabPanel>
+									<Grid />
+								</TabPanel>
+								{/* <TabPanel>
       <Grid /> 
     </TabPanel> */}
-  </Tabs>
-		</section> 
-	</div>
-</div>	
-</div>	
+							</Tabs>
+						</section>
+					</div>
+				</div>
+			</div>
+		</>
+	);
+};
 
-    </>
-  )
-
-}
-
-export default ProfilePage
+export default ProfilePage;

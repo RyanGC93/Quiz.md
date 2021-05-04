@@ -25,7 +25,6 @@ const removeQuestion = (id) => {
 }
 
 export const createQuestion = (repoId,question, answer) => async dispatch => {
-
     const options =
     {
       method: 'POST',
@@ -47,8 +46,8 @@ export const editQuestion = (questionId, question, answer) => async dispatch => 
     body: JSON.stringify({question, answer})
   }
   const res = await fetch(`/api/questions/${questionId}`, options)
-  if (res.ok) {
-    const newQuestion = await res.json()
+  if (!res.ok) {
+    alert('Cannot Edit Please Try Again later')
   }
 }
 

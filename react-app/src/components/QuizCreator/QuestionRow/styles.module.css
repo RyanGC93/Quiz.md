@@ -4,11 +4,12 @@
     width: 100%;
     display:grid;
     grid-template-columns: 40% 60%;  
-
 }
+
 .inputRow:hover .icon {
     visibility:visible;
 }
+
 form.form code {
     white-space: pre-wrap !important
 }
@@ -17,14 +18,13 @@ form.form code {
     height: 100%;
     margin: 0;
     position: relative;
-
 }
+
 .iconContainer{
     position: absolute;
     display: flex;
     top: 0;
     right: 0;
-
 }
 
 .icon{
@@ -54,11 +54,13 @@ form.form code {
     outline:none;
     font-size: 2.5vw;
 }
+
 .options {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .optionsBtn{
     width: 10%;
 }

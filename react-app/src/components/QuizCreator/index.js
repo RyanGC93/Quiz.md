@@ -16,7 +16,6 @@ const QuizCreator = () => {
 	let para = useParams();
 	const dispatch = useDispatch();
 	const history = useHistory();
-
 	const [rowQuestion, setRowQuestion] = useState("");
 	const [rowAnswer, setRowAnswer] = useState("");
 	const [timedUpdate, setTimedUpdate] = useState(null);
@@ -24,8 +23,10 @@ const QuizCreator = () => {
 
 	const user = useSelector((state) => state.session.user);
 	const questions = useSelector((state) => {
-		return Object.values(state.questions).filter((questions) => para.id == questions.repo_id);
-	})
+		return Object.values(state.questions).filter(
+			(questions) => para.id == questions.repo_id
+		);
+	});
 	const repoInfo = useSelector((state) => {
 		return Object.values(state.repo).filter((repo) => para.id == repo.repo_id);
 	});
@@ -39,12 +40,11 @@ const QuizCreator = () => {
 
 	useEffect(() => {
 		if (!para.id || !user) return;
-			dispatch(getQuestions(para.id));
-			dispatch(getRepos(user.id));
+		dispatch(getQuestions(para.id));
+		dispatch(getRepos(user.id));
 		if (!repoInfo[0]) return;
-		setRepoTitle(repoInfo[0].name)
-
-	}, [user, para, dispatch,repoInfo]);
+		setRepoTitle(repoInfo[0].name);
+	}, [user, para, dispatch, repoInfo]);
 
 	const updateTitle = (e) => {
 		setRepoTitle(e.target.value);

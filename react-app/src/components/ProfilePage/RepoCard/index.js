@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import styles from "./styles.module.css";
 import { deleteRepo } from "../../../store/repo";
 import { MdDelete } from "react-icons/md";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 
 const RepoCard = ({ repo }) => {
 	const history = useHistory();
@@ -15,9 +15,9 @@ const RepoCard = ({ repo }) => {
 		history.push(`/create/${repo.repo_id}`);
 	};
 	const deleteHandler = () => {
-		dispatch(deleteRepo(repo.repo_id))
-	}
-	if(!repo) return null
+		dispatch(deleteRepo(repo.repo_id));
+	};
+	if (!repo) return null;
 	return (
 		<>
 			<div className={styles.repoWrapper}>
