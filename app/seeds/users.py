@@ -5,9 +5,7 @@ from app.models import db, User
 def seed_users():
 
     demo = User( id=1,username='Demo', email='demo@aa.io',password='password')
-
     db.session.add(demo)
-
     db.session.commit()
 
 # Uses a raw SQL query to TRUNCATE the users table.
