@@ -7,7 +7,7 @@
 ***
 ***
 *** To avoid retyping too much info. Do a search and replace for the following:
-*** RyanGC93, InterviewMaster, twitter_handle, ryangconk@gmail.com, project_title, This a clone of Instagram that is built with 
+*** RyanGC93, Quiz.md, twitter_handle, ryangconk@gmail.com, project_title, This a clone of Instagram that is built with 
 -->
 
 
@@ -24,14 +24,14 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-
-
+[![Linked In][linkedin-shield]][linkedin-url]
+[linkedin-url]
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/RyanGC93/InterviewMaster">
+  <a href="https://github.com/RyanGC93/Quiz.md">
     <img src="https://i.imgur.com/JbX5XyW.png" alt="Logo" width="300" height="100">
   </a>
 
@@ -39,12 +39,12 @@
   <p align="center">
     A learning site built upon a Flask Backend and React/Redux frontend that allows software engineers to study various topics using a markdown template
     <br />
-    <a href="https://github.com/RyanGC93/InterviewMaster/wiki"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/RyanGC93/Quiz.md/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://instantaneous-gramme.herokuapp.com">View Demo</a>
+    <a href="https://github.com/RyanGC93/Quiz.md">View Demo</a>
     ·
-    <a href="https://github.com/RyanGC93/InterviewMaster/issues">Report Bug</a>
+    <a href="https://github.com/RyanGC93/Quiz.md/issues">Report Bug</a>
     ·
   </p>
 </p>
@@ -114,20 +114,20 @@ This is an example of how to list things you need to use the software and how to
   ```
 ### Installation
 
-1. Clone the InstantaneousGramme
+1. Clone Quiz.md
    ```sh
-   git clone https://github.com/RyanGC93/InterviewMaster
+   git clone https://github.com/RyanGC93/Quiz.md
    ```
 
 2. Backend Installation
-- Follow Instructions for Backend [Instructions](https://github.com/RyanGC93/InterviewMaster/blob/readme/README_BACKEND.md)
+- Follow Instructions for Backend [Instructions](https://github.com/RyanGC93/Quiz.md/blob/readme/README_BACKEND.md)
 
 3. Frontend Installation
-- Follow Instructions for Frontend [Instructions](https://github.com/RyanGC93/InterviewMaster/blob/readme/README_FRONTEND.md)
+- Follow Instructions for Frontend [Instructions](https://github.com/RyanGC93/Quiz.md/blob/readme/README_FRONTEND.md)
 
-
-
-
+## project-challenges
+### Paragraph formatting
+The project was particular challenging on handling formatted paragraph. It proved to be difficult to take formatted text area from the front end, save it server side and display it on the front end displaying it with correct formatting as a textarea and in Markdown
 
 ## Feature Highlights
 
@@ -136,7 +136,7 @@ This is an example of how to list things you need to use the software and how to
   <summary>Click to expand!</summary>
   
   ### Summary
-  An added Feature that is implemented Quizmd is an autosave feature on editing the Questions Repo. This was implemented to allow for a simpler UI and user experience. This was implemented by using a timeout. If any values were changed an onchange called a the following code snippet. If more changes were made within three second the timeout was reset by storing the callback in the local react state. If after 3 seconds of no additonal onchange events the timeout dispatches a redux thunk that updates the changes by updating the resources on the server side
+  An autosave feature was implemented for editing inputs and saving the values to allow for a simpler UI and user experience. This was implemented by using a timeout. If any values were changed an onchange called a the following code snippet. If more changes were made within three second the timeout was reset by storing the callback in the local react state. If after 3 seconds of no additional onchange events the timeout dispatches a redux thunk that updates the changes by updating the resources on the server side
   ### Code Snippet
   ```
 	const timedDataUpdate = () => {
@@ -153,50 +153,17 @@ This is an example of how to list things you need to use the software and how to
 </details>
 
 
-### (2) Direct messaging using web sockets
-<details>
-  <summary>Click to expand!</summary>
-  
-  ### Summary
-  TODO >>>>> ADD Summary
-  ### Code Snippet
-  ```
-  export async function getSignedRequest(photo){
-  let res = await fetch('/sign_s3/?file_name='+photo.name+"&file_type="+photo.type);
-  if (res.ok) {
-    res= await res.json()
-    uploadFile(photo, res.data, res.url);
-  } else {
-    console.error('could not get url')
-  }
-  return res.data.url + res.data.fields.key
-}
-
-export async function uploadFile(file, s3Data, url){
-  const data = new FormData()
-  for(const key in s3Data.fields){
-    data.append(key, s3Data.fields[key]);
-  }
-  data.append('file', file)
-  const res = await fetch(url, {
-    method:'POST',
-    body: data
-  })
-  return res
-}
-  ```
-</details>
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-============ add pictures of site usage_
+> Quiz.md was created to solve the problem of studying language methods with syntax highlighting and serves as a learning aid application that renders in Markdown
+
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/RyanGC93/InterviewMaster/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/RyanGC93/Quiz.md/issues) for a list of proposed features (and known issues).
 
 
 
@@ -221,13 +188,13 @@ Ryan Conk- [Github](https://github.com/RyanGC93) - ryangconk@gmail.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[contributors-url]: https://github.com/RyanGC93/InterviewMaster/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[forks-url]: https://github.com/RyanGC93/InterviewMaster/network/members
-[stars-shield]: https://img.shields.io/github/stars/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[stars-url]: https://github.com/RyanGC93/InterviewMaster/stargazers
-[issues-shield]: https://img.shields.io/github/issues/TolulopeVerissimo/InstantaneousGramme.svg?style=for-the-badge
-[issues-url]: https://github.com/RyanGC93/InterviewMaster/issues
+[contributors-shield]: https://img.shields.io/github/contributors/RyanGC93/Quiz.md.svg?style=for-the-badge
+[contributors-url]: https://github.com/RyanGC93/Quiz.md/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/RyanGC93/Quiz.md.svg?style=for-the-badge
+[forks-url]: https://github.com/RyanGC93/Quiz.md/network/members
+[stars-shield]: https://img.shields.io/github/stars/RyanGC93/Quiz.md.svg?style=for-the-badge
+[stars-url]: https://github.com/RyanGC93/Quiz.md/stargazers
+[issues-shield]: https://img.shields.io/github/issues/RyanGC93/Quiz.md.svg?style=for-the-badge
+[issues-url]: https://github.com/RyanGC93/Quiz.md/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/TolulopeVerissimo
