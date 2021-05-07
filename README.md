@@ -25,7 +25,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Linked In][linkedin-shield]][linkedin-url]
-[linkedin-url]
 
 
 <!-- PROJECT LOGO -->
@@ -114,20 +113,20 @@ This is an example of how to list things you need to use the software and how to
   ```
 ### Installation
 
-1. Clone Quiz.md
+1. Clone Quiz .md
    ```sh
    git clone https://github.com/RyanGC93/Quiz.md
    ```
 
 2. Backend Installation
-- Follow Instructions for Backend [Instructions](https://github.com/RyanGC93/Quiz.md/blob/readme/README_BACKEND.md)
+- Follow Instructions for Backend [Instructions](https://github.com/RyanGC93/Quiz.md/blob/master/README_BACKEND.md)
 
-3. Frontend Installation
-- Follow Instructions for Frontend [Instructions](https://github.com/RyanGC93/Quiz.md/blob/readme/README_FRONTEND.md)
+1. Frontend Installation
+- Follow Instructions for Frontend [Instructions](https://github.com/RyanGC93/Quiz.md/blob/master/README_FRONTEND.md)
 
-## project-challenges
+## Project Challenges
 ### Paragraph formatting
-The project was particular challenging on handling formatted paragraph. It proved to be difficult to take formatted text area from the front end, save it server side and display it on the front end displaying it with correct formatting as a textarea and in Markdown
+> The project was particular challenging on handling formatted paragraph. It proved to be difficult to take formatted text area from the front end, save it server side and display it on the front end displaying it with correct formatting as a textarea and in Markdown
 
 ## Feature Highlights
 
