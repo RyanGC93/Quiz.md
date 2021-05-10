@@ -45,7 +45,7 @@ const FlashCardQuiz = () => {
 	// !Section 1 FlashCards
 	return (
 		<>
-			<div className={styles.quizPageContainer}>{itemIndex}
+			<div className={styles.quizPageContainer}>
 				<div className={styles.quizCardContainer}>
 					<Carousel
 						selectedItem={itemIndex}
