@@ -5,7 +5,7 @@ from .demo_questions.repo_two import seed_example_two_questions
 from .demo_questions.repo_three import seed_example_three_questions
 from .demo_questions.repo_four import seed_example_four_questions
 from .demo_questions.repo_five import seed_example_five_questions
-# from .demo_questions.repo_six import seed_example_six_questions
+from .demo_questions.repo_six import seed_example_six_questions
 from .questions_repo import seed_questions_repo, undo_questions_repo
 from .questions import seed_questions, undo_questions
 

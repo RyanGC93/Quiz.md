@@ -24,8 +24,10 @@ def seed_questions_repo():
     seedFour = QuestionsRepo(id=4, owner_id=1, name='Javscript Array Methods', type=fake.word(), subcategory=fake.word())
     seedFive = QuestionsRepo(id=5, owner_id=1, name='Javascript Time Methods', type=fake.word(), subcategory=fake.word())
     seedSix = QuestionsRepo(id=6, owner_id=1, name='More Python', type=fake.word(), subcategory=fake.word())
+    seedSeven = QuestionsRepo(id=7, owner_id=1, name='Test Automation Interview', type=fake.word(), subcategory=fake.word())
+    
    
-    seed_list = [seedOne,seedTwo,seedThree,seedFour,seedFive, seedSix]
+    seed_list = [seedOne,seedTwo,seedThree,seedFour,seedFive, seedSix, seedSeven]
     db.session.add_all(seed_list)
     db.session.commit()
     
