@@ -7,23 +7,31 @@ from app.models import db, QuestionsRepo, Questions, User
 
 questions_repo_routes = Blueprint('repo', __name__)
 
-# Gets the repo
+# Gets the Users Repo
 @questions_repo_routes.route('/<int:ownerId>')
 @login_required
 def repo(ownerId):
-    repoList = QuestionsRepo.query.filter(QuestionsRepo.owner_id == ownerId).all()
-    resObj = {"repos": [repo.to_dict() for repo in repoList]}
-    return resObj if resObj else {"repos": []} 
+    try:
+        repoList = QuestionsRepo.query.filter(QuestionsRepo.owner_id == ownerId).all()
+        resObj = {"repos": [repo.to_dict() for repo in repoList]}
+        return resObj if resObj else {"repos": []} 
+    except exc.SQLAlchemyError as e:
+        print(type(e))
+        return {'errors': ['Cannot Get User Repos Please Try again']}, 500
 
 
 # Gets the Singular Repo
 @questions_repo_routes.route('/info/<int:repoId>')
 @login_required
 def repoInfo(repoId):
-    keys=['repo_name','repo_username']
-    repo_values = db.session.query(QuestionsRepo.name, User.username).filter(QuestionsRepo.id == repoId).first()
-    resObj  = dict(zip(keys,repo_values))
-    return resObj if resObj else {"repos": []} 
+    try:
+        keys=['repo_name','repo_username']
+        repo_values = db.session.query(QuestionsRepo.name, User.username).filter(QuestionsRepo.id == repoId).first()
+        resObj  = dict(zip(keys,repo_values))
+        return resObj if resObj else {"repos": []} 
+    except exc.SQLAlchemyError as e:
+        print(type(e))
+        return {'errors': ['Cannot Get Repo Please Try again']}, 500
     
 # Edit question
 @questions_repo_routes.route('/<int:id>', methods=['PUT'])
